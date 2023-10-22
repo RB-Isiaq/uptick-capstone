@@ -26,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Collaboration Guidelines
 
-1. Pull origin `git pull origin dev`
+1. Pull origin `git pull origin frontend`
 
 2. Create a new branch for the task you were assigned to, eg `(Feat/Bug/Fix/Chore)/title` : `git checkout -b Feat/Home-page`
 
@@ -36,11 +36,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 5. Commit your changes with a descriptive commit message : `git commit -m "your commit message"`.
 
-6. IMPORTANT: To make sure there are no conflicts, run `git pull origin dev`.
+6. IMPORTANT: To make sure there are no conflicts, run `git pull origin frontend`.
 
 7. Push changes to your new branch, run `git push -u origin Feat/Home-page`.
 
-8. Create a pull request to the `dev` branch not `main`.
+8. Create a pull request to the `frontend` branch not `main`.
 
 9. Ensure to describe your pull request.
 
