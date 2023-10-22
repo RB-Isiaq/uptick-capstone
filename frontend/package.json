@@ -17,18 +17,6 @@
     "format": "npm run check-lint --fix && npm run testing && npx prettier --write .",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "npm test -- --findRelatedTests"
-    ]
-  },
   "dependencies": {
     "jest-environment-jsdom": "^29.7.0",
     "next": "13.5.6",
