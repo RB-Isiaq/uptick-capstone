@@ -15,17 +15,17 @@ export const Hero = () => {
   return (
     <div className="relative flex flex-col min-h-screen justify-center px-3 pt-[22px] xl:px-[100px] md:px-10">
       <div className="flex flex-col min-[960px]:flex-row justify-between items-center gap-3">
-        <div className="flex flex-col w-[576px] max-w-full">
+        <div className="flex flex-col w-[576px] max-w-full gap-3">
           <h1 className="font-poppins text-[32px] md:text-[50px] leading-[140%] text-uptickBlack font-semibold">
             {HeadText}
           </h1>
-          <h2 className="font-poppins text-[26px] md:text-[38px] leading-[140%] text-uptickBlack font-semibold">
+          <h2 className="font-poppins text-[25px] md:text-[36px] leading-[140%] text-uptickBlack font-semibold">
             {HeadText2}
           </h2>
           <p className="font-poppins text-[18px] leading-[32px] text-uptickBlack opacity-80">
             {subText}
           </p>
-          <div className="flex gap-5 mt-[30px]">
+          <div className="flex gap-5 mt-[20px]">
             {ctaButtons.map((btn) => (
               <Link
                 key={btn.id}
@@ -43,8 +43,8 @@ export const Hero = () => {
         </div>
         <div className="relative">
           <Image src={LADY} alt="lady" />
-          <div className="absolute top-20 right-0 w-[515px] h-[539px] rounded-[60%] border border-[1px,solid,#808080] -z-[2]" />
-          <div className="absolute top-24 right-10 w-[515px] h-[539px] rounded-[60%] bg-[#808080] -z-[1]" />
+          <div className="absolute top-20 right-0 w-[350px] h-[350px] md:w-[515px] md:h-[539px] rounded-[60%] border border-[1px,solid,#808080] -z-[2]" />
+          <div className="absolute top-24 right-10 w-[350px] h-[350px] md:w-[515px] md:h-[539px] rounded-[60%] bg-[#808080] -z-[1]" />
         </div>
       </div>
       <div className="w-full flex flex-col sm:flex-row gap-3 justify-between items-start py-[45px] px-3 md:px-[45px] mt-[-80px] rounded-md bg-[#fff] shadow-md z-[2]">

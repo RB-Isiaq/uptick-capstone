@@ -14,6 +14,10 @@ import BUSINESS from './assets/prog3.png';
 import MAP from './assets/prog4.png';
 import ABOUT from './assets/about.png';
 import LETTER from './assets/letter.png';
+import IN from './assets/ri_linkedin-fill.svg';
+import IG from './assets/instagram.svg';
+import X from './assets/twitter.svg';
+import FB from './assets/facebook.svg';
 
 export {
   LOGO,
@@ -32,4 +36,8 @@ export {
   MAP,
   ABOUT,
   LETTER,
+  IN,
+  FB,
+  X,
+  IG,
 };

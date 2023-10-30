@@ -5,10 +5,10 @@ import ProgramCard from './ProgramCard';
 export const Programs = () => {
   return (
     <div className="flex flex-col justify-center items-center bg-[#fff] py-[139px] px-3 xl:px-[100px] md:px-10">
-      <h1 className="font-poppins text-center text-[55px] text-uptickBlack font-semibold">
+      <h1 className="font-poppins text-center text-[38px] text-uptickBlack font-semibold">
         Our Programs
       </h1>
-      <div className="w-full">
+      <div className="w-full mt-10">
         {programs.map((program, i) => (
           <ProgramCard
             key={program.id}

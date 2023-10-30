@@ -22,7 +22,7 @@ const ProgramCard = ({
 }: ProgramCard) => {
   return (
     <>
-      <h1 className="font-poppins text-uptickBlack font-semibold text-[27px] md:text-[38px] text-center">
+      <h1 className="font-poppins text-uptickBlack font-semibold text-[27px] md:text-[36px] text-center">
         {headTitle}
       </h1>
       <div
@@ -38,7 +38,7 @@ const ProgramCard = ({
           className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] object-contain"
         />
         <div className="flex flex-col gap-6 md:gap-[63px] w-[447px] max-w-full">
-          <h1 className="font-poppins text-uptickBlack font-semibold text-[26px] md:text-[39px]">
+          <h1 className="font-poppins text-uptickBlack font-semibold text-[26px] md:text-[36px]">
             {title}
           </h1>
           <p className="font-poppins text-uptickBlack text-[18px]">
