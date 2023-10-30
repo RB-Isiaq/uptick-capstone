@@ -7,12 +7,13 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+    colors: {
+      uptickBlack: '#2C2C2C',
+    },
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
+      inter: ['Inter', 'sans-serif'],
+      cabin: ['Cabin', 'sans-serif'],
     },
   },
   plugins: [],

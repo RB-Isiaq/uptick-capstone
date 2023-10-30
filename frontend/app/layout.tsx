@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Poppins, Cabin } from 'next/font/google';
 import './globals.css';
+import Navbar from '@/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
+
+const poppins = Poppins({ weight: ['400', '500', '600'], subsets: ['latin'] });
+const cabin = Cabin({ weight: ['400', '500', '600'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Uptick Talent Website',
@@ -16,7 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${inter.className} ${poppins.className} ${cabin.className}`}
+      >
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
