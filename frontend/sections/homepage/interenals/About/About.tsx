@@ -4,7 +4,7 @@ import { AboutCard } from './AboutCard';
 
 export const About = () => {
   return (
-    <div className="flex flex-col justify-center items-center bg-[#E7E7E7] py-[139px] xl:px-[100px] md:px-10">
+    <div className="flex flex-col justify-center items-center bg-[#E7E7E7] py-[139px] px-3 xl:px-[100px] md:px-10">
       <h1 className="font-poppins text-center text-[55px] text-uptickBlack font-semibold">
         About Uptick Talent
       </h1>

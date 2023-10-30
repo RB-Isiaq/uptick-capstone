@@ -2,14 +2,14 @@ import React from 'react';
 
 export const Contact = () => {
   return (
-    <div className="flex flex-col justify-center items-center bg-[#E7E7E7] py-[139px] xl:px-[100px] md:px-10">
+    <div className="flex flex-col justify-center items-center bg-[#fff] px-3 py-[139px] xl:px-[100px] md:px-10">
       <h1 className="font-poppins text-center text-[55px] text-uptickBlack font-semibold">
         Contact us
       </h1>
-      <div className="w-full flex flex-col md:flex-row justify-between items-center gap-3 my-[100px]">
+      <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 my-[100px]">
         <div className="w-full max-w-[449px] flex flex-col gap-6">
-          <h1 className="font-poppins text-uptickBlack text-[26px] md:text-[39px] font-semibold">
-            Let&apos;s us Connect
+          <h1 className="font-poppins text-uptickBlack text-[26px] md:text-[39px] font-semibold w-[210px]">
+            Let us Connect
           </h1>
           <p className="font-poppins text-uptickBlack text-[18px]">
             Have questions or need assistance? We&apos;re here to help. Reach
@@ -23,17 +23,17 @@ export const Contact = () => {
           <input
             type="text"
             placeholder="First Name"
-            className="w-full py-[18px] px-[46px] rounded-[28px]  bg-[#E&E&E&]"
+            className="w-full py-[18px] px-[26px] rounded-[28px]  bg-[#E7E7E7]"
           />
           <input
             type="text"
             placeholder="Last Name"
-            className="w-full py-[18px] px-[46px] rounded-[28px]  bg-[#E&E&E&]"
+            className="w-full py-[18px] px-[26px] rounded-[28px]  bg-[#E7E7E7]"
           />
           <input
             type="text"
             placeholder="Enter Email"
-            className="w-full py-[18px] px-[46px] rounded-[28px]  bg-[#E&E&E&]"
+            className="w-full py-[18px] px-[26px] rounded-[28px]  bg-[#E7E7E7]"
           />
           <textarea
             name=""
@@ -41,7 +41,7 @@ export const Contact = () => {
             cols={30}
             rows={30}
             placeholder="Message"
-            className="w-full py-[18px] px-[46px] rounded-[28px]  bg-[#E&E&E&]"
+            className="w-full py-[18px] px-[26px] rounded-[28px]  bg-[#E7E7E7]"
           ></textarea>
           <button className="w-full  py-[18px] px-[46px] rounded-[28px] flex justify-center items-center bg-[#1E1E1E] text-[#fff] font-poppins font-bold text-[18px]">
             Send a Message

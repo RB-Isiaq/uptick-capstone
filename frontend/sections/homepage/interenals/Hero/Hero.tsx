@@ -13,7 +13,7 @@ import Achievement from './Achievement';
 
 export const Hero = () => {
   return (
-    <div className="flex flex-col min-h-screen justify-center px-3 pt-[22px] xl:px-[100px] md:px-10">
+    <div className="relative flex flex-col min-h-screen justify-center px-3 pt-[22px] xl:px-[100px] md:px-10">
       <div className="flex flex-col min-[960px]:flex-row justify-between items-center gap-3">
         <div className="flex flex-col w-[576px] max-w-full">
           <h1 className="font-poppins text-[32px] md:text-[50px] leading-[140%] text-uptickBlack font-semibold">
