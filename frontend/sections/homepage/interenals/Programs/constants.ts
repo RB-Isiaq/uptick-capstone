@@ -1,5 +1,7 @@
 import { BEGINNERS, BUSINESS, MAP, TECH } from '@/public';
 
+
+export const HeadText = "Our Programs"
 export const programs = [
   {
     id: 1,

@@ -1,16 +1,15 @@
 import React from 'react';
-import { programs } from './constants';
-import ProgramCard from './ProgramCard';
+import { HeadText, programs } from './constants';
+import ContentCard from '@/components/ContentCard/ContentCard';
+import Header from '@/components/Header';
 
 export const Programs = () => {
   return (
     <div className="flex flex-col justify-center items-center bg-[#fff] py-[139px] px-3 xl:px-[100px] md:px-10">
-      <h1 className="font-poppins text-center text-[38px] text-uptickBlack font-semibold">
-        Our Programs
-      </h1>
+      <Header title={HeadText} />
       <div className="w-full mt-10">
         {programs.map((program, i) => (
-          <ProgramCard
+          <ContentCard
             key={program.id}
             headTitle={program.title}
             title={program.subTitle}

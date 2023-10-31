@@ -5,3 +5,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.container {
+  @apply w-full flex flex-col justify-center px-3 pt-[22px] xl:px-[100px] md:px-10;
+}
