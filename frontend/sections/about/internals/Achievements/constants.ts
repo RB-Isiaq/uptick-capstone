@@ -19,13 +19,13 @@ export const achievments = [
   {
     id: 2,
     title: 'Global Mentor Network',
-    text: " Our network of mentors spans across continents, bringing the world's brightest minds to our students and founders.",
+    text: "Our network of mentors spans across continents, bringing the world's brightest minds to our students and founders.",
     image: ACHIEVEMENT2,
   },
   {
     id: 3,
     title: 'Talent Placement',
-    text: " Through Uptick Talent Map, we've placed talented individuals in non-technical roles, bridging the gap between talent and opportunity.",
+    text: "Through Uptick Talent Map, we've placed talented individuals in non-technical roles, bridging the gap between talent and opportunity.",
     image: ACHIEVEMENT3,
   },
   {

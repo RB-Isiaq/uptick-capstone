@@ -10,7 +10,7 @@ export const Achievements = () => {
       <p className="font-poppins text-[18px] leading-[32px] text-uptickBlack opacity-80 text-center mt-4">
         {SubText}
       </p>
-      <div className="w-full mt-10">
+      <div className="w-full mt-10 flex flex-col gap-3 justify-center items-center">
         {achievments.map((achievment, i) => (
           <ContentCard
             key={achievment.id}

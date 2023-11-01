@@ -3,7 +3,10 @@ import React from 'react';
 
 export const Contact = () => {
   return (
-    <div className="flex flex-col justify-center items-center bg-[#fff] px-3 py-[139px] xl:px-[100px] md:px-10">
+    <div
+      className="flex flex-col justify-center items-center bg-[#fff] px-3 py-[139px] xl:px-[100px] md:px-10"
+      id="contact"
+    >
       <Header title="Contact us" />
       <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 my-[100px]">
         <div className="w-full max-w-[449px] flex flex-col gap-6">

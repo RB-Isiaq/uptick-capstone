@@ -1,4 +1,7 @@
-import React from 'react';
+'use client';
+
+import { AnimatePresence, motion } from 'framer-motion';
+
 import {
   HeadText,
   HeadText2,
@@ -42,7 +45,17 @@ export const Hero = () => {
           </div>
         </div>
         <div className="relative">
-          <Image src={LADY} alt="lady" />
+          <AnimatePresence>
+            <motion.div
+              animate={{
+                rotateZ: [0, -10, 10, -10, 10, -10, 10, 0],
+                transition: { duration: 1.5, ease: 'easeInOut' },
+              }}
+            >
+              <Image src={LADY} alt="lady" />
+            </motion.div>
+          </AnimatePresence>
+
           <div className="absolute top-20 right-0 w-[350px] h-[350px] md:w-[515px] md:h-[539px] rounded-[60%] border border-[1px,solid,#808080] -z-[2]" />
           <div className="absolute top-24 right-10 w-[350px] h-[350px] md:w-[515px] md:h-[539px] rounded-[60%] bg-[#808080] -z-[1]" />
         </div>

@@ -43,14 +43,14 @@ const ContentCard = ({
           height={500}
           className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] object-contain"
         />
-        <div className="flex flex-col gap-6 md:gap-[63px] w-[447px] max-w-full">
-          <h1 className="font-poppins text-uptickBlack font-semibold text-[26px] md:text-[36px]">
+        <div className="flex flex-col gap-6 md:gap-[40px] w-[447px] max-w-full">
+          <h1 className="font-poppins text-uptickBlack font-semibold text-[26px] md:text-[36px] text-center md:text-left">
             {title}
           </h1>
-          <p className="font-poppins text-uptickBlack text-[18px]">
+          <p className="font-poppins text-uptickBlack text-[18px] text-center md:text-left">
             {description}
           </p>
-          <div className="w-full flex items-center gap-[26px]">
+          <div className="w-full flex justify-center md:justify-start items-center gap-[26px]">
             {input ? (
               <input
                 type="text"

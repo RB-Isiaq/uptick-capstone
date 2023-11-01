@@ -21,7 +21,9 @@ export const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   return (
     <>
-      <nav className="sticky top-0 left-0 z-10 bg-inherit w-full flex justify-between gap-4 items-center  px-3 py-[22px] xl:px-[100px] md:px-10 max-w-[1440px] mx-auto shadow-sm bg-[white]">
+      <nav
+        className={`sticky top-0 left-0 z-10 w-full flex justify-between gap-4 items-center  px-3 py-[22px] xl:px-[100px] md:px-10 max-w-[1440px] mx-auto shadow-sm bg-[inherit] backdrop-blur-2xl`}
+      >
         <Image src={LOGO} alt="logo" />
         <div className="hidden  md:flex justify-between gap-4 items-center w-full max-w-[753px]">
           {navLinks.map((link, i) => (
@@ -30,7 +32,7 @@ export const Navbar = () => {
               href={link.href}
               className={
                 i !== navLinks.length - 1
-                  ? 'font-inter text-[22px] text-[#1E1E1E]'
+                  ? 'font-inter text-[22px] text-[#1E1E1E] hover:text-[#808080]'
                   : 'flex justify-center items-center py-4 px-[35px] rounded-md bg-[#1E1E1E] text-[#fff] font-poppins font-semibold'
               }
             >
@@ -54,7 +56,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, translateX: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             exit={{ translateX: -100, opacity: 0 }}
-            className={`md:hidden flex-col items-start h[100vh]  px-6 w-full max-w-[280px] sm:max-w-[300px] left-0 bg-[white] shadow-xl  fixed h-[100vh] z-[200] top-0 mt-[100px]
+            className={`md:hidden flex-col items-start h[100vh]  px-6 w-full max-w-[280px] sm:max-w-[300px] left-0 bg-[inherit] backdrop-blur-2xl shadow-xl  fixed h-[100vh] z-[200] top-0 mt-[100px]
       `}
           >
             <div className="md:hidden flex flex-col mt-[2rem] gap-7 justify-between">
@@ -64,9 +66,10 @@ export const Navbar = () => {
                   href={link.href}
                   className={
                     i !== navLinks.length - 1
-                      ? 'font-inter text-[22px] text-[#1E1E1E]'
+                      ? 'font-inter text-[22px] text-[#1E1E1E] hover:text-[#808080]'
                       : 'flex justify-center items-center py-4 px-[35px] rounded-md bg-[#1E1E1E] text-[#fff] font-poppins font-semibold'
                   }
+                  onClick={() => setToggleMenu((prev) => !prev)}
                 >
                   {link.label}
                 </Link>

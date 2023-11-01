@@ -15,7 +15,7 @@ export const footerLinks = [
       {
         id: 1,
         label: 'Home',
-        path: '/',
+        path: '/about',
       },
       {
         id: 2,
@@ -24,8 +24,8 @@ export const footerLinks = [
       },
       {
         id: 3,
-        label: 'Home',
-        path: '/#jobs',
+        label: 'Jobs',
+        path: '/about#jobs',
       },
     ],
   },
@@ -36,7 +36,7 @@ export const footerLinks = [
       {
         id: 1,
         label: 'Home',
-        path: '/',
+        path: '/programs',
       },
       {
         id: 2,
@@ -57,7 +57,7 @@ export const footerLinks = [
       {
         id: 1,
         label: 'upticktalent@gmail.com',
-        path: '/',
+        path: 'mailto:upticktalent@gmail.com',
       },
       {
         id: 2,
