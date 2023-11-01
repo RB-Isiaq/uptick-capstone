@@ -15,7 +15,7 @@ export const ctaButtons = [
   {
     id: 2,
     text: 'About us',
-    link: '#about',
+    link: '/about',
   },
 ];
 
