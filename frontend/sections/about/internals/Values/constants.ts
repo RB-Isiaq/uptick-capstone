@@ -27,7 +27,7 @@ export const reasons = [
   {
     id: 4,
     title: 'Innovation',
-    text: " Innovation is in our DNA. We constantly adapt, evolve, and explore new frontiers in technology and business education.",
+    text: ' Innovation is in our DNA. We constantly adapt, evolve, and explore new frontiers in technology and business education.',
     icon: OPPORTUNITY,
   },
 ];
