@@ -17,11 +17,6 @@
     "format": "npm run check-lint --fix && npm run testing && npx prettier --write .",
     "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format"
-    }
-  },
   "dependencies": {
     "framer-motion": "^10.16.4",
     "jest-environment-jsdom": "^29.7.0",
