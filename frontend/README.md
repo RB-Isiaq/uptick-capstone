@@ -10,10 +10,11 @@ First, run:
 npm install
 ```
 
-To activate husky
+To activate husky go to the root dir
 
 ```bash
-npm run prepare
+cd ..
+npm husky install
 ```
 
 Then run:
