@@ -1,9 +1,9 @@
-import HomePage from '@/sections/homepage';
+import AboutPage from '@/sections/about';
 
 export default function Home() {
   return (
     <main data-testid="home_page">
-      <HomePage />
+      <AboutPage />
     </main>
   );
 }
