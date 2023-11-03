@@ -1,19 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import { StaticImageData } from 'next/image';
+import { ContentCardType } from './ContentCard';
 
-export type ContentCardType = {
-  headTitle?: string;
-  image: StaticImageData | string;
-  title: string;
-  description: string;
-  btn1?: string;
-  btn2?: string;
-  reverse?: boolean;
-  input?: boolean;
-  shadow?: boolean;
-};
-const ContentCard = ({
+export const ContentCard2 = ({
   headTitle,
   image,
   title,
@@ -22,6 +11,7 @@ const ContentCard = ({
   btn2,
   reverse,
   input,
+  shadow,
 }: ContentCardType) => {
   return (
     <>
@@ -35,25 +25,23 @@ const ContentCard = ({
           reverse ? 'md:flex-row-reverse' : 'md:flex-row'
         } justify-between items-center ${
           headTitle ? 'my-[60px] md:my-[100px]' : ''
-        }  gap-3`}
+        }  gap-3 ${shadow ? 'shadow-lg' : ''}`}
       >
-        <div className="rounded-full shadow-2xl drop-shadow-2xl">
-          <Image
-            src={image}
-            alt="about"
-            width={500}
-            height={500}
-            className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] object-contain rounded-full"
-          />
-        </div>
-        <div className="flex flex-col gap-6 md:gap-[40px] w-[447px] max-w-full">
-          <h1 className="font-poppins text-uptickBlack font-semibold text-[26px] md:text-[36px] text-center md:text-left">
+        <Image
+          src={image}
+          alt="about"
+          width={400}
+          height={270}
+          className="w-full h-[300px] md:w-[400px] md:h-[270px] object-contain"
+        />
+        <div className="flex flex-col gap-6 md:gap-[40px] w-[620px] max-w-full px-3 lg:px-10">
+          <h1 className="font-poppins text-uptickBlack font-semibold text-[26px] md:text-[28px] md:text-left">
             {title}
           </h1>
-          <p className="font-poppins text-uptickBlack text-[18px] ">
+          <p className="font-poppins text-uptickBlack text-[18px] md:text-left">
             {description}
           </p>
-          <div className="w-full flex justify-center md:justify-start items-center gap-[26px]">
+          <div className="w-full flex items-center gap-[26px]">
             {input ? (
               <input
                 type="text"
@@ -77,5 +65,3 @@ const ContentCard = ({
     </>
   );
 };
-
-export default ContentCard;
