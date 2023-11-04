@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ContentCardType } from './ContentCard';
+import Link from 'next/link';
 
 export const ContentCard2 = ({
   headTitle,
@@ -9,6 +10,7 @@ export const ContentCard2 = ({
   description,
   btn1,
   btn2,
+  to,
   reverse,
   input,
   shadow,
@@ -49,10 +51,13 @@ export const ContentCard2 = ({
                 className="w-full py-[19px] px-[32px] rounded-[7px] border border-[1px,solid,#808080] bg-[white]"
               />
             ) : null}
+
             {btn1 ? (
-              <button className="w-[197px] flex justify-center items-center py-[19px] px-[6px] rounded-md bg-[#1E1E1E] text-[#fff] font-poppins font-semibold">
-                {btn1}
-              </button>
+              <Link href={`${to}`}>
+                <button className="w-[197px] flex justify-center items-center py-[19px] px-[6px] rounded-md bg-[#1E1E1E] text-[#fff] font-poppins font-semibold">
+                  {btn1}
+                </button>
+              </Link>
             ) : null}
             {btn2 ? (
               <button className="w-[197px] flex justify-center items-center py-[19px] px-[6px] rounded-md bg-[white] text-[#1E1E1E] font-poppins font-semibold border border-[1px,solid,#000]">

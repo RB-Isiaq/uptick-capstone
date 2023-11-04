@@ -11,6 +11,7 @@ export const Programs = () => {
         {programs.map((program, i) => (
           <ContentCard
             key={program.id}
+            id={program.id}
             headTitle={program.title}
             title={program.subTitle}
             description={program.text}

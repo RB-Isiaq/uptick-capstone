@@ -24,7 +24,9 @@ export const Navbar = () => {
       <nav
         className={`sticky top-0 left-0 z-10 w-full flex justify-between gap-4 items-center  px-3 py-[22px] xl:px-[100px] md:px-10 max-w-[1440px] mx-auto shadow-sm bg-[inherit] backdrop-blur-2xl`}
       >
-        <Image src={LOGO} alt="logo" />
+        <Link href="/">
+          <Image src={LOGO} alt="logo" />
+        </Link>
         <div className="hidden  md:flex justify-between gap-4 items-center w-full max-w-[753px]">
           {navLinks.map((link, i) => (
             <Link

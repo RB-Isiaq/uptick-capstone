@@ -28,6 +28,9 @@ import ACHIEVEMENT2 from './assets/networking.png';
 import ACHIEVEMENT3 from './assets/hiring.png';
 import ACHIEVEMENT4 from './assets/join.png';
 import BG_BEGINNER from './assets/bg-prog.png';
+import BG_TECH from './assets/bg-tech.png';
+import BG_BUSINESS from './assets/bg-business.png';
+import BG_MAP from './assets/bg-map.png';
 import HERO_BEGINNER from './assets/beginner-hero.png';
 import OFFER1 from './assets/beginner-offer.png';
 import OFFER2 from './assets/beginner-tutors.png';
@@ -68,6 +71,9 @@ export {
   ACHIEVEMENT3,
   ACHIEVEMENT4,
   BG_BEGINNER,
+  BG_TECH,
+  BG_BUSINESS,
+  BG_MAP,
   HERO_BEGINNER,
   OFFER1,
   OFFER2,

@@ -1,8 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import { Url } from 'url';
 
 export type ContentCardType = {
+  id?: number;
   headTitle?: string;
   image: StaticImageData | string;
   title: string;
@@ -12,8 +15,10 @@ export type ContentCardType = {
   reverse?: boolean;
   input?: boolean;
   shadow?: boolean;
+  to?: Url | string;
 };
 const ContentCard = ({
+  id,
   headTitle,
   image,
   title,
@@ -62,9 +67,11 @@ const ContentCard = ({
               />
             ) : null}
             {btn1 ? (
-              <button className="w-[197px] flex justify-center items-center py-[19px] px-[6px] rounded-md bg-[#1E1E1E] text-[#fff] font-poppins font-semibold">
-                {btn1}
-              </button>
+              <Link href={`\programs?id=${id}`}>
+                <button className="w-[197px] flex justify-center items-center py-[19px] px-[6px] rounded-md bg-[#1E1E1E] text-[#fff] font-poppins font-semibold">
+                  {btn1}
+                </button>
+              </Link>
             ) : null}
             {btn2 ? (
               <button className="w-[197px] flex justify-center items-center py-[19px] px-[6px] rounded-md bg-[white] text-[#1E1E1E] font-poppins font-semibold border border-[1px,solid,#000]">

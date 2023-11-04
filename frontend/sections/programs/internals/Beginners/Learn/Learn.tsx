@@ -11,6 +11,7 @@ export const Learn = () => {
         image={LEARN}
         reverse
         btn1="Learn More"
+        to={'mailto:hey@upticktalent.africa'}
       />
     </div>
   );
