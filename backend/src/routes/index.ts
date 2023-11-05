@@ -1,6 +1,7 @@
 import express, { Router } from "express";
 import mailRoute from "./mail.route";
 import applicantRoute from "./applicant.route";
+import programRoute from "./program.route";
 
 const router: Router = express.Router();
 
@@ -11,12 +12,16 @@ interface DefaultRoute {
 
 const defaultRoutes: DefaultRoute[] = [
   {
-    path: "/applicant",
+    path: "/applicants",
     route: applicantRoute,
   },
   {
     path: "/mail",
     route: mailRoute,
+  },
+  {
+    path: "/programs",
+    route: programRoute,
   },
 ];
 
