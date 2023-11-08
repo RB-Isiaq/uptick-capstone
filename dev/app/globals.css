@@ -13,6 +13,10 @@ body {
   @apply bg-about-pattern bg-cover bg-center;
 }
 
+.achieve-bg {
+  @apply bg-achieve-pattern bg-cover bg-center;
+}
+
 .gridCenter {
   @apply grid items-center justify-center;
 }

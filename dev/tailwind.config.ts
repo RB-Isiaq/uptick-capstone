@@ -17,6 +17,7 @@ const config: Config = {
         uptickGray: '#B3B3B3',
         upBlack: '#1c1c1c',
         upLightBlue: '#EDF2FF',
+        upDarkBlue: '#1c3166',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
@@ -25,6 +26,7 @@ const config: Config = {
       },
       backgroundImage: {
         'about-pattern': "url('/about-pattern.svg')",
+        'achieve-pattern': "url('/achieve-pattern.svg')",
       }
     }
   },
