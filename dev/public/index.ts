@@ -23,6 +23,14 @@ import X from './assets/twitter.svg';
 import PHONE from './assets/phone.svg';
 import MAIL from './assets/mail.svg';
 import LOCATION from './assets/location.svg';
+import BG_BEGINNER from './assets//beginner-bg.png';
+import BEGINNER_UNLOCK from './assets//beginner-unlock.png';
+import BEGINNER_STUDENTS from './assets//beginner-why.png';
+import BG_TECH from './assets//tech-bg.png';
+import SE_TECH from './assets//tech-se.png';
+import AI_TECH from './assets//tech-ai.png';
+import UI_TECH from './assets//design.png';
+import NON_TECH from './assets//non-technical.png';
 
 export {
   LOGO,
@@ -50,4 +58,12 @@ export {
   PHONE,
   MAIL,
   LOCATION,
+  BG_BEGINNER,
+  BEGINNER_UNLOCK,
+  BEGINNER_STUDENTS,
+  BG_TECH,
+  SE_TECH,
+  AI_TECH,
+  UI_TECH,
+  NON_TECH,
 };
