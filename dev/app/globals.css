@@ -33,3 +33,7 @@ body {
     rgba(126, 163, 255, 0) 79.67%
   );
 }
+
+.bg_program {
+  background: linear-gradient(97deg, #000 30.56%, rgba(0, 0, 0, 0) 89.37%);
+}

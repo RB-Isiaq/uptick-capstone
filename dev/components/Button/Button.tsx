@@ -12,7 +12,7 @@ export const Button = ({ text, secondary, plain, ...props }: Button) => {
         secondary
           ? 'bg-[inherit] text-white border border-[1px,solid,rgba(255,255,255,0.30)]'
           : plain
-          ? 'bg-white text-uptickBlack'
+          ? 'bg-white text-[#2F2F2F]'
           : 'bg-uptickDarkBlue text-white'
       } font-semibold tracking-[1.25px] leading-4 rounded-lg `}
       {...props}
