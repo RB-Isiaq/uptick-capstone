@@ -35,11 +35,11 @@ export const Blog = () => {
             />
           ))}
         </div>
-        <div className="flex border-[1px] border-[#4D4D4D] justify-center items-center gap-[29px] p-[18px] bg-[rgba(17,17,17,0.48)]">
-          {Array.from({ length: 6 }).map((_, i) => (
+        <div className="flex border-[1px] border-[#4D4D4D] justify-center items-center gap-[29px] p-[18px] bg-[rgba(17,17,17,0.48)] animate-train">
+          {Array.from({ length: 36 }).map((_, i) => (
             <div
               key={i}
-              className="flex gap-[29px] justify-center items-center flex-shrink-0"
+              className="flex gap-[29px] justify-center items-center flex-shrink-0 w-[250px]"
             >
               <p className="text-white text-[24px] font-raleway">
                 {connectionText}

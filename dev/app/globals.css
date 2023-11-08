@@ -53,3 +53,19 @@ body {
 .bg_program {
   background: linear-gradient(97deg, #000 30.56%, rgba(0, 0, 0, 0) 89.37%);
 }
+
+.animate-train {
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+  }
+
+  100% {
+    transform: translateX(-100vw);
+    transition: all 1s ease-in-out;
+  }
+}
