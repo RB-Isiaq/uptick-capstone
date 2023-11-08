@@ -1,7 +1,5 @@
 import { GO, QUOTE } from '@/public';
 import Image from 'next/image';
-import React from 'react';
-
 export const TestimonialCard = ({
   content,
   name,
