@@ -15,7 +15,7 @@ export const Why = () => {
           src={BEGINNER_STUDENTS}
           alt="students"
         />
-        <div className="w-full max-w-[1150px] flex flex-col md:flex-row justify-between  gap-5 ">
+        <div className="w-full max-w-[1150px] flex flex-col lg:flex-row justify-between  gap-5 ">
           {reasons.map((reason) => (
             <div key={reason.id} className="w-full max-w-[351px] p-[30px]">
               <h1 className="text-[24px] leading-[160%] text-white font-semibold">

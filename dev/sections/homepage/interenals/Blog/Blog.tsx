@@ -23,7 +23,7 @@ export const Blog = () => {
             {SubText}
           </h1>
         </div>
-        <div className="flex flex-col gap-6 md:flex-row justify-center">
+        <div className="flex flex-col gap-6 lg:flex-row justify-center">
           {blogs.map((blog) => (
             <BlogCard
               key={blog.id}
@@ -31,6 +31,7 @@ export const Blog = () => {
               title={blog.title}
               desc={blog.text}
               text={blog.btnText}
+              link={blog.link}
             />
           ))}
         </div>

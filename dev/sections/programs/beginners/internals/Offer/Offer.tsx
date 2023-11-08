@@ -6,7 +6,7 @@ export const Offer = () => {
   return (
     <section className="bg-gradient-to-r from-[#1C1C1C] to-[#070C19]">
       <div className="py-[72px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10">
-        <h1 className="font-raleway text-white text-[42px] mb-[45px]">
+        <h1 className="font-raleway text-white text-[36px] md:text-[42px] mb-[45px]">
           {HeadText}
         </h1>
 
@@ -16,7 +16,7 @@ export const Offer = () => {
             className="my-10 w-full max-w-[784px] flex justify-between gap-3 md:gap-[54px]"
           >
             <div>
-              <div className="w-[64px] h-[64px] rounded-full flex justify-center items-center border-[1px] bg-[#1C1C1C] border-[#828282]">
+              <div className="w-[50px] h-[50px] md:w-[64px] md:h-[64px]  rounded-full flex justify-center items-center border-[1px] bg-[#1C1C1C] border-[#828282]">
                 <Image src={offer.icon} alt="right arrow" />
               </div>
             </div>

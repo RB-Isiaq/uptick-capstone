@@ -22,7 +22,7 @@ export const Hero = () => {
         {subText}
       </p>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-[23px] ">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-[23px] ">
         {ctaButtons.map((btn) => (
           <Button key={btn.id} text={btn.text} secondary={btn.id === 2} />
         ))}

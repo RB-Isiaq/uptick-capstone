@@ -15,7 +15,7 @@ export const Footer = () => {
   return (
     <section className="bg-[#121212]">
       <footer className="w-full max-w-[1440px] flex flex-col justify-center gap-[102px] items-center  border-[1px,solid,rgba(82,82,82,0.17)] py-[90px] px-3 xl:px-[60px] md:px-10 mx-auto">
-        <div className="w-full flex flex-col  md:flex-row justify-between gap-4">
+        <div className="w-full flex flex-col  lg:flex-row justify-between gap-4">
           <div className="w-full max-w-[440px] flex flex-col justify-between h-[255px]">
             <Image src={LOGO} alt="uptick" />
             <p className="font-raleway text-white text-[18px] font-medium mt-[60px]">
@@ -68,7 +68,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row justify-between items-center">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-center">
           <p className="font-raleway text-[#666] font-medium text-center">
             {copyright}
           </p>

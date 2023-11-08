@@ -5,6 +5,7 @@ type ProgramProps = {
   id: number;
   title: string;
   desc: string;
+  btn: string;
   bg: string | StaticImageData;
 };
 const ProgramHero = ({ content }: { content: ProgramProps }) => {
@@ -21,7 +22,7 @@ const ProgramHero = ({ content }: { content: ProgramProps }) => {
         >
           {content.desc}
         </p>
-        <Button text="Learn More" />
+        <Button text={content.btn} />
         <Image
           src={content.bg}
           alt="background"

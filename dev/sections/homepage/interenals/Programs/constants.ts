@@ -12,12 +12,12 @@ export const programs = [
       {
         id: 1,
         text: 'Apply Now',
-        link: '/apply/id',
+        link: '/programs/beginners',
       },
       {
         id: 2,
         text: 'Learn More',
-        link: '#',
+        link: '/programs/beginners',
       },
     ],
   },
@@ -31,12 +31,12 @@ export const programs = [
       {
         id: 1,
         text: 'Apply Now',
-        link: '/apply/id',
+        link: '/programs/tech',
       },
       {
         id: 2,
         text: 'Learn More',
-        link: '#',
+        link: '/programs/tech',
       },
     ],
   },
@@ -50,12 +50,12 @@ export const programs = [
       {
         id: 1,
         text: 'Apply Now',
-        link: '/apply/id',
+        link: '/programs/business',
       },
       {
         id: 2,
         text: 'Learn More',
-        link: '#',
+        link: '/programs/business',
       },
     ],
   },
@@ -69,12 +69,12 @@ export const programs = [
       {
         id: 1,
         text: 'Apply Now',
-        link: '/apply/id',
+        link: '/programs/map',
       },
       {
         id: 2,
         text: 'Learn More',
-        link: '#',
+        link: '/programs/map',
       },
     ],
   },

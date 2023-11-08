@@ -2,12 +2,14 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import Hero from './internals/Hero';
-import Curiosity from './internals/Curiosity';
-import Offer from './internals/Offer';
+import Join from './internals/Join';
+import Unleash from './internals/Unleash';
+import Commitment from './internals/Commitment';
+import Startup from './internals/Startup';
 import Why from './internals/Why';
-import Learn from './internals/Learn';
+import Application from './internals/Application';
 
-const BeginnersPage = () => {
+const BusinessPage = () => {
   return (
     <AnimatePresence>
       <motion.div
@@ -17,13 +19,15 @@ const BeginnersPage = () => {
         exit={{ translateX: -100, opacity: 0 }}
       >
         <Hero />
-        <Curiosity />
-        <Offer />
+        <Unleash />
+        <Commitment />
+        <Startup />
         <Why />
-        <Learn />
+        <Application />
+        <Join />
       </motion.div>
     </AnimatePresence>
   );
 };
 
-export default BeginnersPage;
+export default BusinessPage;
