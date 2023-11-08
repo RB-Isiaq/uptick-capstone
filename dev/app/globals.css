@@ -14,6 +14,17 @@ body {
 .purple_gradient {
   @apply bg-gradient-to-r from-[#477BFF] via-[#8E35FF] to-[#AF10F9] bg-clip-text text-[transparent];
 }
+.about-bg {
+  @apply bg-about-pattern bg-cover bg-center;
+}
+
+.achieve-bg {
+  @apply bg-achieve-pattern bg-cover bg-center;
+}
+
+.gridCenter {
+  @apply grid items-center justify-center;
+}
 
 .bg_gradient {
   background: linear-gradient(
