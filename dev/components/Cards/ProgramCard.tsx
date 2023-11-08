@@ -1,10 +1,12 @@
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import Button from '../Button';
+import Link from 'next/link';
 
 export type BTN = {
   id?: number;
   text: string;
+  link: string;
 };
 export interface Card {
   image: string | StaticImageData;
@@ -24,7 +26,9 @@ export const ProgramCard = ({ image, title, desc, buttons }: Card) => {
       </p>
       <div className="flex gap-[10px]">
         {buttons?.map((btn) => (
-          <Button key={btn.id} text={btn.text} secondary={btn.id === 2} />
+          <Link key={btn.id} href={btn.link}>
+            <Button text={btn.text} secondary={btn.id === 2} />
+          </Link>
         ))}
       </div>
     </div>

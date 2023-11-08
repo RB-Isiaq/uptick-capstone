@@ -23,14 +23,22 @@ import X from './assets/twitter.svg';
 import PHONE from './assets/phone.svg';
 import MAIL from './assets/mail.svg';
 import LOCATION from './assets/location.svg';
-import BG_BEGINNER from './assets//beginner-bg.png';
-import BEGINNER_UNLOCK from './assets//beginner-unlock.png';
-import BEGINNER_STUDENTS from './assets//beginner-why.png';
-import BG_TECH from './assets//tech-bg.png';
-import SE_TECH from './assets//tech-se.png';
-import AI_TECH from './assets//tech-ai.png';
-import UI_TECH from './assets//design.png';
-import NON_TECH from './assets//non-technical.png';
+import BG_BEGINNER from './assets/beginner-bg.png';
+import BEGINNER_UNLOCK from './assets/beginner-unlock.png';
+import BEGINNER_STUDENTS from './assets/beginner-why.png';
+import BG_TECH from './assets/tech-bg.png';
+import SE_TECH from './assets/tech-se.png';
+import AI_TECH from './assets/tech-ai.png';
+import UI_TECH from './assets/design.png';
+import NON_TECH from './assets/non-technical.png';
+import BG_BUSINESS from './assets/business-bg.png';
+import UNLEASH_BUSINESS from './assets/business-unleash.png';
+import COMMITMENT_BUSINESS from './assets/business-commit.png';
+import PARTNER1 from './assets/startup1.png';
+import PARTNER2 from './assets/startup2.png';
+import PARTNER3 from './assets/startup3.png';
+import APPLICATION1 from './assets/businnes-why.png';
+import APPLICATION2 from './assets/business-why2.png';
 
 export {
   LOGO,
@@ -66,4 +74,12 @@ export {
   AI_TECH,
   UI_TECH,
   NON_TECH,
+  BG_BUSINESS,
+  UNLEASH_BUSINESS,
+  COMMITMENT_BUSINESS,
+  PARTNER1,
+  PARTNER2,
+  PARTNER3,
+  APPLICATION1,
+  APPLICATION2,
 };

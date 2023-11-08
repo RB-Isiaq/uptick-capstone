@@ -24,7 +24,7 @@ export const Navbar = () => {
     <>
       <section className="bg-[#070C19] sticky top-0 left-0 z-10">
         <nav
-          className={` w-full flex justify-between gap-4 items-center  px-3 py-6 xl:px-[60px] md:px-10 max-w-[1440px] mx-auto shadow-sm  backdrop-blur-2xl`}
+          className={` w-full flex justify-between gap-4 items-center  px-3 py-6 xl:px-[60px] md:px-10 max-w-[1440px] mx-auto shadow-sm`}
         >
           <Link href="/">
             <Image src={LOGO} alt="logo" />

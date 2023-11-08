@@ -10,12 +10,6 @@ export const offers = [
     desc: 'Our carefully crafted curriculum covers a wide range of topics, from coding and digital marketing to entrepreneurship and innovation. We ensure that students receive a well-rounded education in tech and business.',
   },
   {
-    id: 1,
-    icon: RIGHT_ARR,
-    title: 'Inclusivity',
-    desc: 'Our carefully crafted curriculum covers a wide range of topics, from coding and digital marketing to entrepreneurship and innovation. We ensure that students receive a well-rounded education in tech and business.',
-  },
-  {
     id: 2,
     icon: RIGHT_ARR,
     title: 'Experienced Instructors',

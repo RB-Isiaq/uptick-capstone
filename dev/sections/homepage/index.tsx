@@ -16,7 +16,7 @@ const HomePage = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, ease: 'easeIn' }}
+        transition={{ duration: 1.2, ease: 'easeIn' }}
         exit={{ translateX: -100, opacity: 0 }}
       >
         <Hero />
