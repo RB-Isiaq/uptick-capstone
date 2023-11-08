@@ -14,7 +14,7 @@ const Header = () => {
       </div>
       <div>
         <Image
-          src="/aboutHero.svg"
+          src="/aboutHero.png"
           alt=""
           className="w-full"
           width={1000}
