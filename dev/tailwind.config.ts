@@ -15,7 +15,8 @@ const config: Config = {
         uptickDarkBlue: '#477BFF',
         uptickBlack: '#4D4D4D',
         uptickGray: '#B3B3B3',
-        // black: '#000000',
+        upBlack: '#1c1c1c',
+        upLightBlue: '#EDF2FF',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
