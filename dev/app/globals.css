@@ -7,7 +7,7 @@ body {
 }
 
 .purple_gradient {
-  @apply from-[#477BFF] via-[#8E35FF] to-[#AF10F9] bg-clip-text text-[transparent];
+  @apply bg-gradient-to-r from-[#477BFF] via-[#8E35FF] to-[#AF10F9] bg-clip-text text-[transparent];
 }
 .about-bg {
   @apply bg-about-pattern bg-cover bg-center;
