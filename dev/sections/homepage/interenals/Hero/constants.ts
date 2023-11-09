@@ -13,6 +13,6 @@ export const ctaButtons = [
   {
     id: 2,
     text: 'Apply For Jobs',
-    link: '/apply',
+    link: '/jobs',
   },
 ];

@@ -25,6 +25,7 @@ const HomePage = () => {
         <Line />
         <Why />
         <Programs />
+        <Line />
         <Testimonials />
         <Join />
         <Blog />
