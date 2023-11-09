@@ -12,6 +12,7 @@ export const Application = () => {
             desc={application1.desc}
             desc2={application1.desc2}
             btnText={application1.btnText}
+            type={application1.type}
             normal
             reverse
           />
@@ -54,6 +55,7 @@ export const Application = () => {
             desc={application2.desc}
             desc2={application2.desc2}
             btnText={application2.btnText}
+            type={application2.type}
             normal
             reverse
           />

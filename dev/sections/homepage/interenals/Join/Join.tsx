@@ -2,6 +2,7 @@ import Button from '@/components/Button';
 import Header from '@/components/Header';
 import React from 'react';
 import { Btn, HeadText, SubText } from './constants';
+import Link from 'next/link';
 
 export const Join = () => {
   return (
@@ -11,7 +12,9 @@ export const Join = () => {
         <p className="w-full max-w-[742px] font-raleway text-white text-center leading-[160%]">
           {SubText}
         </p>
-        <Button text={Btn} />
+        <Link href="/#programs">
+          <Button text={Btn} />
+        </Link>
       </div>
     </div>
   );

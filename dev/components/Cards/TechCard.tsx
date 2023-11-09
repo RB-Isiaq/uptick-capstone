@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import Button from '../Button';
+import Link from 'next/link';
 
 type Track = {
   id: number;
@@ -14,6 +15,7 @@ interface TechCardProps {
   desc2?: string;
   tracks?: Track[];
   btnText: string;
+  type?: string;
   reverse: boolean;
   normal?: boolean;
 }
@@ -26,6 +28,7 @@ export const TechCard = ({
   desc2,
   tracks,
   btnText,
+  type,
   reverse,
   normal,
 }: TechCardProps) => {
@@ -55,7 +58,9 @@ export const TechCard = ({
         </div>
         <p className="text-[#fff]  text-lg pr-2"> {desc2}</p>
         <div>
-          <Button text={btnText} />
+          <Link href={`/form?title=${title}&desc=${profession}&type=${type}`}>
+            <Button text={btnText} />
+          </Link>
         </div>
       </div>
     </div>

@@ -1,12 +1,14 @@
 import Image, { StaticImageData } from 'next/image';
 import Button from '../Button';
+import Link from 'next/link';
 
-type ProgramProps = {
+export type ProgramProps = {
   id: number;
   title: string;
   desc: string;
   btn: string;
   bg: string | StaticImageData;
+  path: string;
 };
 const ProgramHero = ({ content }: { content: ProgramProps }) => {
   return (
@@ -22,7 +24,9 @@ const ProgramHero = ({ content }: { content: ProgramProps }) => {
         >
           {content.desc}
         </p>
-        <Button text={content.btn} />
+        <Link href={content.path}>
+          <Button text={content.btn} />
+        </Link>
         <Image
           src={content.bg}
           alt="background"

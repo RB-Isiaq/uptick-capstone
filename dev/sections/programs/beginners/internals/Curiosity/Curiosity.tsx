@@ -5,7 +5,10 @@ import { BEGINNER_UNLOCK } from '@/public';
 
 export const Curiosity = () => {
   return (
-    <div className="w-full max-w-[1280px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 py-[50px] px-3">
+    <div
+      className="w-full max-w-[1280px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 py-[50px] px-3"
+      id="curiosity"
+    >
       <Image src={BEGINNER_UNLOCK} alt="beginner" />
       <div className="flex flex-col gap-[16px] md:gap-[23px] w-full max-w-[600px]">
         <h1 className="text-[#3256B3] font-raleway text-2xl font-medium">

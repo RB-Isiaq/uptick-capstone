@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { HeadText, HeadText2, ctaButtons, subText } from './constants';
 import Button from '@/components/Button';
 import { HERO_BG } from '@/public';
+import Link from 'next/link';
 
 export const Hero = () => {
   return (
@@ -24,7 +25,9 @@ export const Hero = () => {
 
       <div className="flex flex-col lg:flex-row items-center justify-center gap-[23px] ">
         {ctaButtons.map((btn) => (
-          <Button key={btn.id} text={btn.text} secondary={btn.id === 2} />
+          <Link key={btn.id} href={btn.link}>
+            <Button text={btn.text} secondary={btn.id === 2} />
+          </Link>
         ))}
       </div>
     </div>
