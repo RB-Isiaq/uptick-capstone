@@ -10,13 +10,13 @@ export const Testimonials = () => {
 
   const scrollLeft = () => {
     if (testimonialsContainerRef.current) {
-      testimonialsContainerRef.current.scrollLeft -= 50;
+      testimonialsContainerRef.current.scrollLeft -= 330;
     }
   };
 
   const scrollRight = () => {
     if (testimonialsContainerRef.current) {
-      testimonialsContainerRef.current.scrollLeft += 50;
+      testimonialsContainerRef.current.scrollLeft += 330;
     }
   };
   return (
