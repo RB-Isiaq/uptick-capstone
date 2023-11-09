@@ -25,6 +25,7 @@ export const programs = [
       },
     ],
     btnText: 'Apply Now',
+    type: 'tech',
     image: SE_TECH,
   },
   {
@@ -53,6 +54,7 @@ export const programs = [
       },
     ],
     btnText: 'Apply Now',
+    type: 'tech',
     image: AI_TECH,
   },
   {
@@ -79,6 +81,7 @@ export const programs = [
       },
     ],
     btnText: 'Apply Now',
+    type: 'tech',
     image: UI_TECH,
   },
   {
@@ -109,6 +112,7 @@ export const programs = [
       },
     ],
     btnText: 'Apply Now',
+    type: 'tech',
     image: NON_TECH,
   },
 ];
@@ -117,4 +121,5 @@ export const join = {
   title: 'Ready to Join Uptick Talent Tech?',
   desc: "If you're ready to embark on an exciting journey of learning, growth, and innovation, Uptick Talent Tech is here to guide you. Apply for your desired program or reach out to us for more information. Your future in technology starts here.",
   btnText: 'Apply Now',
+  type: 'tech',
 };

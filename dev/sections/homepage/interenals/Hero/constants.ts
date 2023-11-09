@@ -8,7 +8,7 @@ export const ctaButtons = [
   {
     id: 1,
     text: 'Explore Our Programmes',
-    link: '#programs',
+    link: '/#programs',
   },
   {
     id: 2,

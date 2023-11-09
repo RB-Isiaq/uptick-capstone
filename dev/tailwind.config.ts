@@ -27,8 +27,8 @@ const config: Config = {
       backgroundImage: {
         'about-pattern': "url('/about-pattern.svg')",
         'achieve-pattern': "url('/achieve-pattern.svg')",
-      }
-    }
+      },
+    },
   },
   plugins: [],
 };

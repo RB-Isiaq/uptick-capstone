@@ -1,7 +1,7 @@
 import AboutHero from './internals/AboutHero';
 import AchievmentJourney from './internals/achievments';
 import AboutValues from './internals/values/AboutValues';
-// import AchievmentJourney 
+// import AchievmentJourney
 const AboutPage = () => {
   return (
     <>

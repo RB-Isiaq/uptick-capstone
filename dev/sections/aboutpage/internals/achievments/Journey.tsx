@@ -1,5 +1,6 @@
 import Button from '@/components/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Journey = () => {
   return (
@@ -24,7 +25,9 @@ const Journey = () => {
           </p>
         </div>
         <div>
-          <Button text="Explore Our Programmes" />
+          <Link href="/#programs">
+            <Button text="Explore Our Programmes" />
+          </Link>
         </div>
       </div>
       <div>

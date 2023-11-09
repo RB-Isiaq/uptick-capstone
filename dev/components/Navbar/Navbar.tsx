@@ -41,7 +41,9 @@ export const Navbar = () => {
             ))}
           </div>
           <div className="hidden md:block">
-            <Button text={btnText} />
+            <Link href="/#programs">
+              <Button text={btnText} />
+            </Link>
           </div>
           <button
             type="button"
@@ -60,7 +62,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, translateX: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             exit={{ translateX: -100, opacity: 0 }}
-            className={`md:hidden flex-col items-start h[100vh]  px-6 w-full max-w-[280px] sm:max-w-[300px] left-0 bg-[inherit] backdrop-blur-2xl shadow-xl  fixed h-[100vh] z-[200] top-0 mt-[80px]
+            className={`md:hidden flex-col items-start h[100vh]  px-6 w-full max-w-[280px] sm:max-w-[300px] left-0 bg-[#070C19] shadow-xl  fixed h-[100vh] z-[200] top-0 mt-[80px]
       `}
           >
             <div className="md:hidden flex flex-col mt-[2rem] gap-7 justify-between">
@@ -74,7 +76,12 @@ export const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Button text={btnText} />
+              <Link
+                href="/#programs"
+                onClick={() => setToggleMenu((prev) => !prev)}
+              >
+                <Button text={btnText} />
+              </Link>
             </div>
           </MotionDiv>
         )}

@@ -1,6 +1,6 @@
 import LOGO from './assets/UP LOGO 222.png';
 import HERO_BG from './assets/bg.png';
-import ACCELERATE from './assets/accelerate.png';
+import ACCELERATE from './assets/acc.png';
 import UNLOCK from './assets/unlock.svg';
 import OPPORTUNITY from './assets/opp.svg';
 import GRAD from './assets/teacher.svg';
@@ -34,6 +34,7 @@ import NON_TECH from './assets/non-technical.png';
 import BG_BUSINESS from './assets/business-bg.png';
 import UNLEASH_BUSINESS from './assets/business-unleash.png';
 import COMMITMENT_BUSINESS from './assets/business-commit.png';
+import PARTNERS_BUSINESS from './assets/business-partners.png';
 import PARTNER1 from './assets/startup1.png';
 import PARTNER2 from './assets/startup2.png';
 import PARTNER3 from './assets/startup3.png';
@@ -77,6 +78,7 @@ export {
   BG_BUSINESS,
   UNLEASH_BUSINESS,
   COMMITMENT_BUSINESS,
+  PARTNERS_BUSINESS,
   PARTNER1,
   PARTNER2,
   PARTNER3,

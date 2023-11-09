@@ -25,11 +25,11 @@ export const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="w-full p-4 rounded-[8px,0px,0px,8p]  bg-[#e6e6e6] "
+                className="w-full p-4 rounded-l-[8px]  bg-[#e6e6e6] "
               />
               <button
                 type="submit"
-                className="text-white  bg-[#477BFF] p-3  rounded-[0px,8px,8px,0px]"
+                className="text-white  bg-[#477BFF] p-3  rounded-r-[8px]"
               >
                 {Subscribe}
               </button>
