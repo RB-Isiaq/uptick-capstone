@@ -8,17 +8,26 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      white: '#FFFFFF',
-      uptickBlue: '#7EA3FF',
-      uptickDarkBlue: '#477BFF',
-      uptickBlack: '#4D4D4D',
-      uptickGray: '#B3B3B3',
-    },
-    fontFamily: {
-      poppins: ['Poppins', 'sans-serif'],
-      inter: ['Inter', 'sans-serif'],
-      raleway: ['Raleway', 'sans-serif'],
+    extend: {
+      colors: {
+        white: '#FFFFFF',
+        uptickBlue: '#7EA3FF',
+        uptickDarkBlue: '#477BFF',
+        uptickBlack: '#4D4D4D',
+        uptickGray: '#B3B3B3',
+        upBlack: '#1c1c1c',
+        upLightBlue: '#EDF2FF',
+        upDarkBlue: '#1c3166',
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
+      },
+      backgroundImage: {
+        'about-pattern': "url('/about-pattern.svg')",
+        'achieve-pattern': "url('/achieve-pattern.svg')",
+      },
     },
   },
   plugins: [],
