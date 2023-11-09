@@ -10,7 +10,7 @@ export const reasons = [
     icon: UNLOCK,
   },
   {
-    id: 1,
+    id: 2,
     title: 'World-Class Mentors',
     text: 'Benefit from mentorship by industry experts and investors from across the globe.',
     icon: OPPORTUNITY,

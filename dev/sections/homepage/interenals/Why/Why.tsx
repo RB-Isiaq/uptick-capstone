@@ -8,10 +8,10 @@ export const Why = () => {
     <section className="bg_gradient">
       <div
         id="why"
-        className="w-full flex flex-col justify-center items-center gap-[48px]  py-[101px]  px-3 xl:px-[60px] md:px-10 max-w-[1440px] mx-auto"
+        className="w-full flex flex-col justify-center items-center gap-[48px]  pt-[100px]  px-3 xl:px-[60px] md:px-10 max-w-[1440px] mx-auto"
       >
         <Header title={HeadText} />
-        <div className="w-full flex flex-col md:flex-row flex-wrap justify-between items-center gap-3">
+        <div className="w-full flex flex-col lg:flex-row flex-wrap justify-between items-center gap-3">
           {reasons.map((reason) => (
             <div
               key={reason.id}

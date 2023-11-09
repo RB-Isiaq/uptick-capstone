@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+html,
+body {
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Raleway', sans-serif;
 }
@@ -43,4 +48,28 @@ body {
     rgba(126, 163, 255, 0) 79.67%,
     rgba(126, 163, 255, 0) 79.67%
   );
+}
+
+.bg_program {
+  background: linear-gradient(97deg, #000 30.56%, rgba(0, 0, 0, 0) 89.37%);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.animate-train {
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+  }
+
+  100% {
+    transform: translateX(-100vw);
+    transition: all 1s ease-in-out;
+  }
 }
