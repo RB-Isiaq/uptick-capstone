@@ -1,5 +1,10 @@
+'use client';
+
+import dynamic from 'next/dynamic';
 import Button from '@/components/Button';
-import Map from '@/components/Map/Map';
+const Map = dynamic(() => import('@/components/Map/Map'), {
+  ssr: false,
+});
 
 export const Contact = () => {
   return (
