@@ -9,25 +9,29 @@ export const Testimonials = () => {
   const testimonialsContainerRef = useRef<HTMLDivElement | null>(null);
 
   const scrollLeft = () => {
-    if (window.innerWidth < 768) {
-      if (testimonialsContainerRef.current) {
-        testimonialsContainerRef.current.scrollLeft -= 336;
-      }
-    } else {
-      if (testimonialsContainerRef.current) {
-        testimonialsContainerRef.current.scrollLeft -= 736;
+    if (window !== undefined) {
+      if (window.innerWidth < 768) {
+        if (testimonialsContainerRef.current) {
+          testimonialsContainerRef.current.scrollLeft -= 336;
+        }
+      } else {
+        if (testimonialsContainerRef.current) {
+          testimonialsContainerRef.current.scrollLeft -= 736;
+        }
       }
     }
   };
 
   const scrollRight = () => {
-    if (window.innerWidth < 768) {
-      if (testimonialsContainerRef.current) {
-        testimonialsContainerRef.current.scrollLeft += 336;
-      }
-    } else {
-      if (testimonialsContainerRef.current) {
-        testimonialsContainerRef.current.scrollLeft += 736;
+    if (window !== undefined) {
+      if (window.innerWidth < 768) {
+        if (testimonialsContainerRef.current) {
+          testimonialsContainerRef.current.scrollLeft += 336;
+        }
+      } else {
+        if (testimonialsContainerRef.current) {
+          testimonialsContainerRef.current.scrollLeft += 736;
+        }
       }
     }
   };
