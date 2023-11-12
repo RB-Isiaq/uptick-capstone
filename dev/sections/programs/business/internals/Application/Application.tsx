@@ -1,18 +1,20 @@
 import { TechCard } from '@/components/Cards/TechCard';
 import { application1, application2, help, venture } from './constants';
 
+import Join from '../Join';
+
 export const Application = () => {
   return (
     <>
-      <section className="bg-gradient-to-r from-[#1C1C1C] to-[#070C19]">
+      <section className="bg-[#070C19]  vector-bg">
         <div className="py-[20px] md:py-[111px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10 ">
           <TechCard
+            programId={application1.id}
             image={application1.image}
             title={application1.title}
             desc={application1.desc}
             desc2={application1.desc2}
             btnText={application1.btnText}
-            type={application1.type}
             normal
             reverse
           />
@@ -47,18 +49,19 @@ export const Application = () => {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-r from-[#1C1C1C] to-[#070C19]">
+      <section className="bg-[#111] vector-bg">
         <div className="py-[20px] md:py-[111px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10 ">
           <TechCard
+            programId={application2.id}
             image={application2.image}
             title={application2.title}
             desc={application2.desc}
             desc2={application2.desc2}
             btnText={application2.btnText}
-            type={application2.type}
             normal
             reverse
           />
+          <Join />
         </div>
       </section>
     </>

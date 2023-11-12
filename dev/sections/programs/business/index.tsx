@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import Hero from './internals/Hero';
-import Join from './internals/Join';
 import Unleash from './internals/Unleash';
 import Commitment from './internals/Commitment';
 import Startup from './internals/Startup';
@@ -24,7 +23,6 @@ const BusinessPage = () => {
         <Startup />
         <Why />
         <Application />
-        <Join />
       </motion.div>
     </AnimatePresence>
   );

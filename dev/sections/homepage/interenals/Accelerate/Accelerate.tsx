@@ -5,7 +5,7 @@ import { ACCELERATE } from '@/public';
 
 export const Accelerate = () => {
   return (
-    <section className="bg_gradient">
+    <section className=" bg-[#000]">
       <div className="flex flex-col justify-center items-center pt-[116px] px-3 xl:px-[60px] md:px-10 w-full max-w-[1440px] mx-auto">
         <ContentCard
           title={HeadText}

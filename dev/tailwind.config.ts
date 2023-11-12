@@ -27,6 +27,8 @@ const config: Config = {
       backgroundImage: {
         'about-pattern': "url('/about-pattern.svg')",
         'achieve-pattern': "url('/achieve-pattern.svg')",
+        'vector-pattern':
+          "linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/achieve-pattern.svg')",
       },
     },
   },

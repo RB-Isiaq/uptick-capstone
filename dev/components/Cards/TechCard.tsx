@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import Button from '../Button';
 import Link from 'next/link';
+import { UUID } from 'crypto';
 
 type Track = {
   id: number;
@@ -8,6 +9,7 @@ type Track = {
 };
 
 interface TechCardProps {
+  programId: number | UUID | string;
   image: string | StaticImageData;
   title: string;
   profession?: string;
@@ -15,12 +17,12 @@ interface TechCardProps {
   desc2?: string;
   tracks?: Track[];
   btnText: string;
-  type?: string;
   reverse: boolean;
   normal?: boolean;
 }
 
 export const TechCard = ({
+  programId,
   image,
   title,
   profession,
@@ -28,7 +30,6 @@ export const TechCard = ({
   desc2,
   tracks,
   btnText,
-  type,
   reverse,
   normal,
 }: TechCardProps) => {
@@ -58,9 +59,13 @@ export const TechCard = ({
         </div>
         <p className="text-[#fff]  text-lg pr-2"> {desc2}</p>
         <div>
-          <Link href={`/form?title=${title}&desc=${profession}&type=${type}`}>
+          {btnText === 'Apply Now' ? (
+            <Link href={`/form?programId=${programId}`}>
+              <Button text={btnText} />
+            </Link>
+          ) : (
             <Button text={btnText} />
-          </Link>
+          )}
         </div>
       </div>
     </div>

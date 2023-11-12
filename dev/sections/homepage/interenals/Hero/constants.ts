@@ -1,5 +1,5 @@
 export const HeadText = 'Discover Your Potential with ';
-export const HeadText2 = 'Uptick Talent.';
+export const HeadText2 = 'Uptick Talent';
 
 export const subText =
   'Uptick Talent incubates and empowers the next generation of great technology and business talent through innovative solutions.';
