@@ -1,4 +1,4 @@
-import { AI_TECH, NON_TECH, SE_TECH, UI_TECH } from '@/public';
+import { NON_TECH, SE_TECH, UI_TECH } from '@/public';
 
 export const programs = [
   {
@@ -30,35 +30,6 @@ export const programs = [
   },
   {
     id: 2,
-    title: 'AI & Data',
-    profession: 'Become a Top 1% Engineer',
-    desc: 'Explore the limitless possibilities of AI and data engineering through our comprehensive fellowship programs. From data science to machine learning, data analysis to core data engineering, we offer a diverse range of opportunities. Join us and become part of a community that is building the future:',
-    desc2:
-      'Our AI & Data Engineering Fellowship is your gateway to becoming a data scientist, data engineer, analyst, or AI engineer. Learn, collaborate, and build the future with Uptick Talent.',
-    tracks: [
-      {
-        id: 1,
-        track: 'Data Science',
-      },
-      {
-        id: 2,
-        track: 'Machine Learning',
-      },
-      {
-        id: 3,
-        track: 'Data Analysis',
-      },
-      {
-        id: 4,
-        track: 'Data Engineering',
-      },
-    ],
-    btnText: 'Apply Now',
-    type: 'tech',
-    image: AI_TECH,
-  },
-  {
-    id: 3,
     title: 'Design',
     profession: 'Unleash Your Creative Genius',
     desc: 'Explore the art of design through our design program, which cuts across critical concepts such as design thinking, systems thinking, design systems & design engineering, and unlock your creative potential and shape user experiences. Choose from a variety of core tracks, including:',
@@ -85,7 +56,7 @@ export const programs = [
     image: UI_TECH,
   },
   {
-    id: 4,
+    id: 3,
     title: 'Non-Technical Programs',
     profession: 'Master the Art of Scaling Technology Products',
     desc: 'Our Non-Technical Fellowship programs are designed for business enthusiasts working to scale technology products, processes and operations. Dive into practical case studies and access weekly mentorship. Curriculum covers:',

@@ -3,10 +3,11 @@ import { HeadText, reasons } from './constants';
 import Image from 'next/image';
 import { BEGINNER_STUDENTS } from '@/public';
 import Header from '@/components/Header';
+import Learn from '../Learn';
 
 export const Why = () => {
   return (
-    <section className=" bg-gradient-to-b from-[#1C1C1C] to-[#070C19]">
+    <section className="bg-[#111] vector-bg ">
       <div className="py-[72px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10 flex flex-col justify-center items-center gap-10">
         <Header title={HeadText} />
         <Image
@@ -26,6 +27,7 @@ export const Why = () => {
           ))}
         </div>
       </div>
+      <Learn />
     </section>
   );
 };

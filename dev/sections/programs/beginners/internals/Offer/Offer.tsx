@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const Offer = () => {
   return (
-    <section className="bg-gradient-to-r from-[#1C1C1C] to-[#070C19]">
+    <section className="bg-[#111] vector-bg">
       <div className="py-[72px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10">
         <h1 className="font-raleway text-white text-[36px] md:text-[42px] mb-[45px]">
           {HeadText}
