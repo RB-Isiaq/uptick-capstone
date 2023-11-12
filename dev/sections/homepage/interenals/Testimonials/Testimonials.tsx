@@ -1,3 +1,5 @@
+'üse client';
+
 import React, { useRef } from 'react';
 import { HeadText, success, testimonials } from './constants';
 import Image from 'next/image';
@@ -9,32 +11,29 @@ export const Testimonials = () => {
   const testimonialsContainerRef = useRef<HTMLDivElement | null>(null);
 
   const scrollLeft = () => {
-    if (window !== undefined) {
-      if (window.innerWidth < 768) {
-        if (testimonialsContainerRef.current) {
-          testimonialsContainerRef.current.scrollLeft -= 336;
-        }
-      } else {
-        if (testimonialsContainerRef.current) {
-          testimonialsContainerRef.current.scrollLeft -= 736;
-        }
+    if (window.innerWidth < 768) {
+      if (testimonialsContainerRef.current) {
+        testimonialsContainerRef.current.scrollLeft -= 336;
+      }
+    } else {
+      if (testimonialsContainerRef.current) {
+        testimonialsContainerRef.current.scrollLeft -= 736;
       }
     }
   };
 
   const scrollRight = () => {
-    if (window !== undefined) {
-      if (window.innerWidth < 768) {
-        if (testimonialsContainerRef.current) {
-          testimonialsContainerRef.current.scrollLeft += 336;
-        }
-      } else {
-        if (testimonialsContainerRef.current) {
-          testimonialsContainerRef.current.scrollLeft += 736;
-        }
+    if (window.innerWidth < 768) {
+      if (testimonialsContainerRef.current) {
+        testimonialsContainerRef.current.scrollLeft += 336;
+      }
+    } else {
+      if (testimonialsContainerRef.current) {
+        testimonialsContainerRef.current.scrollLeft += 736;
       }
     }
   };
+
   return (
     <div
       id="testimonials"
