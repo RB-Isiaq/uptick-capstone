@@ -1,5 +1,3 @@
-'üse client';
-
 import React, { useRef } from 'react';
 import { HeadText, success, testimonials } from './constants';
 import Image from 'next/image';
