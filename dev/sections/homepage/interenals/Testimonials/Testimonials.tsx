@@ -1,4 +1,6 @@
-import React, { useRef } from 'react';
+'use client';
+
+import React, { useEffect, useRef } from 'react';
 import { HeadText, success, testimonials } from './constants';
 import Image from 'next/image';
 import Header from '@/components/Header';
@@ -27,6 +29,7 @@ export const Testimonials = () => {
       }
     }
   };
+  useEffect(() => {}, []);
 
   return (
     <div
