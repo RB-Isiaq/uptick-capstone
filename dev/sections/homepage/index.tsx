@@ -8,10 +8,7 @@ import { Line } from '@/components/Line/Line';
 import Accelerate from './interenals/Accelerate';
 import Join from './interenals/Join';
 import Blog from './interenals/Blog';
-import dynamic from 'next/dynamic';
-const Testimonials = dynamic(() => import('./interenals/Testimonials'), {
-  ssr: false,
-});
+import Testimonials from './interenals/Testimonials';
 
 const HomePage = () => {
   return (
@@ -29,7 +26,7 @@ const HomePage = () => {
         <Why />
         <Programs />
         <Line />
-        {typeof window !== 'undefined' && <Testimonials />}
+        <Testimonials />
         <Join />
         <Blog />
       </motion.div>
