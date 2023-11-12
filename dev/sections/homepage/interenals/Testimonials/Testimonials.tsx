@@ -9,14 +9,26 @@ export const Testimonials = () => {
   const testimonialsContainerRef = useRef<HTMLDivElement | null>(null);
 
   const scrollLeft = () => {
-    if (testimonialsContainerRef.current) {
-      testimonialsContainerRef.current.scrollLeft -= 330;
+    if (window.innerWidth < 768) {
+      if (testimonialsContainerRef.current) {
+        testimonialsContainerRef.current.scrollLeft -= 336;
+      }
+    } else {
+      if (testimonialsContainerRef.current) {
+        testimonialsContainerRef.current.scrollLeft -= 736;
+      }
     }
   };
 
   const scrollRight = () => {
-    if (testimonialsContainerRef.current) {
-      testimonialsContainerRef.current.scrollLeft += 330;
+    if (window.innerWidth < 768) {
+      if (testimonialsContainerRef.current) {
+        testimonialsContainerRef.current.scrollLeft += 336;
+      }
+    } else {
+      if (testimonialsContainerRef.current) {
+        testimonialsContainerRef.current.scrollLeft += 736;
+      }
     }
   };
   return (
@@ -27,7 +39,7 @@ export const Testimonials = () => {
       <Header title={HeadText} color="#1A1A1A" />
       <div
         ref={testimonialsContainerRef}
-        className="w-full max-w-[1440px] flex  justify-between items-center gap-3 overflow-x-scroll line-clamp-3"
+        className="w-[330px] md:w-[730px] mx-auto flex  justify-between items-center gap-3 overflow-x-scroll line-clamp-3 transition-all"
       >
         {testimonials.map((testimony) => (
           <TestimonialCard
