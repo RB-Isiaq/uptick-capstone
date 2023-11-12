@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { HeadText, success, testimonials } from './constants';
 import Image from 'next/image';
 import Header from '@/components/Header';
@@ -8,10 +8,11 @@ import { TestimonialCard } from '@/components/Cards/TestimonialCard';
 import { LEFT_ARR, RIGHT_ARR } from '@/public';
 
 export const Testimonials = () => {
-  const testimonialsContainerRef = useRef<HTMLDivElement | null>(null);
+  const testimonialsContainerRef = useRef<HTMLDivElement>(null);
+  const [isWindow, setIsWindow] = useState(false);
 
   const scrollLeft = () => {
-    if (typeof window !== 'undefined') {
+    if (isWindow) {
       if (window.innerWidth < 768 && testimonialsContainerRef.current) {
         testimonialsContainerRef.current.scrollLeft -= 336;
       } else if (testimonialsContainerRef.current) {
@@ -21,7 +22,7 @@ export const Testimonials = () => {
   };
 
   const scrollRight = () => {
-    if (typeof window !== 'undefined') {
+    if (isWindow) {
       if (window.innerWidth < 768 && testimonialsContainerRef.current) {
         testimonialsContainerRef.current.scrollLeft += 336;
       } else if (testimonialsContainerRef.current) {
@@ -29,7 +30,14 @@ export const Testimonials = () => {
       }
     }
   };
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      console.log('window is defined');
+      setIsWindow(true);
+    } else {
+      console.log('no window is defined');
+    }
+  }, []);
 
   return (
     <div
