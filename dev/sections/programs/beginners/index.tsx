@@ -5,7 +5,6 @@ import Hero from './internals/Hero';
 import Curiosity from './internals/Curiosity';
 import Offer from './internals/Offer';
 import Why from './internals/Why';
-import Learn from './internals/Learn';
 
 const BeginnersPage = () => {
   return (
@@ -20,7 +19,6 @@ const BeginnersPage = () => {
         <Curiosity />
         <Offer />
         <Why />
-        <Learn />
       </motion.div>
     </AnimatePresence>
   );

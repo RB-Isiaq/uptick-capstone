@@ -14,11 +14,13 @@ import { LOGO } from '@/public';
 export const Footer = () => {
   return (
     <section className="bg-[#121212]">
-      <footer className="w-full max-w-[1440px] flex flex-col justify-center gap-[102px] items-center border-t border-[rgba(82,82,82,0.17)] py-[90px] px-3 xl:px-[60px] md:px-10 mx-auto">
+      <footer className="w-full max-w-[1440px] flex flex-col justify-center gap-[10px] md:gap-[102px] items-center border-t border-[rgba(82,82,82,0.17)] py-[45px] md:py-[90px] px-3 xl:px-[60px] md:px-10 mx-auto">
         <div className="w-full flex flex-col  lg:flex-row justify-between gap-4">
           <div className="w-full max-w-[440px] flex flex-col justify-between h-[255px]">
-            <Image src={LOGO} alt="uptick" />
-            <p className="font-raleway text-white text-[18px] font-medium mt-[60px]">
+            <Link href="/">
+              <Image src={LOGO} alt="uptick" />
+            </Link>
+            <p className="font-raleway text-white text-[18px] font-medium mt-[20px] md:mt-[60px]">
               {desc}
             </p>
             <form action="" className="flex">
@@ -36,11 +38,11 @@ export const Footer = () => {
             </form>
           </div>
 
-          <div className="w-full max-w-[660px] flex flex-wrap justify-between gap-2">
+          <div className="w-full max-w-[660px] flex flex-wrap justify-between gap-1 md:gap-2">
             {footerLinks.map((link) => (
               <div
                 key={link.id}
-                className="flex flex-col h-[256px] gap-[30px] "
+                className="flex flex-col h-[220px] md:h-[256px] gap-[30px] "
               >
                 <h1 className="font-raleway text-white text-[18px] font-bold">
                   {link.title}
