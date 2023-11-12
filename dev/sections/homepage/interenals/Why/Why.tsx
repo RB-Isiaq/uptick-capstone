@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 
 export const Why = () => {
   return (
-    <section className="bg_gradient">
+    <section className=" bg-[#111]" id="why">
       <div
         id="why"
         className="w-full flex flex-col justify-center items-center gap-[48px]  pt-[100px]  px-3 xl:px-[60px] md:px-10 max-w-[1440px] mx-auto"
@@ -15,7 +15,7 @@ export const Why = () => {
           {reasons.map((reason) => (
             <div
               key={reason.id}
-              className="w-[311px] h-[309px] flex flex-col  gap-[15px] items-start p-[30px] border border-[1px,solid,#4D4D4D] rounded-2xl bg-[#1C1C1C] hover:shadow-lg hover:scale-105 transition-all"
+              className="w-[311px] h-[309px] flex flex-col  gap-[15px] items-start p-[30px] border border-[#4D4D4D] rounded-2xl bg-[#1C1C1C] hover:shadow-lg hover:scale-105 transition-all"
             >
               <Image src={reason.icon} alt={reason.title} />
               <h1 className="w-[232px] font-raleway  text-[24px] leading-[38.4px] text-[#7EA3FF] font-medium">

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
 import Button from '../Button';
+import Link from 'next/link';
 
 export type ContentCardType = {
   image: StaticImageData | string;
@@ -32,17 +33,24 @@ export const ContentCard = ({
           {description}
         </p>
         <div className="w-full flex  items-center gap-[26px]">
-          {btn1 ? <Button text={btn1} /> : null}
+          {btn1 ? (
+            <Link href="/#why">
+              <Button text={btn1} />{' '}
+            </Link>
+          ) : null}
           {btn2 ? <Button text={btn2} /> : null}
         </div>
       </div>
-      <Image
-        src={image}
-        alt="about"
-        width={682}
-        height={665}
-        className="w-[300px] h-[300px] md:w-[682px] md:h-[665px] object-contain "
-      />
+      <div className="relative">
+        <div className="absolute bg_accelerate  w-[300px] h-[300px] md:w-[740px] md:h-[740px] top-[-15px] right-[-15px] lg:top-[-100px] lg:right-[-100px]" />
+        <Image
+          src={image}
+          alt="about"
+          width={682}
+          height={665}
+          className="w-[300px] h-[300px] md:w-[682px] md:h-[665px] object-contain "
+        />
+      </div>
     </div>
   );
 };
