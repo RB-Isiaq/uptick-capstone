@@ -7,7 +7,7 @@ export const testimonials = [
   {
     id: 0,
     desc: "Our journey during the Startup School Cohort has been incredible. We're in the process of establishing partnerships with imisi3d, a leading VR company in Africa, and Geothe Institute, a renowned German center in Nigeria. Additionally, we're launching an out-of-school program to cater to recent secondary school graduates, and our student reach has grown exponentially. We have ambitious plans to impact over 1,000 students in the coming weeks, thanks to the comprehensive support from the Cohort.",
-    user: 'Startup',
+    user: 'codePlay72',
   },
   {
     id: 1,

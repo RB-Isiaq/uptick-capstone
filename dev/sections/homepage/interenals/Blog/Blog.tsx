@@ -12,10 +12,11 @@ import { BlogCard } from '@/components/Cards/BlogCard';
 import Image from 'next/image';
 import { CONNECT } from '@/public';
 import Button from '@/components/Button';
+import Link from 'next/link';
 
 export const Blog = () => {
   return (
-    <section className="bg_gradient">
+    <section className="bg-[#111]  vector-bg">
       <div className="flex flex-col justify-center items-center  py-[149px] px-3 xl:px-[60px] md:px-10 max-w-[1440px] mx-auto gap-[58px] overflow-hidden">
         <div className="border-l-8 border-[#6C95FF] w-full  flex flex-col justify-start items-start p-3">
           <Header title={HeadText} />
@@ -35,7 +36,7 @@ export const Blog = () => {
             />
           ))}
         </div>
-        <div className="flex border-[1px] border-[#4D4D4D] justify-center items-center gap-[29px] p-[18px] bg-[rgba(17,17,17,0.48)] animate-train">
+        <div className="flex border border-[#4D4D4D] justify-center items-center gap-[29px] p-[18px] bg-[#1A1A1A] animate-train">
           {Array.from({ length: 36 }).map((_, i) => (
             <div
               key={i}
@@ -57,7 +58,9 @@ export const Blog = () => {
               {contactMsg1}
             </p>
           </div>
-          <Button text={btn} plain />
+          <Link href="/contact">
+            <Button text={btn} plain />
+          </Link>
         </div>
       </div>
     </section>

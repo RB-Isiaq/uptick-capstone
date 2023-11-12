@@ -53,7 +53,7 @@ const Story = () => {
 
 const AboutHero = () => {
   return (
-    <div className="about-bg min-h-screen bg-upBlack px-10 md:px-14 py-20 lg:px-32 flex flex-col gap-32">
+    <div className="about-bg min-h-screen bg-upBlack px-10 md:px-14 py-20 lg:px-32 flex flex-col gap-32 mt-[-120px] pt-[200px]">
       <Header />
       <Story />
     </div>
