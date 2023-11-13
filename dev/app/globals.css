@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.purple_gradient {
+  @apply bg-gradient-to-r from-[#477BFF] via-[#8E35FF] to-[#AF10F9] bg-clip-text text-[transparent];
+}
+.about-bg {
+  @apply bg-about-pattern bg-cover bg-center;
+}
+
+.achieve-bg {
+  @apply bg-achieve-pattern bg-cover bg-center;
+}
+
+.gridCenter {
+  @apply grid items-center justify-center;
+}
+
+.bg_gradient {
+  background: linear-gradient(
+    to right,
+    #001abf,
+    #00159b,
+    #000e64,
+    #000839,
+    #000839,
+    #00041a,
+    #000107,
+    #000000
+  );
+}
+
+.line {
+  background: linear-gradient(
+    180deg,
+    rgba(126, 163, 255, 0) 21.1%,
+    #7ea3ff 50.99%,
+    rgba(126, 163, 255, 0) 79.67%,
+    rgba(126, 163, 255, 0) 79.67%
+  );
+}

@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     colors: {
       uptickBlack: '#2C2C2C',
+      uptickGray: '#E7E7E7',
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
