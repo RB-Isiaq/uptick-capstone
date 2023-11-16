@@ -22,7 +22,7 @@ export const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   return (
     <>
-      <section className="bg-[#070C19] sticky top-0 left-0 z-10">
+      <header className=" bg-inherit sticky top-0 left-0 z-10 backdrop-blur-xl ">
         <nav
           className={` w-full flex justify-between gap-4 items-center  px-3 py-6 xl:px-[60px] md:px-10 max-w-[1440px] mx-auto shadow-sm`}
         >
@@ -54,7 +54,7 @@ export const Navbar = () => {
             <Hambuger isOpen={toggleMenu} />
           </button>
         </nav>
-      </section>
+      </header>
       <AnimatePresenceDiv>
         {toggleMenu && (
           <MotionDiv

@@ -11,7 +11,7 @@ export const Button = ({ text, secondary, plain, type, ...props }: Button) => {
     <button
       className={`flex items-center justify-center px-5 py-[18px] font-raleway  ${
         secondary
-          ? 'bg-[inherit] text-white border border-[1px,solid,rgba(255,255,255,0.30)]'
+          ? 'bg-[inherit] text-white border  border-[rgba(255,255,255,0.30)]'
           : plain
           ? 'bg-white text-[#2F2F2F]'
           : 'bg-uptickDarkBlue text-white'

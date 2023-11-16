@@ -6,9 +6,9 @@ import Programs from '@/sections/homepage/interenals/Programs';
 import Why from '@/sections/homepage/interenals/Why';
 import { Line } from '@/components/Line/Line';
 import Accelerate from './interenals/Accelerate';
-import Testimonials from './interenals/Testimonials';
 import Join from './interenals/Join';
 import Blog from './interenals/Blog';
+import Testimonials from './interenals/Testimonials';
 
 const HomePage = () => {
   return (
