@@ -1,10 +1,10 @@
 import express, { Router } from "express";
-import mailRoute from "./mail.route";
 import applicantRoute from "./applicant.route";
-import programRoute from "./program.route";
+import blogpostRoute from "./blogpost.route";
 import jobRoute from "./job.route";
-
-
+import mailRoute from "./mail.route";
+import programRoute from "./program.route";
+import tagRoute from "./tag.route";
 
 const router: Router = express.Router();
 
@@ -30,8 +30,14 @@ const defaultRoutes: DefaultRoute[] = [
     path: "/jobs",
     route: jobRoute,
   },
- 
- 
+  {
+    path: "/blogposts",
+    route: blogpostRoute,
+  },
+  {
+    path: "/tags",
+    route: tagRoute,
+  },
 ];
 
 defaultRoutes.forEach((val) => {
