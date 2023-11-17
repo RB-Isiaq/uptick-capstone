@@ -30,7 +30,7 @@ body {
   @apply bg-vector-black-pattern bg-cover bg-center;
 }
 .waves-bg {
-  @apply bg-wave-pattern bg-center;
+  @apply bg-wave-pattern bg-center bg-no-repeat;
 }
 
 .gridCenter {

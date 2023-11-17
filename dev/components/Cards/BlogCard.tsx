@@ -15,7 +15,7 @@ export const BlogCard = ({ image, title, desc, text, link }: Card & BTN) => {
         {desc}
       </p>
       <Link href={link}>
-        <Button text={text} secondary />
+        <Button text={text} tertiary />
       </Link>
     </div>
   );

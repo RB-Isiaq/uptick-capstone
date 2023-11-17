@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Hero from './internals/Hero';
 import Programs from './internals/Programs';
+import Join from './internals/Join';
 
 const TechPage = () => {
   return (
@@ -15,6 +16,7 @@ const TechPage = () => {
       >
         <Hero />
         <Programs />
+        <Join />
       </motion.div>
     </AnimatePresence>
   );

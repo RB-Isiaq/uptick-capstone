@@ -44,7 +44,7 @@ export const TechCard = ({
         <h1
           className={`text-[#fff]  text-3xl md:text-[48px] leading-normal  font-${
             normal ? 'normal' : 'bold'
-          } `}
+          } ${title === 'Software Engineering' ? 'lg:w-[278px]' : 'w-full'}`}
         >
           {title}
         </h1>
@@ -52,7 +52,15 @@ export const TechCard = ({
           {profession}
         </h1>
         <p className="text-[#fff]  text-lg pr-2">{desc}</p>
-        <div className="flex gap-3 flex-wrap w-full max-w-[438px]">
+        <div
+          className={`flex gap-3 flex-wrap w-full max-w-[438px] ${
+            title === 'Software Engineering'
+              ? 'max-w-[328px]'
+              : title === 'Design'
+              ? 'max-w-[440px]'
+              : 'max-w-[545px]'
+          }`}
+        >
           {tracks?.map((track) => (
             <Button key={track.id} text={track.track} plain />
           ))}

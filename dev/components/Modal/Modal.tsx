@@ -20,8 +20,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, message, onClose }) => {
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={() => {
               onClose(!isOpen);
-              if (message === 'Application submitted successfully')
-                router.push('/programs/tech');
+              if (
+                message === 'Application submitted successfully' ||
+                message === 'Job application submitted successfully'
+              )
+                router.push('/');
             }}
           >
             Close

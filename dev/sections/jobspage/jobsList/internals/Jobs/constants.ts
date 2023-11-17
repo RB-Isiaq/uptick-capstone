@@ -5,7 +5,7 @@ export const JOBS = [
     jobTitle: 'Software Engineer (Backend)',
     jobText:
       'We’re looking for exceptional software engineers to join our team in doing the hard work that makes our users’ lives easy. We run on a mix of Clojure and JavaScript (and TypeScript), and the ideal candidate has shipped production code in one or more of these languages... ',
-    jobDeadline: 'DEADLINE 18th Nov 2023',
+    jobDeadline: '18th Nov 2023',
   },
   {
     image: '/assets/kuda.png',
@@ -13,7 +13,7 @@ export const JOBS = [
     jobTitle: 'Software Engineer (Backend)',
     jobText:
       'We’re looking for exceptional software engineers to join our team in doing the hard work that makes our users’ lives easy. We run on a mix of Clojure and JavaScript (and TypeScript), and the ideal candidate has shipped production code in one or more of these languages... ',
-    jobDeadline: 'DEADLINE 18th Nov 2023',
+    jobDeadline: '18th Nov 2023',
   },
   {
     image: '/assets/kuda.png',
@@ -21,6 +21,6 @@ export const JOBS = [
     jobTitle: 'Software Engineer (Backend)',
     jobText:
       'We’re looking for exceptional software engineers to join our team in doing the hard work that makes our users’ lives easy. We run on a mix of Clojure and JavaScript (and TypeScript), and the ideal candidate has shipped production code in one or more of these languages... ',
-    jobDeadline: 'DEADLINE 18th Nov 2023',
+    jobDeadline: '18th Nov 2023',
   },
 ];

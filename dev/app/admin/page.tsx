@@ -10,7 +10,7 @@ const AdminPage = () => {
   const [designData, setDesignData] = useState([]);
   const [pmData, setPmData] = useState([]);
 
-  const getSE = useCallback(async () => {
+  const getProgramApplicants = useCallback(async () => {
     try {
       setIsLoading(true);
       const resultSE = await getData(
@@ -41,8 +41,8 @@ const AdminPage = () => {
   }, []);
 
   useEffect(() => {
-    getSE();
-  }, [getSE]);
+    getProgramApplicants();
+  }, [getProgramApplicants]);
   return (
     <div>
       {isLoading ? (
