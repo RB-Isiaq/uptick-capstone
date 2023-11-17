@@ -37,10 +37,10 @@ export const TechCard = ({
     <div
       className={`w-full flex flex-col lg:${
         reverse ? 'flex-row-reverse' : 'flex-row'
-      } justify-between items-center gap-4 py-[50px] px-3 font-raleway`}
+      } justify-between items-center gap-4 py-[50px] px-3 font-raleway z-[2]`}
     >
       <Image src={image} alt="beginner" />
-      <div className="flex flex-col gap-[16px] md:gap-[30px] w-full max-w-[586px]">
+      <div className="flex flex-col gap-[16px] md:gap-[24px] w-full max-w-[586px]">
         <h1
           className={`text-[#fff]  text-3xl md:text-[48px] leading-normal  font-${
             normal ? 'normal' : 'bold'
@@ -52,7 +52,7 @@ export const TechCard = ({
           {profession}
         </h1>
         <p className="text-[#fff]  text-lg pr-2">{desc}</p>
-        <div className="flex gap-3 flex-wrap w-full max-w-[450px]">
+        <div className="flex gap-3 flex-wrap w-full max-w-[438px]">
           {tracks?.map((track) => (
             <Button key={track.id} text={track.track} plain />
           ))}

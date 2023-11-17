@@ -1,8 +1,13 @@
 import { NON_TECH, SE_TECH, UI_TECH } from '@/public';
 
+export const programId = {
+  SE_TECH: 'f9db3079-4f43-44e5-aa02-34936639853d',
+  DESIGN_TECH: 'b6d46c67-d57b-4b6d-94fd-fa14762997b3',
+  PRODUCT_TECH: '2208fa4a-009b-4e78-bf39-63d7770fb8cc',
+};
 export const programs = [
   {
-    id: 1,
+    id: programId.SE_TECH,
     title: 'Software Engineering',
     profession: 'Become a Top 1% Engineer',
     desc: 'Our immersive, project-based approach, combined with mentorship-led learning, is designed to transform self-taught developers into top-tier engineers. Gain real-world internship experience and unlock your potential. Join our Software Engineering Fellowship and explore four specialized tracks:',
@@ -29,14 +34,14 @@ export const programs = [
     image: SE_TECH,
   },
   {
-    id: 2,
+    id: programId.DESIGN_TECH,
     title: 'Design',
     profession: 'Unleash Your Creative Genius',
     desc: 'Explore the art of design through our design program, which cuts across critical concepts such as design thinking, systems thinking, design systems & design engineering, and unlock your creative potential and shape user experiences. Choose from a variety of core tracks, including:',
     tracks: [
       {
         id: 1,
-        track: 'UI Design ',
+        track: 'UI Design',
       },
       {
         id: 2,
@@ -56,7 +61,7 @@ export const programs = [
     image: UI_TECH,
   },
   {
-    id: 3,
+    id: programId.PRODUCT_TECH,
     title: 'Non-Technical Programs',
     profession: 'Master the Art of Scaling Technology Products',
     desc: 'Our Non-Technical Fellowship programs are designed for business enthusiasts working to scale technology products, processes and operations. Dive into practical case studies and access weekly mentorship. Curriculum covers:',

@@ -26,6 +26,12 @@ body {
 .vector-bg {
   @apply bg-vector-pattern bg-cover bg-center;
 }
+.vector-black-bg {
+  @apply bg-vector-black-pattern bg-cover bg-center;
+}
+.waves-bg {
+  @apply bg-wave-pattern bg-center;
+}
 
 .gridCenter {
   @apply grid items-center justify-center;

@@ -1,12 +1,10 @@
 import { TechCard } from '@/components/Cards/TechCard';
 import { application1, application2, help, venture } from './constants';
 
-import Join from '../Join';
-
 export const Application = () => {
   return (
     <>
-      <section className="bg-[#070C19]  vector-bg">
+      <section className="bg-[#111]  vector-black-bg">
         <div className="py-[20px] md:py-[111px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10 ">
           <TechCard
             programId={application1.id}
@@ -21,7 +19,7 @@ export const Application = () => {
         </div>
       </section>
       <section className="bg-[#15254C] font-raleway">
-        <div className="py-[60px] md:py-[111px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10 flex flex-col lg:flex-row justify-between gap-10">
+        <div className="py-[60px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10 flex flex-col lg:flex-row justify-between gap-10">
           <div className="flex flex-col w-full max-w-[570px]">
             <h1 className="text-white text-center text-[32px] md:text-[48px]">
               {venture.title}
@@ -49,7 +47,7 @@ export const Application = () => {
           </div>
         </div>
       </section>
-      <section className="bg-[#111] vector-bg">
+      <section className="bg-[#111] ">
         <div className="py-[20px] md:py-[111px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10 ">
           <TechCard
             programId={application2.id}
@@ -61,7 +59,6 @@ export const Application = () => {
             normal
             reverse
           />
-          <Join />
         </div>
       </section>
     </>

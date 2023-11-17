@@ -80,7 +80,7 @@ export const Navbar = () => {
                 href="/#programs"
                 onClick={() => setToggleMenu((prev) => !prev)}
               >
-                <Button text={btnText} />
+                <Button text={'Explore Programmes'} />
               </Link>
             </div>
           </MotionDiv>

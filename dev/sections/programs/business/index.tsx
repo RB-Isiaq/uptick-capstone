@@ -7,6 +7,7 @@ import Commitment from './internals/Commitment';
 import Startup from './internals/Startup';
 import Why from './internals/Why';
 import Application from './internals/Application';
+import Join from './internals/Join';
 
 const BusinessPage = () => {
   return (
@@ -23,6 +24,7 @@ const BusinessPage = () => {
         <Startup />
         <Why />
         <Application />
+        <Join />
       </motion.div>
     </AnimatePresence>
   );

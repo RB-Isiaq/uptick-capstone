@@ -5,7 +5,8 @@ import { designInput, title } from './constants';
 import { useSearchParams } from 'next/navigation';
 import Modal from '@/components/Modal/Modal';
 import Button from '@/components/Button';
-import { FormBody } from '../constants';
+// import { FormBody } from '../constants';
+import { postData } from '@/Services/ApiCalls';
 
 const DesignForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,22 +14,20 @@ const DesignForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const params = useSearchParams();
   const programId = params.get('programId');
-  console.log(programId);
 
-  const fetchData = async (body: FormBody) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const formObject = Object.fromEntries(formData);
+
     try {
       setIsLoading(true);
-      const res = await fetch(
-        `https://uptick-api-backend.onrender.com/api/applicants/${programId}/apply-program`,
-        {
-          method: 'POST',
-          body: JSON.stringify(body),
-        },
+      const result = await postData(
+        `applicants/${programId}/apply-program`,
+        formObject,
       );
-      console.log(res);
-      const data = await res.json();
-      setMessage(data.message);
-      console.log(data);
+
+      setMessage(result.message);
       setIsModalOpen((prev) => !prev);
     } catch (error) {
       if (error instanceof Error) {
@@ -39,17 +38,6 @@ const DesignForm = () => {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.currentTarget);
-    const formObject = Object.fromEntries(formData);
-
-    console.log(formObject);
-
-    fetchData(formObject);
   };
 
   return (

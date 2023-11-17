@@ -40,7 +40,7 @@ export const designInput: FormBody[] = [
     label: 'City, State',
     type: 'text',
     required: false,
-    name: 'city',
+    name: 'cityState',
     placeHolder: 'eg.Jos, Plateau',
   },
   {
@@ -58,7 +58,7 @@ export const designInput: FormBody[] = [
     type: 'select',
     options: ['UI Design', 'UX Design', 'Graphics Design', 'UX Researcher'],
     required: false,
-    name: 'areaOfSpecialization',
+    name: 'stack',
     placeHolder: 'Frontend',
   },
   {
@@ -74,7 +74,7 @@ export const designInput: FormBody[] = [
     label: 'Link to portfolio or one of your completed Projects',
     type: 'url',
     required: false,
-    name: 'portfolio',
+    name: 'portfolioLink',
     placeHolder: 'Portfolio Link',
   },
   {
@@ -111,7 +111,7 @@ export const designInput: FormBody[] = [
       'Other...',
     ],
     required: false,
-    name: 'how',
+    name: 'howDidYouHearAboutUs',
     placeHolder: 'Andela Learning Community',
   },
 ];

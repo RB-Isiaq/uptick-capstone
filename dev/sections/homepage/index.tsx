@@ -22,7 +22,6 @@ const HomePage = () => {
         <Hero />
         <Line />
         <Accelerate />
-        <Line />
         <Why />
         <Programs />
         <Line />

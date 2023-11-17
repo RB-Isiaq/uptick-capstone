@@ -15,7 +15,7 @@ export const Button = ({ text, secondary, plain, type, ...props }: Button) => {
           : plain
           ? 'bg-white text-[#2F2F2F]'
           : 'bg-uptickDarkBlue text-white'
-      } font-semibold tracking-[1.25px] leading-[150%] rounded-lg`}
+      } font-semibold tracking-[1.25px] leading-[100%] rounded-lg`}
       type={type || 'button'}
       {...props}
     >

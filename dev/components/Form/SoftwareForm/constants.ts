@@ -39,7 +39,7 @@ export const softwareInput: FormBody[] = [
     label: 'City, State',
     type: 'text',
     required: false,
-    name: 'city',
+    name: 'cityState',
     placeHolder: 'eg.Jos, Plateau',
   },
   {
@@ -65,9 +65,9 @@ export const softwareInput: FormBody[] = [
     id: 8,
     label: 'If you are a front end engineer, what technology do you use?',
     type: 'select',
-    options: ['ReactJS', 'Angular', 'VueJS', 'NextJS', 'Other...'],
+    options: ['ReactJS', 'Angular', 'VueJS', 'NextJS', 'Other...', 'Nil'],
     required: false,
-    name: 'frontendTech',
+    name: 'frontendTechStack',
     placeHolder: 'ReactJs',
   },
   {
@@ -87,9 +87,10 @@ export const softwareInput: FormBody[] = [
       'Ruby on Ralls',
       'Golang',
       'Other...',
+      'Nil',
     ],
     required: false,
-    name: 'backendTech',
+    name: 'backendTechStack',
     placeHolder: 'NodeJS',
   },
   {
@@ -105,9 +106,10 @@ export const softwareInput: FormBody[] = [
       '.Net (Xamarain)',
       'Ionic Framework',
       'Other...',
+      'Nil',
     ],
     required: false,
-    name: 'mobileTech',
+    name: 'mobileTechStack',
     placeHolder: 'Flutter (Dart Engineering)',
   },
   {
@@ -115,7 +117,7 @@ export const softwareInput: FormBody[] = [
     label: 'Other tracks? List your most proficient technologies below?',
     type: 'textarea',
     required: false,
-    name: 'otherTrack',
+    name: 'otherFieldStack',
     placeHolder: 'Other tracks',
   },
   {
@@ -131,7 +133,7 @@ export const softwareInput: FormBody[] = [
     label: 'Link to Github',
     type: 'url',
     required: false,
-    name: 'github',
+    name: 'githubLink',
     placeHolder: 'Github Link',
   },
   {
@@ -139,7 +141,7 @@ export const softwareInput: FormBody[] = [
     label: 'Link to portfolio or one of your completed Projects',
     type: 'url',
     required: false,
-    name: 'portfolio',
+    name: 'portfolioLink',
     placeHolder: 'Portfolio Link',
   },
   {
@@ -176,7 +178,7 @@ export const softwareInput: FormBody[] = [
       'Other...',
     ],
     required: false,
-    name: 'how',
+    name: 'howDidYouHearAboutUs',
     placeHolder: 'Andela Learning Community',
   },
 ];

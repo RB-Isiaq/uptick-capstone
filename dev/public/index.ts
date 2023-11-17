@@ -40,6 +40,12 @@ import PARTNER2 from './assets/startup2.png';
 import PARTNER3 from './assets/startup3.png';
 import APPLICATION1 from './assets/businnes-why.png';
 import APPLICATION2 from './assets/business-why2.png';
+import DASHBOARD from './assets/dashboard.svg';
+import PROGRAMS from './assets/adminProg.svg';
+import JOBS from './assets/adminJob.svg';
+import BLOG from './assets/adminBlog.svg';
+import LOGOUT from './assets/adminLO.svg';
+import WAVES from './assets/waves.svg';
 
 export {
   LOGO,
@@ -84,4 +90,10 @@ export {
   PARTNER3,
   APPLICATION1,
   APPLICATION2,
+  DASHBOARD,
+  PROGRAMS,
+  JOBS,
+  BLOG,
+  LOGOUT,
+  WAVES,
 };
