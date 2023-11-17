@@ -32,8 +32,7 @@ const config: Config = {
           "linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/achieve-pattern.svg')",
         'vector-black-pattern':
           "linear-gradient(180deg,rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)),url('/achieve-pattern.svg')",
-        'wave-pattern':
-          "linear-gradient(180deg,rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)),url('/waves.svg')",
+        'wave-pattern': "url('/assets/waves.svg')",
       },
     },
   },

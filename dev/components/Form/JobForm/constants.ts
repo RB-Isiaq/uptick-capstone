@@ -2,16 +2,16 @@ export const detailsInput = [
   {
     id: 1,
     label: 'Resume/CV',
-    type: 'file',
+    type: 'url',
     required: false,
-    name: 'cv',
+    name: 'resume',
   },
   {
     id: 2,
     label: 'Full name',
     type: 'text',
     required: true,
-    name: 'name',
+    name: 'fullName',
   },
   {
     id: 3,
@@ -32,14 +32,7 @@ export const detailsInput = [
     label: 'Current company',
     type: 'text',
     required: false,
-    name: 'company',
-  },
-  {
-    id: 5,
-    label: 'Address',
-    type: 'text',
-    required: false,
-    name: 'address',
+    name: 'currentCompany',
   },
 ];
 
@@ -49,35 +42,35 @@ export const links = [
     label: 'LinkedIn URL',
     type: 'url',
     required: true,
-    name: 'linkedIn',
+    name: 'linkedInUrl',
   },
   {
     id: 2,
     label: 'Twitter URL',
     type: 'url',
     required: false,
-    name: 'twitter',
+    name: 'twitterUrl',
   },
   {
     id: 3,
     label: 'GitHub URL',
     type: 'url',
     required: false,
-    name: 'github',
+    name: 'githubUrl',
   },
   {
     id: 4,
     label: 'Portfolio URL',
     type: 'url',
     required: false,
-    name: 'portfolio',
+    name: 'portfolioUrl',
   },
   {
     id: 5,
     label: 'Other website',
     type: 'url',
     required: false,
-    name: 'website',
+    name: 'otherWebsite',
   },
 ];
 
