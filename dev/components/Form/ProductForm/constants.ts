@@ -39,7 +39,7 @@ export const productInput: FormBody[] = [
     label: 'City, State',
     type: 'text',
     required: false,
-    name: 'city',
+    name: 'cityState',
     placeHolder: 'eg.Jos, Plateau',
   },
   {
@@ -64,7 +64,7 @@ export const productInput: FormBody[] = [
     label: 'Link to portfolio or one of your completed Projects',
     type: 'url',
     required: false,
-    name: 'portfolio',
+    name: 'portfolioLink',
     placeHolder: 'Portfolio Link',
   },
   {
@@ -101,7 +101,7 @@ export const productInput: FormBody[] = [
       'Other...',
     ],
     required: false,
-    name: 'how',
+    name: 'howDidYouHearAboutUs',
     placeHolder: 'Andela Learning Community',
   },
 ];
