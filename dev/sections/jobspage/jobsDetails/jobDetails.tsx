@@ -1,14 +1,9 @@
-
 const JobDetails = () => {
-  return (
-    <div>Jobs Details Page</div>
-  );
+  return <div>Jobs Details Page</div>;
 };
 export default JobDetails;
 
-
-// import { movies } from '../../data'; 
-
+// import { movies } from '../../data';
 
 // import { jobsDetailsData, JobDetailsType } from './constant';
 
@@ -45,4 +40,3 @@ export default JobDetails;
 // }
 
 // export default JobDetails;
-

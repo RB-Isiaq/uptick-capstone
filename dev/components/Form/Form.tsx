@@ -5,6 +5,8 @@ import SoftwareForm from './SoftwareForm';
 import DesignForm from './DesignForm';
 import ProductForm from './ProductForm';
 import { programId } from '@/sections/programs/tech/internals/Programs/constants';
+import JobForm from './JobForm';
+
 const Form = () => {
   const params = useSearchParams();
   const id = params.get('programId');
@@ -18,7 +20,7 @@ const Form = () => {
       return <ProductForm />;
 
     default:
-      return <SoftwareForm />;
+      return <JobForm />;
   }
 };
 
