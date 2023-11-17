@@ -1,12 +1,11 @@
-
-import JobDetails from "./jobDetails";
+import JobDetails from './jobDetails';
 
 const JobsDetailsPage = () => {
-    return (
-      <>
-        <JobDetails/>
-      </>
-    );
-  };
-  
-  export default JobsDetailsPage ;
+  return (
+    <>
+      <JobDetails />
+    </>
+  );
+};
+
+export default JobsDetailsPage;
