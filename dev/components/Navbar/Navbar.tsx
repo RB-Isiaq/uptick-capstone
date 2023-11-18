@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { btnText, navLinks } from './constants';
 import Link from 'next/link';
 import { LOGO } from '@/public';
@@ -20,9 +20,35 @@ const AnimatePresenceDiv = dynamic(
 
 export const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
+
+  const [navbarBackground, setNavbarBackground] =
+    useState<string>('transparent');
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      const handleScroll = () => {
+        const scrollHeight = window.scrollY;
+        const heroSectionHeight = 300;
+
+        if (scrollHeight > heroSectionHeight) {
+          setNavbarBackground('#070C19');
+        } else {
+          setNavbarBackground('transparent');
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
   return (
     <>
-      <header className=" bg-inherit sticky top-0 left-0 z-10 backdrop-blur-xl ">
+      <header
+        className={` bg-[${navbarBackground}] sticky top-0 left-0 z-10 backdrop-blur-xl `}
+      >
         <nav
           className={` w-full flex justify-between gap-4 items-center  px-3 py-6 xl:px-[60px] md:px-10 max-w-[1440px] mx-auto shadow-sm`}
         >

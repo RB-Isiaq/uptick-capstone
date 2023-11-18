@@ -16,14 +16,12 @@ export interface Card {
 }
 export const ProgramCard = ({ image, title, desc, buttons }: Card) => {
   return (
-    <div className="w-full md:w-[550px] xl:w-[590px] 2xl:w-[640px] h-max  2xl:h-[784px] flex flex-col  gap-6 items-start p-6 md:p-[50px] border border-[#1C3166] rounded-2xl bg-[#1C1C1C] hover:shadow-lg ">
-      <Image src={image} alt={title} width={549} height={462} />
+    <div className="w-full md:w-[400px] h-max md:h-[650px] flex flex-col  gap-6 justify-between items-start p-6 border border-[#1C3166] rounded-2xl bg-[#1C1C1C] hover:shadow-lg ">
+      <Image src={image} alt={title} width={400} height={300} />
       <h1 className=" font-raleway text-[24px] leading-normal text-white font-bold">
         {title}
       </h1>
-      <p className="w-full sm:w-[403px] font-raleway leading-[160%] text-[#ccc]">
-        {desc}
-      </p>
+      <p className="w-full font-raleway leading-[160%] text-[#ccc]">{desc}</p>
       <div className="flex gap-[10px]">
         {buttons?.map((btn) => (
           <Link key={btn.id} href={btn.link}>
