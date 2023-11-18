@@ -4,20 +4,23 @@ import { useSearchParams } from 'next/navigation';
 import SoftwareForm from './SoftwareForm';
 import DesignForm from './DesignForm';
 import ProductForm from './ProductForm';
+import { programId } from '@/sections/programs/tech/internals/Programs/constants';
+import JobForm from './JobForm';
+
 const Form = () => {
   const params = useSearchParams();
-  const programId = params.get('programId');
+  const id = params.get('programId');
 
-  switch (programId) {
-    case '1':
+  switch (id) {
+    case programId.SE_TECH:
       return <SoftwareForm />;
-    case '2':
+    case programId.DESIGN_TECH:
       return <DesignForm />;
-    case '3':
+    case programId.PRODUCT_TECH:
       return <ProductForm />;
 
     default:
-      return <SoftwareForm />;
+      return <JobForm />;
   }
 };
 

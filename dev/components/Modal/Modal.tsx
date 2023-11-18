@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { useRouter } from 'next/navigation';
 interface ModalProps {
   isOpen: boolean;
   message: string;
@@ -7,6 +6,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, message, onClose }) => {
+  const router = useRouter();
   if (!isOpen) return null;
 
   return (
@@ -18,7 +18,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, message, onClose }) => {
         <div className="mt-4 flex justify-end">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={() => onClose(!isOpen)}
+            onClick={() => {
+              onClose(!isOpen);
+              if (
+                message === 'Application submitted successfully' ||
+                message === 'Job application submitted successfully'
+              )
+                router.push('/');
+            }}
           >
             Close
           </button>

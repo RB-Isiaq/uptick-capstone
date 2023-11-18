@@ -18,7 +18,7 @@ const config: Config = {
         upBlack: '#1c1c1c',
         upLightBlue: '#EDF2FF',
         upDarkBlue: '#1c3166',
-        upLightGray: '#999999'
+        upLightGray: '#999999',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
@@ -30,6 +30,9 @@ const config: Config = {
         'achieve-pattern': "url('/achieve-pattern.svg')",
         'vector-pattern':
           "linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/achieve-pattern.svg')",
+        'vector-black-pattern':
+          "linear-gradient(180deg,rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)),url('/achieve-pattern.svg')",
+        'wave-pattern': "url('/assets/waves.svg')",
       },
     },
   },
