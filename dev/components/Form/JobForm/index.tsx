@@ -11,7 +11,7 @@ import { postData } from '@/Services/ApiCalls';
 const JobForm = () => {
   const params = useSearchParams();
   const title = params.get('title');
-  const jobId = params.get('programId');
+  const jobId = params.get('jobId');
   console.log(jobId);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
