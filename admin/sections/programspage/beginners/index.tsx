@@ -1,12 +1,14 @@
 import Button from '@/components/Button';
-import { techPrograms } from './constants';
 import ProgramCard from '@/components/Cards/ProgramCard';
+import { beginnerPrograms } from './constsnts';
 
-const TalentTech = () => {
+const TalentBeginners = () => {
   return (
-    <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full">
+    <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full min-h-screen">
       <div className="w-full  flex justify-between items-center mb-2">
-        <h1 className="text-[#15254C] font-bold text-[24px]">Talent Tech</h1>
+        <h1 className="text-[#15254C] font-bold text-[24px]">
+          Talent Business
+        </h1>
 
         <Button text="Add New" icon />
       </div>
@@ -18,7 +20,7 @@ const TalentTech = () => {
         <div />
       </div>
       <div className="w-full  flex flex-col justify-between gap-10 py-5 ">
-        {techPrograms.map((program) => (
+        {beginnerPrograms.map((program) => (
           <ProgramCard
             key={program.id}
             title={program.title}
@@ -31,4 +33,4 @@ const TalentTech = () => {
   );
 };
 
-export default TalentTech;
+export default TalentBeginners;

@@ -34,24 +34,24 @@ const Sidebar = () => {
               <Image src={D_ICON} alt="dashboard" />
             </div>
           </button>
-          <div className="absolute top-[10px]  hidden bg-[#9A99A0] text-white group-hover:block group-hover:relative">
+          <div className="absolute top-[10px]  hidden bg-[#252531] text-white group-hover:block group-hover:relative">
             <Link href="/programs/tech">
-              <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#8D8D99]">
+              <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
                 Talent Tech
               </p>
             </Link>
-            <Link href="/programs/startup">
-              <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#8D8D99]">
+            <Link href="/programs/business">
+              <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
                 Talent Business
               </p>
             </Link>
-            <Link href="/programs/beginner">
-              <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#8D8D99]">
+            <Link href="/programs/map">
+              <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
                 Talent Map
               </p>
             </Link>
             <Link href="/programs/beginner">
-              <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#8D8D99]">
+              <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
                 Talent Beginners
               </p>
             </Link>

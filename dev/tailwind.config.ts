@@ -21,8 +21,6 @@ const config: Config = {
         upLightGray: '#999999',
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
         raleway: ['Raleway', 'sans-serif'],
       },
       backgroundImage: {
