@@ -11,8 +11,8 @@ export default function BasicPie() {
         {
           data: [
             { id: 0, value: 120, label: 'Less than a year' },
-            { id: 1, value: 111, label: 'Less than a year' },
-            { id: 2, value: 98, label: 'Less than a year' },
+            { id: 1, value: 111, label: '1 to 2 years' },
+            { id: 2, value: 98, label: 'More than 2 years' },
           ],
         },
       ]}
