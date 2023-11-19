@@ -65,12 +65,10 @@ export default function RecentTable({ header, rows }: RecentTable) {
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
-              <StyledTableCell
-                component="th"
-                scope="row"
-                className="flex items-center gap-[10px]"
-              >
-                {row.icon && <Image src={row.icon} alt="icon" />}
+              <StyledTableCell component="th" scope="row">
+                {row.icon && (
+                  <Image src={row.icon} alt="icon" className="inline mr-3" />
+                )}
                 {row.name}
               </StyledTableCell>
               <StyledTableCell align="left">{row.application}</StyledTableCell>
