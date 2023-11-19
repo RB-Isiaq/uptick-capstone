@@ -53,9 +53,6 @@ export const applicantDetails = [
   {
     id: 11,
     label: 'Other tracks? List your most proficient technologies below?',
-    type: 'textarea',
-    required: false,
-    name: 'otherFieldStack',
     placeHolder: 'Other tracks',
   },
   {
