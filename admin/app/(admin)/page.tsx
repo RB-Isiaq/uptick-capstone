@@ -1,11 +1,11 @@
-const AdminPage = () => {
+import DashboardPage from '@/sections/dashboardpage';
+
+const Dashboard = () => {
   return (
-    <div className="p-4 flex flex-col gap-3">
-      <p>Software Engineering applicants: </p>
-      <p>UI/UX applicants: </p>
-      <p>Product Management applicants</p>
-    </div>
+    <main>
+      <DashboardPage />
+    </main>
   );
 };
 
-export default AdminPage;
+export default Dashboard;
