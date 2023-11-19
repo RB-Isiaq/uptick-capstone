@@ -52,7 +52,7 @@ interface RecentTable {
 export default function RecentTable({ header, rows }: RecentTable) {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+      <Table sx={{ minWidth: 650 }} aria-label="customized table">
         {header && (
           <TableHead>
             <TableRow>
