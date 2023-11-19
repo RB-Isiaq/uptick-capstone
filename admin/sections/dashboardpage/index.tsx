@@ -46,12 +46,12 @@ const DashboardPage = () => {
       </h1>
       <RecentTable header={applicantsHeader} rows={applicantRows} />
 
-      <div className="flex justify-between gap-[20px] mt-[30px]">
+      <div className="flex  gap-[10px] mt-[30px] justify-between">
         <div className="bg-white rounded-2xl py-[17px] px-[20px]  flex flex-col">
           <h1 className="font-bold text-lg">Experience</h1>
           <BasicPie />
         </div>
-        <div className="overflow-hidden">
+        <div>
           <h1 className="px-3  py-[10px] bg-white shadow text-[#15254C] text-lg font-bold mb-2">
             Recent Jobs
           </h1>
