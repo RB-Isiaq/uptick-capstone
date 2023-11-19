@@ -53,7 +53,7 @@ const DashboardPage = () => {
         </div>
         <div>
           <h1 className="px-3  py-[10px] bg-white shadow text-[#15254C] text-lg font-bold mb-2">
-            Recent Job
+            Recent Jobs
           </h1>
           <RecentTable rows={jobRows} />
         </div>
