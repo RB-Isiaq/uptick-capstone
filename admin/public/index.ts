@@ -14,6 +14,9 @@ import DROP_ICON from './assets/dropdown.svg';
 import D_ICON from './assets/d_icon.svg';
 import Add from './assets/add.svg';
 import Menu from './assets/menu.png';
+import Right_Arr from './assets/arr-right.svg';
+import Csv_Icon from './assets/csv.svg';
+import Close from './assets/close.png';
 
 export {
   LOGO,
@@ -32,4 +35,7 @@ export {
   D_ICON,
   Add,
   Menu,
+  Right_Arr,
+  Csv_Icon,
+  Close,
 };

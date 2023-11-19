@@ -11,10 +11,20 @@ import RecentTable from '@/components/RecentTable/RecentTable';
 import BasicPie from '@/components/Chart';
 
 const DashboardPage = () => {
+  const specificDate = new Date();
+  const option: Intl.DateTimeFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+
+  const formattedDate = specificDate.toLocaleDateString('en-US', option);
+
   return (
     <div className="bg-[#F7F9FF] px-8 py-3 pb-[100px]">
       <h1 className="text-[32px] font-bold">Welcome, Admin</h1>
-      <p className="text-sm">Monday, 6th Nov.2023</p>
+      <p className="text-sm">{formattedDate}</p>
 
       <div className="flex flex-col lg:flex-row gap-3 w-full justify-between my-6">
         {applicants.map((app) => (

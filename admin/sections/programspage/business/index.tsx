@@ -23,6 +23,7 @@ const TalentBusiness = () => {
         {startupPrograms.map((program) => (
           <ProgramCard
             key={program.id}
+            id={program.id}
             title={program.title}
             applicantsNum={program.applicantsNum}
             options={program.options}

@@ -33,7 +33,7 @@ const NumberCard = ({
           </p>
         </div>
         <p
-          className={`flex justify-center items-center text-[48px] font-bold bg-[#${bgC}] text-[#${textC}] w-[87px] h-[53px] rounded-lg`}
+          className={`flex justify-center items-center text-[48px] font-bold ${bgC} ${textC} w-[88px] h-[53px] rounded-lg px-1`}
         >
           {number}
         </p>
