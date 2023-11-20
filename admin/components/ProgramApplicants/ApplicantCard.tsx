@@ -16,7 +16,7 @@ const ApplicantCard = ({
   handleShowDetails,
 }: IApplicationCard) => {
   return (
-    <div className="flex justify-between items-center gap-2 py-[26px] px-6 w-full bg-white">
+    <div className="flex justify-between items-center gap-2 py-[13px] px-[18px] w-full bg-white">
       <h1 className="text-lg  text-[#111] w-[110px] ">{name}</h1>
       <h1 className="text-lg  text-[#111] w-[110px] ">{track}</h1>
       <div className="w-[110px] flex justify-center">
@@ -34,7 +34,7 @@ const ApplicantCard = ({
       </div>
       <h1 className="text-lg  text-[#111] w-[110px]">{date}</h1>
       <button
-        className="flex justify-center items-center px-[10px] py-[13px] rounded-lg bg-[#B5CAFF] text-black"
+        className="flex justify-center items-center px-[10px] py-[13px]  bg-[#B5CAFF] text-black "
         onClick={() => handleShowDetails(id)}
       >
         View Details
