@@ -38,7 +38,7 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({ isOpen, onClose }) => {
             >
               Accept
             </label>
-            <input type="radio" name="status" id="accept" checked />
+            <input type="radio" name="status" id="accept" defaultChecked />
           </div>
           <div className="flex flex-row-reverse gap-2 items-center">
             <label
