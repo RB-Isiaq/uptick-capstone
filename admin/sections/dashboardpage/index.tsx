@@ -22,7 +22,10 @@ const DashboardPage = () => {
   const formattedDate = specificDate.toLocaleDateString('en-US', option);
 
   return (
-    <div className="bg-[#F7F9FF] px-8 py-3 pb-[100px]">
+    <div
+      className="bg-[#F7F9FF] px-8 py-3 pb-[100px]"
+      data-testid="dashboard_page"
+    >
       <h1 className="text-[32px] font-bold">Welcome, Admin</h1>
       <p className="text-sm">{formattedDate}</p>
 

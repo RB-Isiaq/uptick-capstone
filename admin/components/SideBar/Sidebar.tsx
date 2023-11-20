@@ -12,7 +12,10 @@ import Link from 'next/link';
 
 const Sidebar = () => {
   return (
-    <nav className="bg-[#14141E] py-[37px] px-6 min-h-screen font-raleway w-[240px] flex-shrink-0 fixed">
+    <nav
+      className="bg-[#14141E] py-[37px] px-6 min-h-screen font-raleway w-[240px] flex-shrink-0 fixed"
+      data-testid="sidebar"
+    >
       <Link href="/">
         <Image src={LOGO} alt="logo" />
       </Link>
