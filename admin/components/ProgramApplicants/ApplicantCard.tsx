@@ -3,7 +3,7 @@ interface IApplicationCard {
   track: string;
   status: string;
   date: string;
-  id?: string | number;
+  id: string | number;
   handleShowDetails: (id: string | number) => void;
 }
 
