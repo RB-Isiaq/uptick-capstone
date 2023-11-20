@@ -14,7 +14,7 @@ export default function AdminLayout({
   return (
     <main className="w-full flex">
       <Sidebar />
-      <section className="w-full flex-col ml-[240px] overflow-hidden">
+      <section className="hidden lg:block w-full flex-col ml-[240px] overflow-hidden">
         <Navbar />
         {children}
       </section>

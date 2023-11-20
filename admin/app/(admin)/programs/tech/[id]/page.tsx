@@ -1,5 +1,9 @@
 import ProgramApplicants from '@/components/ProgramApplicants';
-import { seApplicants } from '@/sections/programspage/tech/constants';
+import {
+  deApplicants,
+  prApplicants,
+  seApplicants,
+} from '@/sections/programspage/tech/constants';
 
 const ProgramPage = ({ params }: { params: { id: string } }) => {
   const { id } = params;
@@ -18,7 +22,7 @@ const ProgramPage = ({ params }: { params: { id: string } }) => {
     case '2':
       return (
         <main>
-          <ProgramApplicants title="Design" details={seApplicants} />
+          <ProgramApplicants title="Design" details={deApplicants} />
         </main>
       );
     case '3':
@@ -26,7 +30,7 @@ const ProgramPage = ({ params }: { params: { id: string } }) => {
         <main>
           <ProgramApplicants
             title="Product Management"
-            details={seApplicants}
+            details={prApplicants}
           />
         </main>
       );
