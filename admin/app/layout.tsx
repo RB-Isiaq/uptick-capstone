@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins, Raleway } from 'next/font/google';
 import './globals.css';
+import AuthContextProvider from '@/context/AuthCtx';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${poppins.className} ${raleway.className}`}
       >
-        {children}
+        <AuthContextProvider>{children}</AuthContextProvider>
       </body>
     </html>
   );
