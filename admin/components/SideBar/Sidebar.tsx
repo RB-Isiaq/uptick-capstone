@@ -1,3 +1,5 @@
+'use client';
+
 import {
   BLOG,
   DASHBOARD,
@@ -7,10 +9,17 @@ import {
   LOGOUT,
   PROGRAMS,
 } from '@/public';
+import { clearToken } from '@/utils';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Sidebar = () => {
+  const router = useRouter();
+  const logout = () => {
+    clearToken();
+    router.replace('/login');
+  };
   return (
     <nav
       className="bg-[#14141E] py-[37px] px-6 min-h-screen font-raleway w-[240px] flex-shrink-0 fixed"
@@ -73,12 +82,12 @@ const Sidebar = () => {
             Blogs
           </p>
         </Link>
-        <Link href="/" className="flex gap-2">
+        <button className="flex gap-2" onClick={logout}>
           <Image src={LOGOUT} alt="dashboard" width={24} height={24} />
           <p className="text-[#8D8D99] text-sm font-semibold leading-[24px]">
             Logout
           </p>
-        </Link>
+        </button>
       </div>
     </nav>
   );
