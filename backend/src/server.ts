@@ -1,5 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
+import cors from "cors";
 import config from "./config/config";
 import route from "./routes/index";
 import sequelize from "./config/database";
@@ -9,6 +10,10 @@ const app = express();
 // Body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Cors
+app.use(cors());
+
 // Your routes here
 app.use("/api", route);
 
@@ -16,7 +21,7 @@ const port: number = config.port || 3000;
 
 // Load all the models to the db, check connection and start app
 sequelize
-  .sync()
+  .sync({ force: true })
   .then(() => {
     console.log("db connected");
 
