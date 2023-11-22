@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@/components/Button';
 import TitleAndOptions from '@/components/TitleAndOptions';
@@ -28,6 +29,24 @@ const AddTitle = () => {
     category,
     location,
   } = useSelector((state: JobState) => state.jobApplication);
+  const [jobTitle, setJobTitle] = useState(title);
+  const [jobCompany, setJobCompany] = useState(company);
+  const [jobDeadline, setJobDeadline] = useState(deadline);
+  const [jobDesc, setJobDesc] = useState(description);
+  const [jType, setJType] = useState(type);
+  const [jCategory, setJCategory] = useState(category);
+  const [jLocation, setJLocation] = useState(location);
+
+  const handleDispatch = () => {
+    dispatch(setTitle(jobTitle));
+    dispatch(setCompany(jobCompany));
+    dispatch(setDeadline(jobDeadline));
+    dispatch(setDescription(jobDesc));
+    dispatch(setType(jType));
+    dispatch(setCategory(jCategory));
+    dispatch(setLocation(jLocation));
+    dispatch(setStep(step + 1));
+  };
 
   return (
     <div className="flex flex-col gap-[30px] font-raleway">
@@ -38,9 +57,9 @@ const AddTitle = () => {
         <input
           type="text"
           id="title"
-          className="border-0 outline-0 border-b border-black text-black  bg-inherit"
-          value={title}
-          onChange={(e) => dispatch(setTitle(e.target.value))}
+          className="border-0 outline-0 border-b border-black text-black  bg-inherit pt-3 pb-1"
+          defaultValue={title}
+          onChange={(e) => setJobTitle(e.target.value)}
         />
       </div>
       <div className=" flex gap-[37px] items-center">
@@ -50,9 +69,9 @@ const AddTitle = () => {
         <input
           type="text"
           id="company"
-          className="border-0 outline-0 border-b border-black text-black py-3"
-          value={company}
-          onChange={(e) => dispatch(setCompany(e.target.value))}
+          className="border-0 outline-0 border-b border-black text-black pt-3 pb-1"
+          defaultValue={company}
+          onChange={(e) => setJobCompany(e.target.value)}
         />
       </div>
       <div className=" flex gap-[37px] items-center">
@@ -62,44 +81,49 @@ const AddTitle = () => {
         <input
           type="text"
           id="deadline"
-          className="border-0 outline-0 border-b border-black text-black py-3"
-          value={deadline}
-          onChange={(e) => dispatch(setDeadline(e.target.value))}
+          className="border-0 outline-0 border-b border-black text-black pt-3 pb-1"
+          defaultValue={deadline}
+          onChange={(e) => setJobDeadline(e.target.value)}
         />
       </div>
       <div className="bg-[#F7F7F7] py-[16px] px-[27px] flex flex-col gap-3">
         <label htmlFor="jobDesc" className="text-black text-lg font-medium">
           Add Job Description
         </label>
-        <input
-          type="text"
+        <textarea
           id="jobDesc"
           placeholder="Description"
-          className="border-0 outline-0 border-b border-black text-black py-3 bg-inherit"
-          value={description}
-          onChange={(e) => dispatch(setDescription(e.target.value))}
+          className="border-0 outline-0 border-b border-black text-black pt-3 pb-1 bg-inherit"
+          defaultValue={description}
+          onChange={(e) => setJobDesc(e.target.value)}
         />
       </div>
       <TitleAndOptions
         title={jobType.title}
         options={jobType.options}
+        name={jobType.name}
         value={type}
-        onChange={(e) => dispatch(setType(e.target.value))}
+        dValue={jType}
+        onChange={setJType}
       />
       <TitleAndOptions
         title={jobCategory.title}
         options={jobCategory.options}
+        name={jobCategory.name}
         value={category}
-        onChange={(e) => dispatch(setCategory(e.target.value))}
+        dValue={jCategory}
+        onChange={setJCategory}
       />
       <TitleAndOptions
         title={jobLocation.title}
         options={jobLocation.options}
+        name={jobLocation.name}
         value={location}
-        onChange={(e) => dispatch(setLocation(e.target.value))}
+        dValue={jLocation}
+        onChange={setJLocation}
       />
 
-      <Button text="Save Changes" onClick={() => dispatch(setStep(step + 1))} />
+      <Button text="Save Changes" onClick={handleDispatch} />
     </div>
   );
 };

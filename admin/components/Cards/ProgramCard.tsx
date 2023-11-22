@@ -19,7 +19,7 @@ interface IProgramCard {
 const ProgramCard = ({ id, title, applicantsNum, options }: IProgramCard) => {
   const [showOptions, setShowOptions] = useState(false);
   const pathname = usePathname();
-  const path = pathname.split('/')[2];
+  const path = pathname.split('/');
 
   const handleCloseApp = (id: string | number) => {
     console.log(`${id} closed`);
@@ -47,7 +47,10 @@ const ProgramCard = ({ id, title, applicantsNum, options }: IProgramCard) => {
           >
             {options[0].label}
           </button>
-          <Link href={`${path}/${id}`} className="w-full ">
+          <Link
+            href={`${path[2] ? path[2] : path[1]}/${id}`}
+            className="w-full "
+          >
             <button className="font-medium hover:bg-[#F0F0F0] focus:bg-[#F0F0F0] px-1  py-1">
               {options[1].label}
             </button>

@@ -3,6 +3,7 @@
 import Button from '@/components/Button';
 import FormModal from '@/components/Modal/FormModal';
 import { useState } from 'react';
+import ProgramCard from '@/components/Cards/ProgramCard';
 
 const JobsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +25,25 @@ const JobsPage = () => {
         </h1>
         <div />
       </div>
+      <ProgramCard
+        id={1}
+        title={'Full stack Dev'}
+        applicantsNum={20}
+        options={[
+          {
+            id: 1,
+            label: 'Close Application',
+          },
+          {
+            id: 2,
+            label: 'View Applicants',
+          },
+          {
+            id: 3,
+            label: 'Open Application',
+          },
+        ]}
+      />
       <FormModal isOpen={isOpen} onClose={setIsOpen} />
     </div>
   );

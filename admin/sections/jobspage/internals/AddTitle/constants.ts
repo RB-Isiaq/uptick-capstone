@@ -1,5 +1,6 @@
 export const jobType = {
   title: 'Type of Job',
+  name: 'jobType',
   options: [
     {
       id: 1,
@@ -17,6 +18,7 @@ export const jobType = {
 };
 export const jobCategory = {
   title: 'Job Category',
+  name: 'jobCategory',
   options: [
     {
       id: 1,
@@ -46,6 +48,7 @@ export const jobCategory = {
 };
 export const jobLocation = {
   title: 'Location',
+  name: 'jobLocation',
   options: [
     {
       id: 1,

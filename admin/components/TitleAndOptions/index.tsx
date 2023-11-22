@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, Dispatch, SetStateAction } from 'react';
 
 type Option = {
   id: number;
@@ -8,24 +8,28 @@ interface TitleAndOptionsProps {
   title: string;
   options: Option[];
   value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  dValue: string;
+  name: string;
+  onChange: Dispatch<SetStateAction<string>>;
 }
 const TitleAndOptions = ({
   title,
   options,
   value,
+  dValue,
+  name,
   onChange,
 }: TitleAndOptionsProps) => {
   return (
     <div className="bg-[#F7F7F7] py-[16px] px-[27px] flex flex-col gap-3">
-      <label htmlFor="jobDesc" className="text-black">
+      <label htmlFor={title} className="text-black">
         {title}
       </label>
       <input
         type="text"
-        id="jobDesc"
+        id={title}
         className="border-0 outline-0 border-b border-black text-black bg-inherit"
-        defaultValue={value}
+        defaultValue={dValue || value}
       />
       <div>
         {options.map((option) => (
@@ -41,9 +45,13 @@ const TitleAndOptions = ({
             </label>
             <input
               type="radio"
-              name="type"
+              name={name}
               id={option.label}
-              onChange={onChange}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                onChange(e.target.value)
+              }
+              defaultChecked={value === option.label}
+              value={option.label}
             />
           </div>
         ))}

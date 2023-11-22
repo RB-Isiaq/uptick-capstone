@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
-import { persistReducer } from 'redux-persist';
+import { persistReducer, persistStore } from 'redux-persist';
 import { combineReducers } from '@reduxjs/toolkit';
-import jobApplication from './JobReducer';
+import jobReducer from './JobReducer';
 import blogReducer from './BlogReducer';
 
 const config = {
@@ -11,12 +11,16 @@ const config = {
   version: 1,
 };
 
-const reducer = combineReducers({ jobApplication, blogReducer });
+const reducer = combineReducers({
+  jobApplication: jobReducer,
+  blog: blogReducer,
+});
 
 const presisted = persistReducer(config, reducer);
 
-export const store = configureStore({
+const store = configureStore({
   reducer: presisted,
 });
+const persistor = persistStore(store);
 
-export default store;
+export { store, persistor };
