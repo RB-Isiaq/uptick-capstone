@@ -17,6 +17,10 @@ import Menu from './assets/menu.png';
 import Right_Arr from './assets/arr-right.svg';
 import Csv_Icon from './assets/csv.svg';
 import Close from './assets/close.png';
+import EYE from './assets/eye.svg';
+import KUDA from './assets/Kuda.png';
+import LEFT from './assets/left-arr.svg';
+import RIGHT from './assets/right-arr.svg';
 
 export {
   LOGO,
@@ -38,4 +42,8 @@ export {
   Right_Arr,
   Csv_Icon,
   Close,
+  EYE,
+  KUDA,
+  LEFT,
+  RIGHT,
 };

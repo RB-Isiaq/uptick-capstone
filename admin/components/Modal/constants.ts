@@ -1,3 +1,5 @@
+import { EYE } from '@/public';
+
 export const applicantDetails = [
   {
     id: 1,
@@ -80,5 +82,21 @@ export const applicantDetails = [
     id: 16,
     label: 'How did you get to know about the fellowship?',
     placeHolder: 'Andela Learning Community',
+  },
+];
+
+export const formTabs = [
+  {
+    id: 1,
+    label: 'Add Thumbnail',
+  },
+  {
+    id: 2,
+    label: 'Add Title',
+  },
+  {
+    id: 3,
+    label: 'Preview',
+    icon: EYE,
   },
 ];
