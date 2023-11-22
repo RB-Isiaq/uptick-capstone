@@ -3,13 +3,14 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import JobThumbnail from './internals/JobThumbnail';
 import JobDescription from './internals/JobDescription';
+import Button from '@/components/Button';
 
 const Preview = () => {
   const [isPreviewed, setIsPreviewed] = useState(true);
   return (
-    <div className="bg-[#FAFAFA] w-full min-h-[502px] px-8 pt-[75px] pb-[21px] font-raleway">
+    <div className="bg-[#FAFAFA] w-full min-h-[502px] px-8 pt-[75px] pb-[21px] font-raleway flex flex-col">
       {isPreviewed ? <JobThumbnail /> : <JobDescription />}
-      <div className="w-full flex justify-center items-center gap-[17px] mt-[45px]">
+      <div className="w-full flex justify-center items-center gap-[17px] my-[45px]">
         <button
           className={`w-[34.5px] h-[34.5px] flex justify-center items-center ${
             isPreviewed
@@ -31,6 +32,7 @@ const Preview = () => {
           <Image src={RIGHT} alt="right logo" />
         </button>
       </div>
+      <Button text="Save Changes" />
     </div>
   );
 };

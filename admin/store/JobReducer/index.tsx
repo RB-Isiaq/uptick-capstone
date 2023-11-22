@@ -53,7 +53,7 @@ const jobApplication = createSlice({
     setThumbnail: (state, action) => {
       state.thumbnail = action.payload;
     },
-    setTitle: (state, action) => {
+    setTitle: (state, action: { payload: string }) => {
       state.title = action.payload;
     },
     setType: (state, action) => {
