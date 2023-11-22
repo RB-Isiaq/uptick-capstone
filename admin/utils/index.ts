@@ -1,9 +1,18 @@
 export const getToken = () => {
-  return localStorage.getItem('uptickAdmin');
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem('uptickAdmin');
+  }
+  return null;
 };
+
 export const setToken = (token: string) => {
-  localStorage.setItem('uptickAdmin', token);
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('uptickAdmin', token);
+  }
 };
+
 export const clearToken = () => {
-  localStorage.removeItem('uptickAdmin');
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('uptickAdmin');
+  }
 };

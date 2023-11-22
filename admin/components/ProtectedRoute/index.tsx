@@ -22,7 +22,9 @@ export default ProtectedRoute;
 
 function Navigate({ to }: { to: string }) {
   const router = useRouter();
-  router.replace(to);
-  useEffect(() => {}, [router, to]);
+
+  useEffect(() => {
+    router.replace(to);
+  }, [router, to]);
   return null;
 }
