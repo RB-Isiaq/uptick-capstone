@@ -1,6 +1,6 @@
 export const techPrograms = [
   {
-    id: '1',
+    id: '2ad81a24-342f-443b-bdb9-369ad15dc8e2',
     title: 'Software Engineering',
     applicantsNum: 200,
     options: [
@@ -19,7 +19,7 @@ export const techPrograms = [
     ],
   },
   {
-    id: '2',
+    id: '8a82358e-574a-4a2f-9bb9-a0ad906db0aa',
     title: 'Design',
     applicantsNum: 70,
     options: [
@@ -38,28 +38,9 @@ export const techPrograms = [
     ],
   },
   {
-    id: '3',
+    id: '154c22c8-a490-487b-9b48-587551b7e09c',
     title: 'Project Management',
     applicantsNum: 20,
-    options: [
-      {
-        id: 1,
-        label: 'Close Application',
-      },
-      {
-        id: 2,
-        label: 'View Applicants',
-      },
-      {
-        id: 3,
-        label: 'Open Application',
-      },
-    ],
-  },
-  {
-    id: '4',
-    title: 'AI and Data',
-    applicantsNum: 0,
     options: [
       {
         id: 1,
