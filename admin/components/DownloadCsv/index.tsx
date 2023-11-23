@@ -12,7 +12,6 @@ const CSVDownloadButton: React.FC<CSVDownloadButtonProps> = ({ data }) => {
     const csvContent =
       'data:text/csv;charset=utf-8,' +
       data.map((row) => Object.values(row).join(',')).join('\n');
-    console.log(csvContent);
 
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
