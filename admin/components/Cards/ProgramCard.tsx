@@ -10,16 +10,23 @@ interface IProgramCard {
   id: number | string;
   title: string;
   applicantsNum: number;
+  deadline?: string;
   options: {
     id: number;
     label: string;
   }[];
 }
 
-const ProgramCard = ({ id, title, applicantsNum, options }: IProgramCard) => {
+const ProgramCard = ({
+  id,
+  title,
+  applicantsNum,
+  deadline,
+  options,
+}: IProgramCard) => {
   const [showOptions, setShowOptions] = useState(false);
   const pathname = usePathname();
-  const path = pathname.split('/')[2];
+  const path = pathname.split('/');
 
   const handleCloseApp = (id: string | number) => {
     console.log(`${id} closed`);
@@ -32,6 +39,7 @@ const ProgramCard = ({ id, title, applicantsNum, options }: IProgramCard) => {
     <div className="bg-white flex justify-between gap-2 pt-5 pb-7 px-6 w-full">
       <h1 className=" font-semibold w-[165px]">{title}</h1>
       <h1 className=" font-semibold w-[170px]">{applicantsNum}</h1>
+      {deadline && <h1 className=" font-semibold w-[170px]">{deadline}</h1>}
       <div className="relative">
         <button type="button" onClick={() => setShowOptions((prev) => !prev)}>
           <Image src={Menu} alt="menu" />
@@ -47,7 +55,10 @@ const ProgramCard = ({ id, title, applicantsNum, options }: IProgramCard) => {
           >
             {options[0].label}
           </button>
-          <Link href={`${path}/${id}`} className="w-full ">
+          <Link
+            href={`${path[2] ? path[2] : path[1]}/${id}`}
+            className="w-full "
+          >
             <button className="font-medium hover:bg-[#F0F0F0] focus:bg-[#F0F0F0] px-1  py-1">
               {options[1].label}
             </button>

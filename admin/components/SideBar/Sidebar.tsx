@@ -1,3 +1,5 @@
+'use client';
+
 import {
   BLOG,
   DASHBOARD,
@@ -7,10 +9,19 @@ import {
   LOGOUT,
   PROGRAMS,
 } from '@/public';
+import { useDispatch } from 'react-redux';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { initialState, storeAdmin } from '@/store/AdminReducer';
 
 const Sidebar = () => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const logout = () => {
+    dispatch(storeAdmin(initialState));
+    router.replace('/login');
+  };
   return (
     <nav
       className="bg-[#14141E] py-[37px] px-6 min-h-screen font-raleway w-[240px] flex-shrink-0 fixed"
@@ -19,8 +30,11 @@ const Sidebar = () => {
       <Link href="/">
         <Image src={LOGO} alt="logo" />
       </Link>
-      <div className="flex flex-col gap-[28px] mt-[51px]">
-        <Link href="/dashboard" className="flex gap-2">
+      <div className="flex flex-col gap-[24px] mt-[51px]">
+        <Link
+          href="/dashboard"
+          className="flex gap-2 hover:bg-[#2F2F3A] p-1 hover:border-t-[#477BFF] hover:border-t rounded-md"
+        >
           <Image src={DASHBOARD} alt="dashboard" width={24} height={24} />
           <p className="text-[#8D8D99] text-sm font-semibold leading-[24px]">
             Dashboard
@@ -28,7 +42,7 @@ const Sidebar = () => {
         </Link>
 
         <div className="relative group w-full">
-          <button className="w-full  flex gap-2 items-center focus:outline-none">
+          <button className="w-full  flex gap-2 items-center focus:outline-none hover:bg-[#2F2F3A] p-1 hover:border-t-[#477BFF] hover:border-t rounded-md">
             <Image src={PROGRAMS} alt="dashboard" width={24} height={24} />
             <p className="text-[#8D8D99] text-sm font-semibold leading-[24px]">
               Programs
@@ -61,24 +75,33 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <Link href="/jobs" className="flex gap-2">
+        <Link
+          href="/jobs"
+          className="flex gap-2 hover:bg-[#2F2F3A] p-1 hover:border-t-[#477BFF] hover:border-t rounded-md"
+        >
           <Image src={JOBS} alt="dashboard" width={24} height={24} />
           <p className="text-[#8D8D99] text-sm font-semibold leading-[24px]">
             Jobs
           </p>
         </Link>
-        <Link href="/blogs" className="flex gap-2">
+        <Link
+          href="/blogs"
+          className="flex gap-2 hover:bg-[#2F2F3A] p-1 hover:border-t-[#477BFF] hover:border-t rounded-md"
+        >
           <Image src={BLOG} alt="dashboard" width={24} height={24} />
           <p className="text-[#8D8D99] text-sm font-semibold leading-[24px]">
             Blogs
           </p>
         </Link>
-        <Link href="/" className="flex gap-2">
+        <button
+          className="flex gap-2 hover:bg-[#2F2F3A] p-1 hover:border-t-[#477BFF] hover:border-t rounded-md"
+          onClick={logout}
+        >
           <Image src={LOGOUT} alt="dashboard" width={24} height={24} />
           <p className="text-[#8D8D99] text-sm font-semibold leading-[24px]">
             Logout
           </p>
-        </Link>
+        </button>
       </div>
     </nav>
   );
