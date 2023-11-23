@@ -4,7 +4,9 @@ const Achievments = () => {
   return (
     <div>
       <div>
-        <h1 className=" text-4xl lg:text-6xl font-[500] text-white">Our Achievements</h1>
+        <h1 className=" text-4xl lg:text-6xl font-[500] text-white">
+          Our Achievements
+        </h1>
         <p className="text-white text-lg mt-4 leading-[160%]">
           Our journey has been marked by significant milestones
         </p>
@@ -22,7 +24,7 @@ const Achievments = () => {
               height={1500}
               alt="achievment"
             />
-            <div className='mt-6 flex flex-col gap-4'>
+            <div className="mt-6 flex flex-col gap-4">
               <h1 className="text-2xl font-semi bold ">{item.title}</h1>
               <p className="text-uptickGray text-lg ">{item.text}</p>
             </div>

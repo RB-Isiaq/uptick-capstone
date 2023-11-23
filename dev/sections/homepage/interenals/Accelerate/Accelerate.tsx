@@ -3,16 +3,19 @@ import React from 'react';
 import { HeadText, btnText, subText } from './constants';
 import { ACCELERATE } from '@/public';
 
+import { Line } from '@/components/Line/Line';
+
 export const Accelerate = () => {
   return (
-    <section className="bg_gradient">
-      <div className="flex flex-col justify-center items-center pt-[116px] px-3 xl:px-[60px] md:px-10 w-full max-w-[1440px] mx-auto">
+    <section className=" bg-[#000]">
+      <div className="pt-[116px] pb-[101px] px-3 xl:px-[60px] md:px-10 w-full max-w-[1440px] mx-auto">
         <ContentCard
           title={HeadText}
           description={subText}
           image={ACCELERATE}
           btn1={btnText}
         />
+        <Line />
       </div>
     </section>
   );

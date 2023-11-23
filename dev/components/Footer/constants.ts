@@ -62,34 +62,34 @@ export const footerLinks: FooterLinks[] = [
       {
         id: 1,
         label: 'Uptick Talent Beginners',
-        path: '/programs',
+        path: '/programs/beginners',
       },
       {
         id: 2,
         label: 'Uptick Talent Tech',
-        path: '/#contact',
+        path: '/programs/tech',
       },
       {
         id: 3,
         label: 'Uptick Talent Business',
-        path: '/#jobs',
+        path: '/programs/business',
       },
       {
         id: 4,
         label: 'Uptick Talent Map',
-        path: '/#jobs',
+        path: '/programs/map',
       },
     ],
   },
   {
-    id: 1,
+    id: 3,
     title: 'Contact Us',
     links: [
       {
         id: 1,
         icon: PHONE,
         label: '+234 9037424764',
-        path: 'mailto:upticktalent@gmail.com',
+        path: '/',
       },
       {
         id: 2,

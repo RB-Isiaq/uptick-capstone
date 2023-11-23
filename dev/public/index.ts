@@ -1,6 +1,6 @@
 import LOGO from './assets/UP LOGO 222.png';
 import HERO_BG from './assets/bg.png';
-import ACCELERATE from './assets/accelerate.png';
+import ACCELERATE from './assets/acc.png';
 import UNLOCK from './assets/unlock.svg';
 import OPPORTUNITY from './assets/opp.svg';
 import GRAD from './assets/teacher.svg';
@@ -23,6 +23,29 @@ import X from './assets/twitter.svg';
 import PHONE from './assets/phone.svg';
 import MAIL from './assets/mail.svg';
 import LOCATION from './assets/location.svg';
+import BG_BEGINNER from './assets/beginner-bg.png';
+import BEGINNER_UNLOCK from './assets/beginner-unlock.png';
+import BEGINNER_STUDENTS from './assets/beginner-why.png';
+import BG_TECH from './assets/tech-bg.png';
+import SE_TECH from './assets/tech-se.png';
+import AI_TECH from './assets/tech-ai.png';
+import UI_TECH from './assets/design.png';
+import NON_TECH from './assets/non-technical.png';
+import BG_BUSINESS from './assets/business-bg.png';
+import UNLEASH_BUSINESS from './assets/business-unleash.png';
+import COMMITMENT_BUSINESS from './assets/business-commit.png';
+import PARTNERS_BUSINESS from './assets/business-partners.png';
+import PARTNER1 from './assets/startup1.png';
+import PARTNER2 from './assets/startup2.png';
+import PARTNER3 from './assets/startup3.png';
+import APPLICATION1 from './assets/businnes-why.png';
+import APPLICATION2 from './assets/business-why2.png';
+import DASHBOARD from './assets/dashboard.svg';
+import PROGRAMS from './assets/adminProg.svg';
+import JOBS from './assets/adminJob.svg';
+import BLOG from './assets/adminBlog.svg';
+import LOGOUT from './assets/adminLO.svg';
+import WAVES from './assets/waves.svg';
 
 export {
   LOGO,
@@ -50,4 +73,27 @@ export {
   PHONE,
   MAIL,
   LOCATION,
+  BG_BEGINNER,
+  BEGINNER_UNLOCK,
+  BEGINNER_STUDENTS,
+  BG_TECH,
+  SE_TECH,
+  AI_TECH,
+  UI_TECH,
+  NON_TECH,
+  BG_BUSINESS,
+  UNLEASH_BUSINESS,
+  COMMITMENT_BUSINESS,
+  PARTNERS_BUSINESS,
+  PARTNER1,
+  PARTNER2,
+  PARTNER3,
+  APPLICATION1,
+  APPLICATION2,
+  DASHBOARD,
+  PROGRAMS,
+  JOBS,
+  BLOG,
+  LOGOUT,
+  WAVES,
 };
