@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 import './globals.css';
-import AuthContextProvider from '@/context/AuthCtx';
 import ReduxProvider from '@/components/ReduxProvider';
 
 const raleway = Raleway({ weight: ['400', '500', '600'], subsets: ['latin'] });
@@ -19,9 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={raleway.className}>
-        <ReduxProvider>
-          <AuthContextProvider>{children}</AuthContextProvider>
-        </ReduxProvider>
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );

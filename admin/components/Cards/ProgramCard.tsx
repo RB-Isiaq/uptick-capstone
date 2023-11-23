@@ -10,13 +10,20 @@ interface IProgramCard {
   id: number | string;
   title: string;
   applicantsNum: number;
+  deadline?: string;
   options: {
     id: number;
     label: string;
   }[];
 }
 
-const ProgramCard = ({ id, title, applicantsNum, options }: IProgramCard) => {
+const ProgramCard = ({
+  id,
+  title,
+  applicantsNum,
+  deadline,
+  options,
+}: IProgramCard) => {
   const [showOptions, setShowOptions] = useState(false);
   const pathname = usePathname();
   const path = pathname.split('/');
@@ -32,6 +39,7 @@ const ProgramCard = ({ id, title, applicantsNum, options }: IProgramCard) => {
     <div className="bg-white flex justify-between gap-2 pt-5 pb-7 px-6 w-full">
       <h1 className=" font-semibold w-[165px]">{title}</h1>
       <h1 className=" font-semibold w-[170px]">{applicantsNum}</h1>
+      {deadline && <h1 className=" font-semibold w-[170px]">{deadline}</h1>}
       <div className="relative">
         <button type="button" onClick={() => setShowOptions((prev) => !prev)}>
           <Image src={Menu} alt="menu" />

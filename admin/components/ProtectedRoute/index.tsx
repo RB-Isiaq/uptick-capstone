@@ -2,16 +2,17 @@
 
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuthCtx } from '@/context/AuthCtx';
+import { useSelector } from 'react-redux';
+import { AdminState } from '@/store/AdminReducer';
 
 interface Props {
   children: React.ReactNode;
 }
 
 const ProtectedRoute = ({ children }: Props) => {
-  const context = useAuthCtx();
+  const { isAdmin } = useSelector((state: AdminState) => state.admin);
 
-  if (!context.isAdmin) {
+  if (!isAdmin) {
     return <Navigate to="/login" />;
   }
 

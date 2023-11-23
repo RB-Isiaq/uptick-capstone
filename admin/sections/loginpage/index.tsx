@@ -5,14 +5,15 @@ import { LOGO } from '@/public';
 import Image from 'next/image';
 import Link from 'next/link';
 import { postData } from '@/Services/ApiCalls';
-import { useAuthCtx } from '@/context/AuthCtx';
+import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/navigation';
-import { setToken } from '@/utils';
+import { storeAdmin } from '@/store/AdminReducer';
 
 const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState('');
   const router = useRouter();
-  const ctx = useAuthCtx();
+  const dispatch = useDispatch();
 
   const username = 'Uptick Admin';
   const userId = '67411fa9-e140-46a0-8b3e-e0914e5d2c2a';
@@ -27,19 +28,23 @@ const LoginPage = () => {
       setIsLoading(true);
       const result = await postData(`login`, formObject);
 
-      ctx.setToken(result.token);
-      setToken(JSON.stringify(result.token));
+      dispatch(
+        storeAdmin({
+          userId: formObject.user_id,
+          token: result.token,
+          isAdmin: true,
+        }),
+      );
       router.replace('/dashboard');
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error);
+        console.log(error.message);
+        setMessage(error.message);
       }
     } finally {
       setIsLoading(false);
     }
   };
-
-  console.log(ctx.isAdmin);
 
   return (
     <div className="relative bg-[#070C19] flex flex-col justify-center items-center  px-3 lg:px-[60px] font-raleway py-10">
@@ -108,6 +113,7 @@ const LoginPage = () => {
           {isLoading ? 'Logging In' : 'Log In'}
         </button>
       </form>
+      <p className="text-red-500 mx-auto">{message}</p>
       <p className="text-white  font-medium mx-auto">
         Don’t have an account?{' '}
         <Link href="/" className="text-[#477BFF]">
