@@ -23,7 +23,7 @@ const DashboardPage = () => {
 
   return (
     <div
-      className="bg-[#F7F9FF] px-8 py-3 pb-[100px]"
+      className="bg-[#F7F9FF] px-8 py-3 pb-[100px] min-h-screen"
       data-testid="dashboard_page"
     >
       <h1 className="text-[32px] font-bold">Welcome, Admin</h1>
