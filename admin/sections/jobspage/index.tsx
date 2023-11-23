@@ -23,12 +23,14 @@ const JobsPage = () => {
         <h1 className="text-lg font-semibold w-[185px]">
           Number of applicants
         </h1>
+        <h1 className="text-lg font-semibold w-[185px]">Deadline</h1>
         <div />
       </div>
       <ProgramCard
         id={1}
         title={'Full stack Dev'}
         applicantsNum={20}
+        deadline="12/22/2023"
         options={[
           {
             id: 1,

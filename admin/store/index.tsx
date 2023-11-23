@@ -4,6 +4,7 @@ import { persistReducer, persistStore } from 'redux-persist';
 import { combineReducers } from '@reduxjs/toolkit';
 import jobReducer from './JobReducer';
 import blogReducer from './BlogReducer';
+import adminReducer from './AdminReducer';
 
 const config = {
   key: 'uptick',
@@ -13,7 +14,8 @@ const config = {
 
 const reducer = combineReducers({
   jobApplication: jobReducer,
-  blog: blogReducer,
+  blogs: blogReducer,
+  admin: adminReducer,
 });
 
 const presisted = persistReducer(config, reducer);
