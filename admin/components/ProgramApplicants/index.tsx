@@ -3,12 +3,14 @@
 import Link from 'next/link';
 
 import Image from 'next/image';
-import { Csv_Icon, Right_Arr } from '@/public';
+import { Right_Arr } from '@/public';
 import ApplicantCard from './ApplicantCard';
 import ApplicantModal from '../Modal/ApplicantModal';
 import { useState } from 'react';
+import PaginationRounded from '../Pagination';
+import CSVDownloadButton from '../DownloadCsv';
 
-type Details = {
+export type Details = {
   id: number;
   name: string;
   status: string;
@@ -40,10 +42,7 @@ const ProgramApplicants = ({ title, details }: IProgramApplicants) => {
             <Image src={Right_Arr} alt="arrow" />
             <h1 className="text-[#111] font-bold text-[24px]">{title}</h1>
           </div>
-          <button className="flex justify-center items-center px-[35px] py-[11px] gap-[11px] rounded-lg bg-[#C8D7FF] text-[#15254C] font-bold">
-            Download as CSV
-            <Image src={Csv_Icon} alt="download" />
-          </button>
+          <CSVDownloadButton data={details} />
         </div>
         <div className="flex justify-between items-center gap-2 py-7 px-6 w-full">
           <h1 className="text-lg font-semibold text-[#111] w-[115px]">Name</h1>
@@ -66,6 +65,9 @@ const ProgramApplicants = ({ title, details }: IProgramApplicants) => {
               handleShowDetails={showDetailsHandler}
             />
           ))}
+        </div>
+        <div className="w-full flex justify-end mt-6">
+          <PaginationRounded />
         </div>
       </div>
       <ApplicantModal isOpen={showDetails} onClose={setShowDetails} />
