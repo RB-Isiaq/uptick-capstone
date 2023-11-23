@@ -17,7 +17,7 @@ const LoginPage = () => {
 
   const username = 'Uptick Admin';
   const userId = '67411fa9-e140-46a0-8b3e-e0914e5d2c2a';
-  const password = 'Admin';
+  // const password = 'Admin';
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,7 +47,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="relative bg-[#070C19] flex flex-col justify-center items-center  px-3 lg:px-[60px] font-raleway py-10">
+    <div className="relative bg-[#070C19] flex flex-col justify-center items-center  px-3 lg:px-[60px] font-raleway py-10 min-h-screen">
       <Image
         src={LOGO}
         alt="logo"
@@ -97,7 +97,6 @@ const LoginPage = () => {
             className="w-full px-5 py-[18px] border rounded-lg border-[#4D4D4D] bg-[rgba(153,153,153,0.11)] text-white"
             type="password"
             placeholder="Password"
-            defaultValue={password}
           />
         </div>
         <div className="flex items-center gap-2 mb-[55px] mt-2">
@@ -110,7 +109,7 @@ const LoginPage = () => {
           className="flex justify-center items-center px-5 py-[14px] gap-[11px] rounded-lg bg-[#477BFF] text-white w-full"
           type="submit"
         >
-          {isLoading ? 'Logging In' : 'Log In'}
+          {isLoading ? 'Logging In ...' : 'Log In'}
         </button>
       </form>
       <p className="text-red-500 mx-auto">{message}</p>
