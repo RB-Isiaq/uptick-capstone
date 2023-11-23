@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+*,
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: 'Raleway';
+}
+
+.purple_gradient {
+  @apply bg-gradient-to-r from-[#477BFF] via-[#8E35FF] to-[#AF10F9] bg-clip-text text-[transparent];
+}
+
+.about-bg {
+  @apply bg-about-pattern bg-cover bg-center;
+}
+
+.achieve-bg {
+  @apply bg-achieve-pattern bg-cover bg-center;
+}
+
+.vector-bg {
+  @apply bg-vector-pattern bg-cover bg-center;
+}
+.vector-black-bg {
+  @apply bg-vector-black-pattern bg-cover bg-center;
+}
+.waves-bg {
+  @apply bg-wave-pattern bg-center bg-no-repeat;
+}
+
+.gridCenter {
+  @apply grid items-center justify-center;
+}
+
+.hero {
+  fill: radial-gradient(
+    72.99% 61.73% at 49.45% 27.03%,
+    rgba(0, 26, 191, 0.86) 0%,
+    rgba(0, 21, 155, 0.86) 13%,
+    rgba(0, 14, 100, 0.86) 35%,
+    rgba(0, 8, 57, 0.86) 55%,
+    rgba(0, 4, 26, 0.86) 74%,
+    rgba(0, 1, 7, 0.86) 89%,
+    rgba(0, 0, 0, 0.86) 100%
+  );
+  background-blend-mode: screen;
+  mix-blend-mode: screen;
+}
+
+.program-hero {
+  background: linear-gradient(90deg, #000 45.1%, rgba(0, 0, 0, 0) 100%);
+}
+
+.form_input {
+  @apply w-full py-[18px] px-5 flex-shrink-0 rounded-lg border border-[1px,solid,#B3B3B3] bg-[#E6E6E6];
+}
+
+.bg_gradient {
+  background: linear-gradient(
+    to right,
+    #001abf,
+    #00159b,
+    #000e64,
+    #000839,
+    #000839,
+    #00041a,
+    #000107,
+    #000000
+  );
+}
+
+.bg_gradient2 {
+  background: radial-gradient(
+    to right,
+    #001abf,
+    #00159b,
+    #000e64,
+    #000839,
+    #000839,
+    #00041a,
+    #000107,
+    #000000
+  );
+}
+
+.line {
+  background: linear-gradient(
+    270deg,
+    rgba(126, 163, 255, 0) 21.1%,
+    #7ea3ff 50.99%,
+    rgba(126, 163, 255, 0) 79.67%,
+    rgba(126, 163, 255, 0) 79.67%
+  );
+}
+
+.bg_accelerate {
+  border-radius: 740px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(71, 123, 255, 0.35) 0%,
+    rgba(71, 123, 255, 0) 85.31%
+  );
+}
+
+.bg_program {
+  background: linear-gradient(97deg, #000 30.56%, rgba(0, 0, 0, 0) 89.37%);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.animate-train {
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+  }
+
+  100% {
+    transform: translateX(-100vw);
+    transition: all 1s ease-in-out;
+  }
+}
