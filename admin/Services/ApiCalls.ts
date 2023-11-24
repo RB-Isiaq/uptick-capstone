@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://uptick-api-backend.onrender.com/api/';
+const API_BASE_URL = 'https://uptick-talent-api.onrender.com/api/';
 
 export const postData = async function (route = '', data = {}) {
   const response = await fetch(`${API_BASE_URL}${route}`, {

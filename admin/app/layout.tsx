@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 import './globals.css';
 import ReduxProvider from '@/components/ReduxProvider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const raleway = Raleway({ weight: ['400', '500', '600'], subsets: ['latin'] });
 
@@ -15,10 +16,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const queryClient = new QueryClient();
   return (
     <html lang="en">
       <body className={raleway.className}>
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          <QueryClientProvider client={queryClient}>
+            {children}
+          </QueryClientProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

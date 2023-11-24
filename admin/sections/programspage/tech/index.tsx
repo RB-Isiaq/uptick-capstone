@@ -3,6 +3,12 @@ import { techPrograms } from './constants';
 import ProgramCard from '@/components/Cards/ProgramCard';
 
 const TalentTech = () => {
+  const softwareProgramId = techPrograms[0].id;
+  const designProgramId = techPrograms[1].id;
+  const productProgramId = techPrograms[2].id;
+
+  console.log(softwareProgramId, designProgramId, productProgramId);
+
   return (
     <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full min-h-screen">
       <div className="w-full  flex justify-between items-center mb-2">
