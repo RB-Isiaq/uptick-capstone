@@ -4,3 +4,15 @@ export function truncateText(text: string): string {
   const truncatedText = words.length > 50 ? first50Words + '...' : first50Words;
   return truncatedText;
 }
+
+export const getDate = (): string => {
+  const specificDate = new Date();
+  const option: Intl.DateTimeFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+
+  return specificDate.toLocaleDateString('en-US', option);
+};
