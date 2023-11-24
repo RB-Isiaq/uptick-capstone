@@ -1,6 +1,7 @@
 import Button from '@/components/Button';
 import React from 'react';
 import { join } from './constants';
+import Link from 'next/link';
 
 export const Join = () => {
   return (
@@ -15,7 +16,9 @@ export const Join = () => {
         <p className="w-full max-w-[892px] font-raleway text-black text-center text-lg leading-[160%] px-2">
           {join.desc2}
         </p>
-        <Button text={join.btnText} />
+        <Link href="#apply-business">
+          <Button text={join.btnText} />
+        </Link>
       </div>
     </section>
   );

@@ -1,7 +1,11 @@
+'use client';
 import Image, { StaticImageData } from 'next/image';
 import Button from '../Button';
 import Link from 'next/link';
 import { UUID } from 'crypto';
+import { usePathname } from 'next/navigation';
+import Modal from '../Modal/Modal';
+import { useState } from 'react';
 
 type Track = {
   id: number;
@@ -33,6 +37,9 @@ export const TechCard = ({
   reverse,
   normal,
 }: TechCardProps) => {
+  const [showModal, setShowModal] = useState(false);
+  const pathname = usePathname();
+  const path = pathname.split('/')[2];
   return (
     <div
       className={`w-full flex flex-col lg:${
@@ -55,7 +62,7 @@ export const TechCard = ({
         <div
           className={`flex gap-3 flex-wrap w-full max-w-[438px] ${
             title === 'Software Engineering'
-              ? 'max-w-[328px]'
+              ? 'max-w-[326px]'
               : title === 'Design'
               ? 'max-w-[440px]'
               : 'max-w-[545px]'
@@ -67,12 +74,24 @@ export const TechCard = ({
         </div>
         <p className="text-[#fff]  text-lg pr-2"> {desc2}</p>
         <div>
-          {btnText === 'Apply Now' ? (
-            <Link href={`/form?programId=${programId}`}>
+          {path === 'tech' ? (
+            <Link href={`${path}/${programId}`}>
               <Button text={btnText} />
             </Link>
           ) : (
-            <Button text={btnText} />
+            <>
+              <Button
+                text={btnText}
+                onClick={() => setShowModal((prev) => !prev)}
+              />
+              <Modal
+                isOpen={showModal}
+                message={
+                  'Application is currently closed. \nPlease check back later'
+                }
+                onClose={setShowModal}
+              />
+            </>
           )}
         </div>
       </div>

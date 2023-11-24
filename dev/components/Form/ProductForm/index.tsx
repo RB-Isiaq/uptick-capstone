@@ -2,17 +2,15 @@
 
 import React, { FormEvent, useState } from 'react';
 import { productInput, title } from './constants';
-import { useSearchParams } from 'next/navigation';
 import Modal from '@/components/Modal/Modal';
 import Button from '@/components/Button';
 import { postData } from '@/Services/ApiCalls';
+import { IProgramId } from '../SoftwareForm';
 
-const ProductForm = () => {
+const ProductForm = ({ programId }: IProgramId) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const params = useSearchParams();
-  const programId = params.get('programId');
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,7 +20,7 @@ const ProductForm = () => {
     try {
       setIsLoading(true);
       const result = await postData(
-        `applicants/${programId}/apply-program`,
+        `progApplicant/${programId}/apply-program`,
         formObject,
       );
 
@@ -48,13 +46,13 @@ const ProductForm = () => {
         </h1>
 
         <form onSubmit={handleSubmit} className="w-full max-w-[575px]">
-          <h1 className="text-black text-[18px] md:text-[24px] mb-[10px] md:mb-[22px] leading-[160%]">
+          <h1 className="text-black text-[18px] md:text-[24px] mb-[10px] md:mb-[20px] leading-[160%]">
             SUBMIT YOUR APPLICATION
           </h1>
           {productInput.map((inp) => (
             <div
               key={inp.id}
-              className="flex flex-col w-full justify-between gap-1  mb-[20px] lg:mb-[40px]"
+              className="flex flex-col w-full justify-between gap-1  mb-[20px]"
             >
               <label
                 htmlFor={inp.name}
