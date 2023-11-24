@@ -1,9 +1,9 @@
 import { NON_TECH, SE_TECH, UI_TECH } from '@/public';
 
 export const programId = {
-  SE_TECH: '2ad81a24-342f-443b-bdb9-369ad15dc8e2',
-  DESIGN_TECH: '8a82358e-574a-4a2f-9bb9-a0ad906db0aa',
-  PRODUCT_TECH: '154c22c8-a490-487b-9b48-587551b7e09c',
+  SE_TECH: 'fba3250e-67c5-4325-a352-78577dba3a89',
+  DESIGN_TECH: 'b0eca4b1-8907-4459-9a08-86ec79e1f551',
+  PRODUCT_TECH: '439d636d-7846-4b5a-b33d-3cca22fec06d',
 };
 export const programs = [
   {
