@@ -27,7 +27,7 @@ const LoginPage = () => {
 
     try {
       setIsLoading(true);
-      const result = await postData(`login`, formObject);
+      const result = await postData(`auth/login`, formObject);
 
       console.log(result);
       if (result.token) {

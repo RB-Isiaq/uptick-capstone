@@ -5,7 +5,7 @@ export function truncateText(text: string): string {
   return truncatedText;
 }
 
-export const getDate = (): string => {
+export const getDate = () => {
   const specificDate = new Date();
   const option: Intl.DateTimeFormatOptions = {
     weekday: 'long',
