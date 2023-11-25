@@ -1,13 +1,78 @@
 import Image from 'next/image';
 import { applicantDetails } from './constants';
 import { Close } from '@/public';
+import { ProgramApplicant } from '@/interfaces';
+import { FormEvent } from 'react';
+import { updateData } from '@/Services/ApiCalls';
+import { useMutation } from '@tanstack/react-query';
 
 interface ApplicantModalProps {
   isOpen: boolean;
   onClose: React.Dispatch<React.SetStateAction<boolean>>;
+  appDetails: ProgramApplicant[];
+  applicantId: string;
 }
 
-const ApplicantModal: React.FC<ApplicantModalProps> = ({ isOpen, onClose }) => {
+const ApplicantModal: React.FC<ApplicantModalProps> = ({
+  isOpen,
+  onClose,
+  appDetails,
+  applicantId,
+}) => {
+  console.log(applicantId);
+
+  console.log(appDetails);
+  const details = appDetails.filter(
+    (applicant) => applicant.programApplicantId === applicantId,
+  );
+  console.log(details);
+  const progDetails: ProgramApplicant = details[0];
+
+  const { mutate, data, error, isPending, isSuccess } = useMutation({
+    mutationFn: async (formData: ProgramApplicant) => {
+      const data = await updateData(
+        `progApplicant/${applicantId}/program`,
+        formData,
+      );
+      return data;
+    },
+  });
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const formObject = Object.fromEntries(formData);
+
+    console.log(formObject);
+    const updatedApplicantData: ProgramApplicant = {
+      ...progDetails,
+      status: String(formObject.status), // Convert to string explicitly
+    };
+    console.log(updatedApplicantData);
+    mutate(updatedApplicantData);
+
+    //progApplicant/:programApplicantId/program
+    // try {
+    //   const result = await updateData(
+    //     `progApplicant/${applicantId}/program`,
+    //     formObject,
+    //   );
+
+    //   console.log(result);
+    //   if (result.applicant) {
+    //     console.log('updated');
+    //   } else {
+    //     throw new Error(result.message);
+    //   }
+    // } catch (error) {
+    //   if (error instanceof Error) {
+    //     console.log(error.message);
+    //   }
+    // }
+  };
+
+  console.log(data);
+
   if (!isOpen) return null;
 
   return (
@@ -22,15 +87,23 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({ isOpen, onClose }) => {
           />
         </div>
         <div className="w-full flex flex-col gap-[14px]">
-          {applicantDetails.map((details) => (
-            <div key={details.id}>
-              <p className="text-lg text-black">{details.label}</p>
-              <p className="text-lg text-[#5988FF]">{details.placeHolder}</p>
-            </div>
-          ))}
+          {applicantDetails.map((detail) =>
+            progDetails[detail.key as keyof ProgramApplicant] ? (
+              <div key={detail.id}>
+                <p className="text-lg text-black">{detail.label}</p>
+                <p className="text-lg text-[#5988FF]">
+                  {progDetails[detail.key as keyof ProgramApplicant]}
+                </p>
+              </div>
+            ) : null,
+          )}
         </div>
 
-        <form action="" className="flex gap-9 items-center mt-[35px]">
+        <form
+          action=""
+          onSubmit={handleSubmit}
+          className="flex gap-9 items-center mt-[35px]"
+        >
           <div className="flex flex-row-reverse gap-2 items-center">
             <label
               htmlFor="accept"
@@ -38,7 +111,13 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({ isOpen, onClose }) => {
             >
               Accept
             </label>
-            <input type="radio" name="status" id="accept" defaultChecked />
+            <input
+              type="radio"
+              name="status"
+              id="accept"
+              value="Accepted"
+              defaultChecked
+            />
           </div>
           <div className="flex flex-row-reverse gap-2 items-center">
             <label
@@ -47,9 +126,22 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({ isOpen, onClose }) => {
             >
               Reject
             </label>
-            <input type="radio" name="status" id="reject" />
+            <input type="radio" name="status" id="reject" value="Rejected" />
           </div>
+          <button type="submit" className="hidden">
+            Submit
+          </button>
         </form>
+
+        {isPending ? (
+          <p className="text-red-400">Loading ...</p>
+        ) : error ? (
+          <p className="text-red-400">Something went wrong</p>
+        ) : isSuccess ? (
+          <p className="text-green-400">Updated</p>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );

@@ -1,14 +1,44 @@
+'use client';
+
 import Button from '@/components/Button';
 import { techPrograms } from './constants';
 import ProgramCard from '@/components/Cards/ProgramCard';
+import { useQuery } from '@tanstack/react-query';
+import { getData } from '@/Services/ApiCalls';
+import Spinner from '@/components/Spinner';
 
 const TalentTech = () => {
-  const softwareProgramId = techPrograms[0].id;
-  const designProgramId = techPrograms[1].id;
-  const productProgramId = techPrograms[2].id;
+  const programIds = techPrograms.map((program) => program.id);
 
-  console.log(softwareProgramId, designProgramId, productProgramId);
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['applicants'],
+    queryFn: async () => {
+      const requests = programIds.map((programId) =>
+        getData(`progApplicant/${programId}/apply-program`),
+      );
+      const responses = await Promise.all(requests);
+      return responses;
+    },
+  });
 
+  if (isLoading) {
+    return (
+      <div className="w-[300px] h-[calc(100vh-150px)] flex justify-center items-center animate-spin mx-auto">
+        <Spinner />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <span>Error: {error.message}</span>;
+  }
+
+  console.log(data);
+  const updatedTechPrograms = techPrograms.map((program, index) => ({
+    ...program,
+    applicantsNum: data && data[index].data ? data[index].data.length : 0,
+  }));
+  console.log(updatedTechPrograms);
   return (
     <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full min-h-screen">
       <div className="w-full  flex justify-between items-center mb-2">
@@ -24,7 +54,7 @@ const TalentTech = () => {
         <div />
       </div>
       <div className="w-full  flex flex-col justify-between gap-10 py-5 ">
-        {techPrograms.map((program) => (
+        {updatedTechPrograms.map((program) => (
           <ProgramCard
             key={program.id}
             id={program.id}
