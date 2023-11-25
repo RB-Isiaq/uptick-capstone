@@ -53,12 +53,14 @@ export const Contact = () => {
             type="text"
             placeholder="Enter your name"
             className="w-full py-[18px] px-5 rounded-lg border border-[#2F2F2F] bg-[rgba(26,26,26,0.75)] text-white"
+            required
           />
           <input
             name="email"
             type="text"
             placeholder="Enter your email adress"
             className="w-full py-[18px] px-5 rounded-lg border border-[#2F2F2F] bg-[rgba(26,26,26,0.75)] text-white"
+            required
           />
           <input
             name="phone"
@@ -73,6 +75,7 @@ export const Contact = () => {
             rows={10}
             placeholder="Go ahead we are listening"
             className="w-full py-[18px] px-5 rounded-lg border border-[#2F2F2F] bg-[rgba(26,26,26,0.75)] text-white"
+            required
           ></textarea>
           <div>
             <Button
