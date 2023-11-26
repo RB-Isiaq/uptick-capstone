@@ -50,25 +50,6 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
     };
     console.log(updatedApplicantData);
     mutate(updatedApplicantData);
-
-    //progApplicant/:programApplicantId/program
-    // try {
-    //   const result = await updateData(
-    //     `progApplicant/${applicantId}/program`,
-    //     formObject,
-    //   );
-
-    //   console.log(result);
-    //   if (result.applicant) {
-    //     console.log('updated');
-    //   } else {
-    //     throw new Error(result.message);
-    //   }
-    // } catch (error) {
-    //   if (error instanceof Error) {
-    //     console.log(error.message);
-    //   }
-    // }
   };
 
   console.log(data);

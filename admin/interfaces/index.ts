@@ -21,3 +21,19 @@ export type ProgramApplicant = {
   updatedAt: string;
   programId: string;
 };
+
+export type TechProgram = {
+  name: string;
+  description: string;
+  type: string;
+  curriculumOutline: string[];
+  objectives: string;
+  benefits: string;
+  prerequisites: string;
+  duration: string;
+  applicationFormLink: string;
+  enrollmentInformation: string;
+  startDate: string;
+  endDate: string;
+  status: string;
+};
