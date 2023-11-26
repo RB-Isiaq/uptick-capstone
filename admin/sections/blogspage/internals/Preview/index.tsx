@@ -10,20 +10,25 @@ const Preview = () => {
   const { title, thumbnail, story, author } = useSelector(
     (state: BlogState) => state.blogs,
   );
+
+  const blogData = {
+    title: title,
+    imageUrl: thumbnail,
+    content: story,
+    author: author,
+    publicationDate: new Date(),
+  };
   const { mutate, data, error, isSuccess, isPending } = useMutation({
     mutationFn: async () => {
-      const data = await postData(`blogposts`, {
-        title: title,
-        image: thumbnail,
-        content: story,
-        author: author,
-      });
+      const data = await postData(`blogposts`, blogData);
       return data;
     },
   });
 
   const handleSubmit = () => {
     mutate();
+    console.log(blogData);
+
     if (isSuccess) {
       console.log('posted for real');
     }
