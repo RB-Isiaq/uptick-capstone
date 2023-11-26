@@ -10,7 +10,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Image, { StaticImageData } from 'next/image';
-import ApplicantModal from '../Modal/ApplicantModal';
+// import ApplicantModal from '../Modal/ApplicantModal';
+// import { ProgramApplicant } from '@/interfaces';
+// import { seApplicants } from '@/sections/programspage/tech/constants';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -51,12 +53,14 @@ interface RecentTable {
 }
 
 export default function RecentTable({ header, rows }: RecentTable) {
-  const [showDetails, setShowDetails] = React.useState(false);
+  // const [showDetails, setShowDetails] = React.useState(false);
+  // const [applicantId, setApplicantId] = React.useState('');
 
-  const handleShowDetails = (id: string | number) => {
-    console.log(id);
-    setShowDetails(true);
-  };
+  // const handleShowDetails = (id: string) => {
+  //   console.log(id);
+  //   setApplicantId(id);
+  //   setShowDetails(true);
+  // };
 
   return (
     <>
@@ -93,16 +97,19 @@ export default function RecentTable({ header, rows }: RecentTable) {
                   <StyledTableCell align="left">{row.number}</StyledTableCell>
                 )}
                 <StyledTableCell align="left">
-                  <button onClick={() => handleShowDetails(row.name)}>
-                    {row.view}
-                  </button>
+                  <button>{row.view}</button>
                 </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
-      <ApplicantModal isOpen={showDetails} onClose={setShowDetails} />
+      {/* <ApplicantModal
+        isOpen={showDetails}
+        onClose={setShowDetails}
+        applicantId={applicantId}
+        appDetails={seApplicants}
+      /> */}
     </>
   );
 }

@@ -4,7 +4,7 @@ import { application1, application2, help, venture } from './constants';
 export const Application = () => {
   return (
     <>
-      <section className="bg-[#111]  vector-black-bg">
+      <section className="bg-[#111]  vector-black-bg" id="apply-business">
         <div className="py-[20px] md:py-[111px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10 ">
           <TechCard
             programId={application1.id}

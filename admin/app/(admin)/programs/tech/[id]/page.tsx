@@ -1,43 +1,27 @@
 import ProgramApplicants from '@/components/ProgramApplicants';
-import {
-  deApplicants,
-  prApplicants,
-  seApplicants,
-} from '@/sections/programspage/tech/constants';
+import { programId } from '@/sections/programspage/tech/constants';
 
 const ProgramPage = ({ params }: { params: { id: string } }) => {
   const { id } = params;
   console.log(id);
 
   switch (id) {
-    case '1':
+    case programId.SE_TECH:
       return (
         <main>
-          <ProgramApplicants
-            title="Software Engineering"
-            details={seApplicants}
-          />
+          <ProgramApplicants title="Software Engineering" id={id} />
         </main>
       );
-    case '2':
+    case programId.DESIGN_TECH:
       return (
         <main>
-          <ProgramApplicants title="Design" details={deApplicants} />
+          <ProgramApplicants title="Design" id={id} />
         </main>
       );
-    case '3':
+    case programId.MGMT_TECH:
       return (
         <main>
-          <ProgramApplicants
-            title="Product Management"
-            details={prApplicants}
-          />
-        </main>
-      );
-    case '4':
-      return (
-        <main>
-          <ProgramApplicants title="AI and Data" details={seApplicants} />
+          <ProgramApplicants title="Product Management" id={id} />
         </main>
       );
 
@@ -46,7 +30,7 @@ const ProgramPage = ({ params }: { params: { id: string } }) => {
         <main>
           <ProgramApplicants
             title="Software Engineering"
-            details={seApplicants}
+            id={programId.SE_TECH}
           />
         </main>
       );

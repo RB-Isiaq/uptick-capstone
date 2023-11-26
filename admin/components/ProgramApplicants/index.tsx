@@ -9,29 +9,61 @@ import ApplicantModal from '../Modal/ApplicantModal';
 import { useState } from 'react';
 import PaginationRounded from '../Pagination';
 import CSVDownloadButton from '../DownloadCsv';
+import { useQuery } from '@tanstack/react-query';
+import { getData } from '@/Services/ApiCalls';
+import Spinner from '../Spinner';
 
 export type Details = {
-  id: number;
-  name: string;
+  programApplicantId: string;
+  firstName: string;
   status: string;
-  track: string;
-  date: string;
+  stack: string;
+  updatedAt: string;
 };
 interface IProgramApplicants {
   title: string;
-  details: Details[];
+  id: string;
 }
 
-const ProgramApplicants = ({ title, details }: IProgramApplicants) => {
+const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
   const [showDetails, setShowDetails] = useState(false);
+  const [applicantId, setApplicantId] = useState('');
 
-  const showDetailsHandler = (id: string | number) => {
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['programId'],
+    queryFn: async () => {
+      const data = await getData(`progApplicant/${id}/apply-program`);
+
+      return data;
+    },
+  });
+
+  if (isLoading) {
+    return (
+      <div className="w-[300px] h-[calc(100vh-150px)] flex justify-center items-center animate-spin mx-auto">
+        <Spinner />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <span className="w-full mx-auto h-screen text-red-400">
+        Error: {error.message}
+      </span>
+    );
+  }
+
+  console.log(data, 'DATA');
+
+  const showDetailsHandler = (id: string) => {
     console.log(id);
+    setApplicantId(id);
     setShowDetails(true);
   };
   return (
     <>
-      <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full">
+      <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full min-h-screen">
         <div className="w-full  flex justify-between items-center mb-2">
           <div className="flex gap-2 items-center">
             <Link href="/programs/tech">
@@ -42,7 +74,7 @@ const ProgramApplicants = ({ title, details }: IProgramApplicants) => {
             <Image src={Right_Arr} alt="arrow" />
             <h1 className="text-[#111] font-bold text-[24px]">{title}</h1>
           </div>
-          <CSVDownloadButton data={details} />
+          <CSVDownloadButton data={data.data} />
         </div>
         <div className="flex justify-between items-center gap-2 py-7 px-6 w-full">
           <h1 className="text-lg font-semibold text-[#111] w-[115px]">Name</h1>
@@ -54,14 +86,14 @@ const ProgramApplicants = ({ title, details }: IProgramApplicants) => {
           <div className="w-[100px]" />
         </div>
         <div className="w-full  flex flex-col justify-between gap-[10px] py-5 ">
-          {details.map((applicantDetail) => (
+          {data.data.map((applicantDetail: Details) => (
             <ApplicantCard
-              key={applicantDetail.id}
-              id={applicantDetail.id}
-              name={applicantDetail.name}
+              key={applicantDetail.programApplicantId}
+              id={applicantDetail.programApplicantId}
+              name={applicantDetail.firstName}
               status={applicantDetail.status}
-              track={applicantDetail.track}
-              date={applicantDetail.date}
+              track={applicantDetail.stack}
+              date={applicantDetail.updatedAt.split('T')[0]}
               handleShowDetails={showDetailsHandler}
             />
           ))}
@@ -70,7 +102,12 @@ const ProgramApplicants = ({ title, details }: IProgramApplicants) => {
           <PaginationRounded />
         </div>
       </div>
-      <ApplicantModal isOpen={showDetails} onClose={setShowDetails} />
+      <ApplicantModal
+        isOpen={showDetails}
+        onClose={setShowDetails}
+        appDetails={data.data}
+        applicantId={applicantId}
+      />
     </>
   );
 };

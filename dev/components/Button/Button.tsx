@@ -6,6 +6,7 @@ interface Button {
   plain?: boolean;
   tertiary?: boolean;
   type?: 'button' | 'reset' | 'submit';
+  onClick?: () => void;
 }
 export const Button = ({
   text,
@@ -13,6 +14,7 @@ export const Button = ({
   plain,
   tertiary,
   type,
+  onClick,
   ...props
 }: Button) => {
   return (
@@ -27,6 +29,7 @@ export const Button = ({
           : 'bg-uptickDarkBlue text-white'
       } font-semibold tracking-[1.25px] leading-[100%] rounded-lg`}
       type={type || 'button'}
+      onClick={onClick}
       {...props}
     >
       {text}
