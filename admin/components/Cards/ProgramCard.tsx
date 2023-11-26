@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { getData, updateData } from '@/Services/ApiCalls';
+import Modal from '../Modal/Modal';
 interface IProgramCard {
   id: number | string;
   title: string;
@@ -44,7 +45,7 @@ const ProgramCard = ({
 
   console.log(programData);
 
-  const { mutate, data, error } = useMutation({
+  const { mutate, data, error, isSuccess } = useMutation({
     mutationFn: async (status: string) => {
       const data = await updateData(`programs/${id}`, {
         ...programData,
@@ -57,9 +58,9 @@ const ProgramCard = ({
   const handleCloseApp = (id: string | number) => {
     console.log(`${id} closed`);
     mutate('close');
-    if (data.program) {
-      setIsOpen(true);
+    if (isSuccess) {
       setMessage('Application closed successfully');
+      setIsOpen(true);
       console.log('updated for real');
     }
     if (error) {
@@ -72,8 +73,8 @@ const ProgramCard = ({
   const handleOpenApp = (id: string | number) => {
     console.log(`${id} opened`);
     mutate('open');
-    setIsOpen(true);
-    if (data.program) {
+    if (isSuccess) {
+      setIsOpen(true);
       setMessage('Application opened successfully');
     }
     if (error) {
@@ -129,6 +130,7 @@ const ProgramCard = ({
           </div>
         </div>
       </div>
+      <Modal isOpen={isOpen} message={message} onClose={setIsOpen} />
     </>
   );
 };

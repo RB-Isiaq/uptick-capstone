@@ -115,7 +115,7 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
         </form>
 
         {isPending ? (
-          <p className="text-red-400">Loading ...</p>
+          <p className="text-black">Loading ...</p>
         ) : error ? (
           <p className="text-red-400">Something went wrong</p>
         ) : isSuccess ? (

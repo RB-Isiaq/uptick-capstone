@@ -30,7 +30,7 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
   const [applicantId, setApplicantId] = useState('');
 
   const { isLoading, error, data } = useQuery({
-    queryKey: [id],
+    queryKey: ['programId'],
     queryFn: async () => {
       const data = await getData(`progApplicant/${id}/apply-program`);
 
@@ -54,7 +54,7 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
     );
   }
 
-  console.log(data);
+  console.log(data, 'DATA');
 
   const showDetailsHandler = (id: string) => {
     console.log(id);
