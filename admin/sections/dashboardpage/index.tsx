@@ -9,25 +9,16 @@ import {
 import NumberCard from '@/components/Cards/NumberCard';
 import RecentTable from '@/components/RecentTable/RecentTable';
 import BasicPie from '@/components/Chart';
+import { getDate } from '@/utils';
 
 const DashboardPage = () => {
-  const specificDate = new Date();
-  const option: Intl.DateTimeFormatOptions = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  };
-
-  const formattedDate = specificDate.toLocaleDateString('en-US', option);
-
   return (
     <div
       className="bg-[#F7F9FF] px-8 py-3 pb-[100px] min-h-screen"
       data-testid="dashboard_page"
     >
       <h1 className="text-[32px] font-bold">Welcome, Admin</h1>
-      <p className="text-sm">{formattedDate}</p>
+      <p className="text-sm">{getDate()}</p>
 
       <div className="flex flex-col lg:flex-row gap-3 w-full justify-between my-6">
         {applicants.map((app) => (

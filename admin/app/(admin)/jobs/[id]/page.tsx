@@ -1,5 +1,5 @@
-import ProgramApplicants from '@/components/ProgramApplicants';
-import { seApplicants } from '@/sections/programspage/tech/constants';
+// import ProgramApplicants from '@/components/ProgramApplicants';
+// import { seApplicants } from '@/sections/programspage/tech/constants';
 
 const jobApplicantsPage = ({ params }: { params: { id: string } }) => {
   const { id } = params;
@@ -7,7 +7,8 @@ const jobApplicantsPage = ({ params }: { params: { id: string } }) => {
 
   return (
     <main>
-      <ProgramApplicants title="Software Engineering" details={seApplicants} />
+      Empty
+      {/* <ProgramApplicants title="Software Engineering"  /> */}
     </main>
   );
 };

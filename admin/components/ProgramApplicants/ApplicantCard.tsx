@@ -3,8 +3,8 @@ interface IApplicationCard {
   track: string;
   status: string;
   date: string;
-  id: string | number;
-  handleShowDetails: (id: string | number) => void;
+  id: string;
+  handleShowDetails: (id: string) => void;
 }
 
 const ApplicantCard = ({

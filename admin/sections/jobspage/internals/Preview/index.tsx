@@ -4,9 +4,53 @@ import React, { useState } from 'react';
 import JobThumbnail from './internals/JobThumbnail';
 import JobDescription from './internals/JobDescription';
 import Button from '@/components/Button';
+import { JobState } from '@/store/JobReducer';
+import { useSelector } from 'react-redux';
+import { useMutation } from '@tanstack/react-query';
+import { postData } from '@/Services/ApiCalls';
 
 const Preview = () => {
   const [isPreviewed, setIsPreviewed] = useState(true);
+  const {
+    title,
+    thumbnail,
+    company,
+    description,
+    deadline,
+    type,
+    category,
+    location,
+  } = useSelector((state: JobState) => state.jobApplication);
+
+  const jobData = {
+    title: title,
+    companyLogo: thumbnail,
+    companyName: company,
+    description: description,
+    deadline: deadline,
+    jobType: type,
+    jobCategory: category,
+    location: location,
+  };
+  const { mutate, data, error, isSuccess, isPending } = useMutation({
+    mutationFn: async () => {
+      const data = await postData(`jobs`, jobData);
+      return data;
+    },
+  });
+
+  const handleSubmit = () => {
+    mutate();
+    console.log(jobData);
+
+    if (isSuccess) {
+      console.log('posted for real');
+    }
+    if (error) {
+      console.log(`${error}} end`);
+    }
+  };
+  console.log(data);
   return (
     <div className="bg-[#FAFAFA] w-full min-h-[502px] px-8 pt-[75px] pb-[21px] font-raleway flex flex-col">
       {isPreviewed ? <JobThumbnail /> : <JobDescription />}
@@ -32,7 +76,8 @@ const Preview = () => {
           <Image src={RIGHT} alt="right logo" />
         </button>
       </div>
-      <Button text="Save Changes" />
+      <Button text="Create Job" onClick={handleSubmit} />
+      {isPending && <p>Submitting ...</p>}
     </div>
   );
 };

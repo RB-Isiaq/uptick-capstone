@@ -1,9 +1,9 @@
 import { NON_TECH, SE_TECH, UI_TECH } from '@/public';
 
 export const programId = {
-  SE_TECH: '2ad81a24-342f-443b-bdb9-369ad15dc8e2',
-  DESIGN_TECH: '8a82358e-574a-4a2f-9bb9-a0ad906db0aa',
-  PRODUCT_TECH: '154c22c8-a490-487b-9b48-587551b7e09c',
+  SE_TECH: '8726c585-5483-4e9a-822a-107741a59ea3',
+  DESIGN_TECH: 'c9bf8c93-8d63-4681-957c-c28b032415f7',
+  MGMT_TECH: '320989a7-c759-46a2-adb1-0445c517c7c6',
 };
 export const programs = [
   {
@@ -61,7 +61,7 @@ export const programs = [
     image: UI_TECH,
   },
   {
-    id: programId.PRODUCT_TECH,
+    id: programId.MGMT_TECH,
     title: 'Non-Technical Programs',
     profession: 'Master the Art of Scaling Technology Products',
     desc: 'Our Non-Technical Fellowship programs are designed for business enthusiasts working to scale technology products, processes and operations. Dive into practical case studies and access weekly mentorship. Curriculum covers:',

@@ -1,8 +1,14 @@
+export const programId = {
+  SE_TECH: '8726c585-5483-4e9a-822a-107741a59ea3',
+  DESIGN_TECH: 'c9bf8c93-8d63-4681-957c-c28b032415f7',
+  MGMT_TECH: '320989a7-c759-46a2-adb1-0445c517c7c6',
+};
+
 export const techPrograms = [
   {
-    id: '2ad81a24-342f-443b-bdb9-369ad15dc8e2',
+    id: programId.SE_TECH,
     title: 'Software Engineering',
-    applicantsNum: 200,
+    applicantsNum: 0,
     options: [
       {
         id: 1,
@@ -19,9 +25,9 @@ export const techPrograms = [
     ],
   },
   {
-    id: '8a82358e-574a-4a2f-9bb9-a0ad906db0aa',
+    id: programId.DESIGN_TECH,
     title: 'Design',
-    applicantsNum: 70,
+    applicantsNum: 0,
     options: [
       {
         id: 1,
@@ -38,9 +44,9 @@ export const techPrograms = [
     ],
   },
   {
-    id: '154c22c8-a490-487b-9b48-587551b7e09c',
+    id: programId.MGMT_TECH,
     title: 'Project Management',
-    applicantsNum: 20,
+    applicantsNum: 0,
     options: [
       {
         id: 1,

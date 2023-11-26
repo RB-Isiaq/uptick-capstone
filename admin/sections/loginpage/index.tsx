@@ -19,7 +19,6 @@ const LoginPage = () => {
   const username = 'The Admin';
 
   console.log(userId);
-  // 4bf90387-c633-45a9-8664-5b5cc321e75c
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -27,7 +26,7 @@ const LoginPage = () => {
 
     try {
       setIsLoading(true);
-      const result = await postData(`login`, formObject);
+      const result = await postData(`auth/login`, formObject);
 
       console.log(result);
       if (result.token) {
