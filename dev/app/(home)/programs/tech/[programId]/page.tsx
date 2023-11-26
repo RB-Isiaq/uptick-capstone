@@ -11,7 +11,7 @@ const ProgramPage = ({ params }: { params: { programId: string } }) => {
       return <SoftwareForm programId={id} />;
     case programId.DESIGN_TECH:
       return <DesignForm programId={id} />;
-    case programId.PRODUCT_TECH:
+    case programId.MGMT_TECH:
       return <ProductForm programId={id} />;
 
     default:

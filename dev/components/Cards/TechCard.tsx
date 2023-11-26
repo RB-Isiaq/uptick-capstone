@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { UUID } from 'crypto';
 import { usePathname } from 'next/navigation';
 import Modal from '../Modal/Modal';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { getData } from '@/Services/ApiCalls';
 
 type Track = {
   id: number;
@@ -38,8 +39,19 @@ export const TechCard = ({
   normal,
 }: TechCardProps) => {
   const [showModal, setShowModal] = useState(false);
+  const [status, setStatus] = useState('');
   const pathname = usePathname();
   const path = pathname.split('/')[2];
+
+  const getProgram = useCallback(async () => {
+    const data = await getData(`programs/${programId}`);
+    if (data) setStatus(data.status);
+  }, [programId]);
+
+  useEffect(() => {
+    getProgram();
+  }, [getProgram]);
+
   return (
     <div
       className={`w-full flex flex-col lg:${
@@ -74,7 +86,7 @@ export const TechCard = ({
         </div>
         <p className="text-[#fff]  text-lg pr-2"> {desc2}</p>
         <div>
-          {path === 'tech' ? (
+          {path === 'tech' && status === 'open' ? (
             <Link href={`${path}/${programId}`}>
               <Button text={btnText} />
             </Link>
