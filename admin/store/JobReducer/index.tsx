@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export type jobState = {
   step: number;
   thumbnail: string;
+  companyLogo: Blob | Buffer;
   title: string;
   company: string;
   deadline: string;
@@ -19,6 +20,7 @@ export interface JobState {
 const initialState = {
   step: 1,
   thumbnail: '',
+  companyLogo: {},
   title: '',
   company: '',
   deadline: '',
@@ -53,6 +55,9 @@ const jobApplication = createSlice({
     setThumbnail: (state, action) => {
       state.thumbnail = action.payload;
     },
+    setCompanyLogo: (state, action) => {
+      state.companyLogo = action.payload;
+    },
     setTitle: (state, action: { payload: string }) => {
       state.title = action.payload;
     },
@@ -66,6 +71,7 @@ export default jobApplication.reducer;
 export const {
   setStep,
   setThumbnail,
+  setCompanyLogo,
   setTitle,
   setCompany,
   setDeadline,
