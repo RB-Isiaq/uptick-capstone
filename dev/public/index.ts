@@ -60,6 +60,10 @@ import P4 from './assets/p4.png';
 import P5 from './assets/p5.svg';
 import P6 from './assets/p6.svg';
 import P7 from './assets/p7.png';
+import MAP_EVALUATION from './assets/talent-evaluation.png';
+import MAP_MATCHING from './assets/talent-matching.png';
+import MAP_SUPPORT from './assets/talent-support.png';
+import DOWN_ICON from './assets/arr-down.svg';
 
 export {
   LOGO,
@@ -124,4 +128,8 @@ export {
   P5,
   P6,
   P7,
+  MAP_EVALUATION,
+  MAP_MATCHING,
+  MAP_SUPPORT,
+  DOWN_ICON,
 };

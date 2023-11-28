@@ -6,6 +6,7 @@ import Description from './internals/Description';
 import Commitment from './internals/Commitment';
 import Why from './internals/Why';
 import Contact from './internals/Contact';
+import Process from './internals/Process';
 
 const MapPage = () => {
   return (
@@ -20,6 +21,7 @@ const MapPage = () => {
         <Description />
         <Commitment />
         <Why />
+        <Process />
         <Contact />
       </motion.div>
     </AnimatePresence>
