@@ -1,11 +1,11 @@
-import BeginnersPage from '@/sections/programs/beginners';
+import MapPage from '@/sections/programs/map';
 
-const Beginners = () => {
+const Map = () => {
   return (
     <main>
-      <BeginnersPage />
+      <MapPage />
     </main>
   );
 };
 
-export default Beginners;
+export default Map;

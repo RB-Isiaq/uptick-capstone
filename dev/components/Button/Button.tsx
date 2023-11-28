@@ -4,6 +4,7 @@ interface Button {
   text: string;
   secondary?: boolean;
   plain?: boolean;
+  black?: boolean;
   tertiary?: boolean;
   type?: 'button' | 'reset' | 'submit';
   onClick?: () => void;
@@ -12,6 +13,7 @@ export const Button = ({
   text,
   secondary,
   plain,
+  black,
   tertiary,
   type,
   onClick,
@@ -24,6 +26,8 @@ export const Button = ({
           ? 'bg-[inherit] text-white border  border-[rgba(255,255,255,0.30)]'
           : plain
           ? 'bg-white text-[#2F2F2F]'
+          : black
+          ? 'text-white bg-black'
           : tertiary
           ? 'text-[#477BFF] bg-inherit'
           : 'bg-uptickDarkBlue text-white'

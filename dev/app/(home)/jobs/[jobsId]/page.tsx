@@ -2,9 +2,9 @@ import JobsDetailsPage from '@/sections/jobspage/jobsDetails';
 
 const JobsID = () => {
   return (
-    <div>
+    <main>
       <JobsDetailsPage />
-    </div>
+    </main>
   );
 };
 
