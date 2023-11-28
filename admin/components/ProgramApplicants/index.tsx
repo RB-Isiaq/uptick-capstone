@@ -28,6 +28,7 @@ interface IProgramApplicants {
 const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
   const [showDetails, setShowDetails] = useState(false);
   const [applicantId, setApplicantId] = useState('');
+  const [page, setPage] = useState(1);
 
   const { isLoading, error, data } = useQuery({
     queryKey: ['programId'],
@@ -86,20 +87,25 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
           <div className="w-[100px]" />
         </div>
         <div className="w-full  flex flex-col justify-between gap-[10px] py-5 ">
-          {data.data.map((applicantDetail: Details) => (
-            <ApplicantCard
-              key={applicantDetail.programApplicantId}
-              id={applicantDetail.programApplicantId}
-              name={applicantDetail.firstName}
-              status={applicantDetail.status}
-              track={applicantDetail.stack}
-              date={applicantDetail.updatedAt.split('T')[0]}
-              handleShowDetails={showDetailsHandler}
-            />
-          ))}
+          {data.data
+            .slice(page === 1 ? 0 : page + 1 - page, page * 1)
+            .map((applicantDetail: Details) => (
+              <ApplicantCard
+                key={applicantDetail.programApplicantId}
+                id={applicantDetail.programApplicantId}
+                name={applicantDetail.firstName}
+                status={applicantDetail.status}
+                track={applicantDetail.stack}
+                date={applicantDetail.updatedAt.split('T')[0]}
+                handleShowDetails={showDetailsHandler}
+              />
+            ))}
         </div>
         <div className="w-full flex justify-end mt-6">
-          <PaginationRounded />
+          <PaginationRounded
+            page={Math.ceil(data.data.length / 1)}
+            setPage={setPage}
+          />
         </div>
       </div>
       <ApplicantModal

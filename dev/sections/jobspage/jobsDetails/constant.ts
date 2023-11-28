@@ -1,3 +1,5 @@
+import { KUDA } from '@/public';
+
 export interface JobDetailsType {
   id: number;
   title: string;
@@ -21,3 +23,10 @@ export const jobsDetailsData: JobDetailsType[] = [
     description: 'Description for Job 3',
   },
 ];
+
+export const jobDetails = {
+  title: 'Software Engineer (Backend)',
+  thumbnail: KUDA,
+  deadline: '18th Nov 2023',
+  description: '',
+};

@@ -36,7 +36,7 @@ export const Contact = () => {
     }
   };
   return (
-    <section className="mt-[-120px] pt-[120px]  bg-[#111] about-bg ">
+    <section className="mt-[-120px] pt-[120px]  bg-[#111] waves-bg ">
       <div className="flex flex-col gap-[100px] py-[60px] md:py-[100px] font-raleway  px-3 xl:px-[60px] md:px-10 w-full max-w-[1440px] mx-auto">
         <form
           onSubmit={handleSubmit}

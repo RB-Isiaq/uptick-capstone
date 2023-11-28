@@ -51,7 +51,7 @@ const Sidebar = () => {
               <Image src={D_ICON} alt="dashboard" />
             </div>
           </button>
-          <div className="absolute top-[10px]  hidden bg-[#252531] text-white group-hover:block group-hover:relative">
+          <div className="absolute top-0  hidden bg-[#252531] text-white group-hover:block group-hover:relative">
             <Link href="/programs/tech/">
               <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
                 Talent Tech

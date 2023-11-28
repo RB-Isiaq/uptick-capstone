@@ -31,11 +31,12 @@ const ProgramCard = ({
   const [message, setMessage] = useState('');
   const pathname = usePathname();
   const path = pathname.split('/');
+  console.log(path);
 
   console.log(id);
 
   const { data: programData } = useQuery({
-    queryKey: [id],
+    queryKey: ['singleProgram'],
     queryFn: async () => {
       const data = await getData(`programs/${id}`);
 
@@ -110,11 +111,8 @@ const ProgramCard = ({
             >
               {options[0].label}
             </button>
-            <Link
-              href={`${path[2] ? path[2] : path[1]}/${id}`}
-              className="w-full "
-            >
-              <button className="font-medium hover:bg-[#F0F0F0] focus:bg-[#F0F0F0] px-1  py-1">
+            <Link href={`${path[2] ? path[2] : path[1]}/${id}`}>
+              <button className="font-medium hover:bg-[#F0F0F0] focus:bg-[#F0F0F0] px-1  py-1 w-full">
                 {options[1].label}
               </button>
             </Link>

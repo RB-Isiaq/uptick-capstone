@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export type blogState = {
   step: number;
   thumbnail: string;
+  image: Blob | Buffer;
   title: string;
   story: string;
   author: string;
@@ -15,6 +16,7 @@ export interface BlogState {
 const initialState = {
   step: 1,
   thumbnail: '',
+  image: {},
   title: '',
   story: '',
   author: '',
@@ -36,6 +38,9 @@ const blog = createSlice({
     setThumbnail: (state, action) => {
       state.thumbnail = action.payload;
     },
+    setImage: (state, action) => {
+      state.image = action.payload;
+    },
     setTitle: (state, action) => {
       state.title = action.payload;
     },
@@ -43,5 +48,11 @@ const blog = createSlice({
 });
 
 export default blog.reducer;
-export const { setStep, setAuthor, setStory, setThumbnail, setTitle } =
-  blog.actions;
+export const {
+  setStep,
+  setAuthor,
+  setStory,
+  setThumbnail,
+  setTitle,
+  setImage,
+} = blog.actions;
