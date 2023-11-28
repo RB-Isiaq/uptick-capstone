@@ -16,8 +16,8 @@ export interface Card {
 }
 export const ProgramCard = ({ image, title, desc, buttons }: Card) => {
   return (
-    <div className="w-full md:w-[400px] h-max md:h-[650px] flex flex-col  gap-6 justify-between items-start p-6 border border-[#1C3166] rounded-2xl bg-[#1C1C1C] hover:shadow-lg ">
-      <Image src={image} alt={title} width={400} height={300} />
+    <div className="w-full md:w-[450px] h-max md:h-[623px] flex flex-col  gap-6 justify-between items-start p-6 md:p-[34px] border border-[#1C3166] rounded-2xl bg-[#1C1C1C] hover:shadow-lg ">
+      <Image src={image} alt={title} width={450} height={380} />
       <h1 className=" font-raleway text-[24px] leading-normal text-white font-bold">
         {title}
       </h1>

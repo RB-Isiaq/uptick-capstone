@@ -1,9 +1,10 @@
+import { jobDetails } from './constant';
 import JobDetails from './jobDetails';
 
 const JobsDetailsPage = () => {
   return (
     <>
-      <JobDetails />
+      <JobDetails details={jobDetails} />
     </>
   );
 };

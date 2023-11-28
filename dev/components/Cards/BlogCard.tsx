@@ -14,7 +14,7 @@ export const BlogCard = ({ image, title, desc, text, link }: Card & BTN) => {
       <p className="w-full sm:w-[364px] font-raleway  leading-[160%] text-[#B3B3B3]">
         {desc}
       </p>
-      <Link href={link}>
+      <Link href={link} className="self-end">
         <Button text={text} tertiary />
       </Link>
     </div>

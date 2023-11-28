@@ -1,7 +1,12 @@
 import React, { ChangeEvent, useRef } from 'react';
 import Button from '@/components/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { JobState, setStep, setThumbnail } from '@/store/JobReducer';
+import {
+  JobState,
+  setCompanyLogo,
+  setStep,
+  setThumbnail,
+} from '@/store/JobReducer';
 import Image from 'next/image';
 
 const AddThumbnail = () => {
@@ -14,6 +19,7 @@ const AddThumbnail = () => {
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.currentTarget.files?.[0];
     if (file) {
+      dispatch(setCompanyLogo(file));
       dispatch(setThumbnail(URL.createObjectURL(file)));
     }
   };

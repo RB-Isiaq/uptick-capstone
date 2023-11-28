@@ -13,7 +13,7 @@ const Preview = () => {
   const [isPreviewed, setIsPreviewed] = useState(true);
   const {
     title,
-    thumbnail,
+    companyLogo,
     company,
     description,
     deadline,
@@ -23,8 +23,8 @@ const Preview = () => {
   } = useSelector((state: JobState) => state.jobApplication);
 
   const jobData = {
-    title: title,
-    companyLogo: thumbnail,
+    jobTitle: title,
+    companyLogo: companyLogo,
     companyName: company,
     description: description,
     deadline: deadline,

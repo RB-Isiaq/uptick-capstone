@@ -46,6 +46,24 @@ import JOBS from './assets/adminJob.svg';
 import BLOG from './assets/adminBlog.svg';
 import LOGOUT from './assets/adminLO.svg';
 import WAVES from './assets/waves.svg';
+import KUDA from './assets/image 15.png';
+import QTP from './assets/qtp.svg';
+import DE from './assets/de.svg';
+import PTR from './assets/ptr.svg';
+import COMMITMENT_MAP from './assets/map-commitment.png';
+import LADY_MAP from './assets/lady-glasses.png';
+import HERO_MAP from './assets/map-bg.png';
+import P1 from './assets/p1.png';
+import P2 from './assets/p2.png';
+import P3 from './assets/p3.svg';
+import P4 from './assets/p4.png';
+import P5 from './assets/p5.svg';
+import P6 from './assets/p6.svg';
+import P7 from './assets/p7.png';
+import MAP_EVALUATION from './assets/talent-evaluation.png';
+import MAP_MATCHING from './assets/talent-matching.png';
+import MAP_SUPPORT from './assets/talent-support.png';
+import DOWN_ICON from './assets/arr-down.svg';
 
 export {
   LOGO,
@@ -96,4 +114,22 @@ export {
   BLOG,
   LOGOUT,
   WAVES,
+  KUDA,
+  QTP,
+  DE,
+  PTR,
+  COMMITMENT_MAP,
+  LADY_MAP,
+  HERO_MAP,
+  P1,
+  P2,
+  P3,
+  P4,
+  P5,
+  P6,
+  P7,
+  MAP_EVALUATION,
+  MAP_MATCHING,
+  MAP_SUPPORT,
+  DOWN_ICON,
 };

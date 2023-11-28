@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useRef } from 'react';
 import Button from '@/components/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { setStep, setThumbnail } from '@/store/BlogReducer';
+import { setImage, setStep, setThumbnail } from '@/store/BlogReducer';
 import Image from 'next/image';
 import { BlogState } from '@/store/BlogReducer';
 
@@ -12,8 +12,11 @@ const AddThumbnail = () => {
 
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.currentTarget.files?.[0];
+    console.log(file);
+
     if (file) {
       dispatch(setThumbnail(URL.createObjectURL(file)));
+      dispatch(setImage(file));
     }
   };
 
