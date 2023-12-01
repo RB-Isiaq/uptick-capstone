@@ -13,7 +13,7 @@ const Preview = () => {
   const [isPreviewed, setIsPreviewed] = useState(true);
   const {
     title,
-    companyLogo,
+    thumbnail,
     company,
     description,
     deadline,
@@ -24,7 +24,7 @@ const Preview = () => {
 
   const jobData = {
     jobTitle: title,
-    companyLogo: companyLogo,
+    companyLogo: thumbnail,
     companyName: company,
     description: description,
     deadline: deadline,
@@ -32,6 +32,7 @@ const Preview = () => {
     jobCategory: category,
     location: location,
   };
+
   const { mutate, data, error, isSuccess, isPending } = useMutation({
     mutationFn: async () => {
       const data = await postData(`jobs`, jobData);

@@ -7,17 +7,16 @@ import { useMutation } from '@tanstack/react-query';
 import { postData } from '@/Services/ApiCalls';
 
 const Preview = () => {
-  const { title, thumbnail, story, author, image } = useSelector(
+  const { title, story, author, image } = useSelector(
     (state: BlogState) => state.blogs,
   );
 
   const blogData = {
     title: title,
     image: image,
-    imageUrl: thumbnail,
+    imageUrl: image,
     content: story,
     author: author,
-    publicationDate: new Date().toUTCString(),
   };
   const { mutate, data, error, isSuccess, isPending } = useMutation({
     mutationFn: async () => {
