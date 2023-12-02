@@ -13,7 +13,7 @@ const Preview = () => {
   const [isPreviewed, setIsPreviewed] = useState(true);
   const {
     title,
-    thumbnail,
+    companyLogo,
     company,
     description,
     deadline,
@@ -24,7 +24,7 @@ const Preview = () => {
 
   const jobData = {
     jobTitle: title,
-    companyLogo: thumbnail,
+    companyLogo: companyLogo,
     companyName: company,
     description: description,
     deadline: deadline,
@@ -77,8 +77,10 @@ const Preview = () => {
           <Image src={RIGHT} alt="right logo" />
         </button>
       </div>
-      <Button text="Create Job" onClick={handleSubmit} />
-      {isPending && <p>Submitting ...</p>}
+      <Button
+        text={isPending ? 'Submitting ...' : 'Create Job'}
+        onClick={handleSubmit}
+      />
     </div>
   );
 };

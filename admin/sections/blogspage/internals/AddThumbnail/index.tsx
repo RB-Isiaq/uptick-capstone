@@ -13,7 +13,7 @@ const AddThumbnail = () => {
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.currentTarget.files?.[0];
     console.log(file);
-    dispatch(setImage(e.currentTarget.files));
+    dispatch(setImage(file));
 
     if (file) {
       dispatch(setThumbnail(URL.createObjectURL(file)));
