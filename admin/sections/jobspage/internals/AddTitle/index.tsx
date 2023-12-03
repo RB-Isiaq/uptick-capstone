@@ -79,10 +79,10 @@ const AddTitle = () => {
           Deadline
         </label>
         <input
-          type="text"
+          type="date"
           id="deadline"
           className="border-0 outline-0 border-b border-black text-black pt-3 pb-1"
-          defaultValue={deadline}
+          defaultValue={deadline.toString()}
           onChange={(e) => setJobDeadline(e.target.value)}
         />
       </div>

@@ -98,12 +98,12 @@ const ProgramCard = ({
             <Image src={Menu} alt="menu" />
           </button>
           <div
-            className={`absolute top-[10px]   bg-white text-black ${
+            className={`absolute top-[10px]   bg-[#252531] text-white ${
               showOptions ? 'flex' : 'hidden'
-            } -top-[10px] right-[20px] px-2 w-[156px] flex-col items-start`}
+            } -top-[10px] right-[20px]  flex-col  items-start rounded-lg w-max`}
           >
             <button
-              className="font-medium hover:bg-[#F0F0F0] focus:bg-[#F0F0F0] px-1 py-1 w-full"
+              className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"
               onClick={() => {
                 handleCloseApp(id);
                 setShowOptions((prev) => !prev);
@@ -112,12 +112,12 @@ const ProgramCard = ({
               {options[0].label}
             </button>
             <Link href={`${path[2] ? path[2] : path[1]}/${id}`}>
-              <button className="font-medium hover:bg-[#F0F0F0] focus:bg-[#F0F0F0] px-1  py-1 w-full">
+              <button className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
                 {options[1].label}
               </button>
             </Link>
             <button
-              className="font-medium hover:bg-[#F0F0F0] focus:bg-[#F0F0F0] px-1 py-1 w-full"
+              className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"
               onClick={() => {
                 handleOpenApp(id);
                 setShowOptions((prev) => !prev);

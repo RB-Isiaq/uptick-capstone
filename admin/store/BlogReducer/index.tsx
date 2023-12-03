@@ -16,7 +16,7 @@ export interface BlogState {
 const initialState = {
   step: 1,
   thumbnail: '',
-  image: {},
+  image: '',
   title: '',
   story: '',
   author: '',

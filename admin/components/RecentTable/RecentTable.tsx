@@ -29,7 +29,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({}) => ({
   '&:nth-of-type(even)': {
-    backgroundColor: '#F7F9FF',
+    backgroundColor: '#F9F9F9',
+    borderBottom: '1px solid #F1F1F1',
   },
   // hide last border
   '&:last-child td, &:last-child th': {

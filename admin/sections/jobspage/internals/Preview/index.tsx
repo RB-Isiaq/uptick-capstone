@@ -7,7 +7,7 @@ import Button from '@/components/Button';
 import { JobState } from '@/store/JobReducer';
 import { useSelector } from 'react-redux';
 import { useMutation } from '@tanstack/react-query';
-import { postData } from '@/Services/ApiCalls';
+import { postFile } from '@/Services/ApiCalls';
 
 const Preview = () => {
   const [isPreviewed, setIsPreviewed] = useState(true);
@@ -32,10 +32,23 @@ const Preview = () => {
     jobCategory: category,
     location: location,
   };
+  // console.log(new Date(deadline).toUTCString());
+  const formData = new FormData();
+  formData.append('jobTitle', title);
+  formData.append('companyLogo', companyLogo);
+  formData.append('companyName', company);
+  formData.append('description', description);
+  formData.append('deadline', deadline);
+  formData.append('jobType', type);
+  formData.append('jobCategory', category);
+  formData.append('location', location);
+  formData.append('startDate', new Date().toISOString());
+  formData.append('endDate', new Date().toISOString());
+  console.log(Object.fromEntries(formData));
 
   const { mutate, data, error, isSuccess, isPending } = useMutation({
     mutationFn: async () => {
-      const data = await postData(`jobs`, jobData);
+      const data = await postFile(`jobs`, formData);
       return data;
     },
   });
@@ -43,12 +56,13 @@ const Preview = () => {
   const handleSubmit = () => {
     mutate();
     console.log(jobData);
+    console.log(Object.fromEntries(formData));
 
     if (isSuccess) {
-      console.log('posted for real');
+      console.log('posted successfully');
     }
     if (error) {
-      console.log(`${error}} end`);
+      console.log(`${error}} error`);
     }
   };
   console.log(data);

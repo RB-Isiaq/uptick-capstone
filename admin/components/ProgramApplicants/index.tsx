@@ -31,7 +31,7 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
   const [page, setPage] = useState(1);
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ['programId'],
+    queryKey: [id],
     queryFn: async () => {
       const data = await getData(`progApplicant/${id}/apply-program`);
 

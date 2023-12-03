@@ -4,7 +4,7 @@ import { programs } from './constants';
 export const Programs = () => {
   return (
     <section className="bg-[#111] waves-bg relative" id="programs">
-      <div className="py-[20px] md:py-[88px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10 flex flex-col justify-center items-center gap-3 lg:gap-[90px] z-[2]">
+      <div className="py-[20px] md:py-[88px] w-full max-w-[1440px] mx-auto px-3 xl:px-[60px] md:px-10 flex flex-col justify-center items-center gap-3  z-[2]">
         {programs.map((program, i) => (
           <TechCard
             key={program.id}
@@ -13,6 +13,7 @@ export const Programs = () => {
             title={program.title}
             profession={program.profession}
             desc={program.desc}
+            desc2={program.desc2}
             tracks={program.tracks}
             btnText={program.btnText}
             reverse={i % 2 !== 0}

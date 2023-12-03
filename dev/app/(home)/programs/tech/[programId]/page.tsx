@@ -1,3 +1,4 @@
+import AIForm from '@/components/Form/AIForm';
 import DesignForm from '@/components/Form/DesignForm';
 import ProductForm from '@/components/Form/ProductForm';
 import SoftwareForm from '@/components/Form/SoftwareForm';
@@ -9,6 +10,8 @@ const ProgramPage = ({ params }: { params: { programId: string } }) => {
   switch (id) {
     case programId.SE_TECH:
       return <SoftwareForm programId={id} />;
+    case programId.AI_TECH:
+      return <AIForm programId={id} />;
     case programId.DESIGN_TECH:
       return <DesignForm programId={id} />;
     case programId.MGMT_TECH:

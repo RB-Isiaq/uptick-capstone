@@ -24,6 +24,12 @@ const ProgramPage = ({ params }: { params: { id: string } }) => {
           <ProgramApplicants title="Product Management" id={id} />
         </main>
       );
+    case programId.AI_TECH:
+      return (
+        <main>
+          <ProgramApplicants title="AI and Data" id={id} />
+        </main>
+      );
 
     default:
       return (

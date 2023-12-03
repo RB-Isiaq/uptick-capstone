@@ -53,7 +53,7 @@ const TalentTech = () => {
         </h1>
         <div />
       </div>
-      <div className="w-full  flex flex-col justify-between gap-10 py-5 ">
+      <div className="w-full  flex flex-col justify-between gap-8 py-5 ">
         {updatedTechPrograms.map((program) => (
           <ProgramCard
             key={program.id}
