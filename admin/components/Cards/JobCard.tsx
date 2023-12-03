@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { getData, updateData } from '@/Services/ApiCalls';
+import { deleteData, getData, updateData } from '@/Services/ApiCalls';
 import Modal from '../Modal/Modal';
 import { IProgramCard } from './ProgramCard';
 
@@ -27,7 +27,7 @@ const JobCard = ({
   console.log(id);
 
   const { data: programData } = useQuery({
-    queryKey: [id],
+    queryKey: ['jobspage'],
     queryFn: async () => {
       const data = await getData(`jobs/${id}/applications`);
 
@@ -39,7 +39,7 @@ const JobCard = ({
 
   const { mutate, data, error, isSuccess } = useMutation({
     mutationFn: async (status: string) => {
-      const data = await updateData(`programs/${id}`, {
+      const data = await updateData(`jobs/${id}`, {
         ...programData,
         status: status,
       });
@@ -74,14 +74,15 @@ const JobCard = ({
       setMessage('Something went wrong, Please try again');
     }
   };
-  const handleDeleteJob = (id: string | number) => {
-    console.log(`${id} opened`);
-    mutate('open');
-    if (isSuccess) {
+  const handleDeleteJob = async (id: string | number) => {
+    console.log(`${id} deleting`);
+    try {
+      const res = await deleteData(`jobs/${id} `);
+      console.log(res);
       setIsOpen(true);
-      setMessage('Application opened successfully');
-    }
-    if (error) {
+      setMessage(res.message);
+    } catch (error) {
+      console.log(error);
       setIsOpen(true);
       setMessage('Something went wrong, Please try again');
     }
@@ -92,7 +93,7 @@ const JobCard = ({
 
   return (
     <>
-      <div className="bg-white flex justify-between gap-2 pt-5 pb-7 px-6 w-full">
+      <div className="bg-white flex justify-between items-center gap-2 pt-5 pb-7 px-6 w-full">
         <h1 className=" font-semibold w-[165px]">{title}</h1>
         <h1 className=" font-semibold w-[170px]">{applicantsNum}</h1>
         {deadline && <h1 className=" font-semibold w-[170px]">{deadline}</h1>}

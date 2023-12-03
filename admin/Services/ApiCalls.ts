@@ -31,6 +31,13 @@ export const updateData = async function (route = '', data = {}) {
 
   return response.json();
 };
+export const deleteData = async function (route = '') {
+  const response = await fetch(`${API_BASE_URL}${route}`, {
+    method: 'DELETE',
+  });
+
+  return response.json();
+};
 
 export const getData = async function (route = '') {
   const response = await fetch(`${API_BASE_URL}${route}`, {

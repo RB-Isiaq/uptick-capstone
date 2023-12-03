@@ -1,12 +1,16 @@
 'use client';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Story from './internals/Story';
 import Button from '@/components/Button';
 import { BlogState } from '@/store/BlogReducer';
 import { useMutation } from '@tanstack/react-query';
 import { postFile } from '@/Services/ApiCalls';
+import Modal from '@/components/Modal/Modal';
 
 const Preview = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [message, setMessage] = useState('');
   const { title, story, author, image } = useSelector(
     (state: BlogState) => state.blogs,
   );
@@ -30,10 +34,13 @@ const Preview = () => {
     console.log(formData);
 
     if (isSuccess) {
-      console.log('posted for real');
+      setMessage(data.message);
+      setShowModal((prev) => !prev);
     }
     if (error) {
       console.log(`${error}} end`);
+      setMessage(error.message);
+      setShowModal((prev) => !prev);
     }
   };
   console.log(data);
@@ -45,6 +52,7 @@ const Preview = () => {
         text={isPending ? 'Publishing ...' : 'Publish'}
         onClick={handleSubmit}
       />
+      <Modal isOpen={showModal} onClose={setShowModal} message={message} />
     </div>
   );
 };
