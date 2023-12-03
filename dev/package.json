@@ -17,6 +17,7 @@
     "format": "npm run check-lint --fix && npm run testing && npx prettier --write ."
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.12.2",
     "framer-motion": "^10.16.4",
     "jest-environment-jsdom": "^29.7.0",
     "leaflet": "^1.9.4",
@@ -26,6 +27,7 @@
     "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.12.1",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.7",

@@ -6,30 +6,48 @@ import { detailsInput, links } from './constants';
 import { useSearchParams } from 'next/navigation';
 import Button from '@/components/Button';
 import Modal from '@/components/Modal/Modal';
-import { postData } from '@/Services/ApiCalls';
+import { getData, postFile } from '@/Services/ApiCalls';
+import { useQuery } from '@tanstack/react-query';
+import { JobDetailsProps } from '@/sections/jobspage/jobsList/internals/Jobs/jobs';
+import Image from 'next/image';
 
 const JobForm = () => {
   const params = useSearchParams();
-  const title = params.get('title');
   const jobId = params.get('jobId');
   console.log(jobId);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const { isPending, error, data } = useQuery<JobDetailsProps>({
+    queryKey: [jobId],
+    queryFn: async () => {
+      const result = await getData(`jobs/${jobId}`);
 
+      return result;
+    },
+  });
+  if (error) {
+    return (
+      <div className="w-full h-screen flex justify-center items-center">
+        <p className="text-red-400">Error: {error.message}</p>
+      </div>
+    );
+  }
+  // console.log(data);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const formObject = Object.fromEntries(formData);
+    formData.append('resumeFile', formObject.resume);
 
     console.log(formObject);
 
+    setIsLoading(true);
     try {
-      setIsLoading(true);
-      const result = await postData(
-        `applicants/${jobId}/apply-job`,
-        formObject,
+      const result = await postFile(
+        `jobApplicant/${jobId}/applications`,
+        formData,
       );
 
       console.log(result);
@@ -39,6 +57,7 @@ const JobForm = () => {
     } catch (error) {
       if (error instanceof Error) {
         console.log(error);
+        console.log(error.message);
         setMessage(error.message);
         setIsModalOpen((prev) => !prev);
       }
@@ -51,11 +70,22 @@ const JobForm = () => {
     <section className="mt-[-120px] pt-[120px] ">
       <div className="absolute top-0 left-0 w-full bg-[#070C19] h-[80px] md:h-[120px]" />
       <div className="w-full flex flex-col justify-between gap-4   px-3 py-[60px] lg:py-[80px] md:px-10 xl:px-[170px]  max-w-[1440px] mx-auto font-raleway">
+        {data?.companyLogo && (
+          <Image
+            src={data.companyLogo}
+            alt="job logo"
+            width={225}
+            height={181}
+            className="w-[225px] h-[181px]"
+          />
+        )}
         <h1 className="text-black font-bold text-[32px] md:text-[48px] mb-[10px] md:mb-[35px] leading-[160%]">
-          {title || 'Software Engineer (Backend)'}
+          {data?.jobTitle}
         </h1>
         <h2 className="text-black font-bold text-[18px] md:text-[24px] mb-[10px] md:mb-[51px] leading-[160%] max-w-[533px]">
-          {'GLOBAL REMOTE ENGINEERING / FULL-TIME (REMOTE) / REMOTE'}
+          {isPending
+            ? `Loading / Loading / Loading`
+            : `${data?.jobType} / ${data?.jobCategory} / ${data?.location}`}
         </h2>
 
         <form onSubmit={handleSubmit}>
@@ -110,15 +140,15 @@ const JobForm = () => {
           </h1>
           <div className="flex flex-col  w-full justify-between  gap-4 mt-[60px] mb-[30px]">
             <label
-              htmlFor="cityCountry"
+              htmlFor="address"
               className="text-black text-lg md:text-[24px] leading-[160%]"
             >
               (City, Country)
             </label>
             <input
-              id="cityCountry"
+              id="address"
               type="text"
-              name="cityCountry"
+              name="address"
               className="w-full py-[18px] px-5 flex-shrink-0 rounded-lg border border-[#B3B3B3] bg-[#E6E6E6]"
             />
           </div>

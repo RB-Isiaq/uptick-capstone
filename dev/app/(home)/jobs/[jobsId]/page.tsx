@@ -1,9 +1,11 @@
 import JobsDetailsPage from '@/sections/jobspage/jobsDetails';
 
-const JobsID = () => {
+const JobsID = ({ params }: { params: { jobsId: string } }) => {
+  const { jobsId } = params;
+  console.log(jobsId);
   return (
     <main>
-      <JobsDetailsPage />
+      <JobsDetailsPage id={jobsId} />
     </main>
   );
 };

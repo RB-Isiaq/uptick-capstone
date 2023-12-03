@@ -69,7 +69,7 @@ export const Navbar = () => {
                   <Image src={D_ICON} alt="drop_down" />
                 </div>
               </button>
-              <div className="absolute to-10 hidden bg-[#070C19] text-white group-hover:block w-[200px] px-4 rounded-lg ">
+              <div className="absolute top-10  hidden bg-[#070C19] text-white group-hover:block w-[200px] px-4 rounded-xl shadow-2xl">
                 <Link href="/programs/tech/">
                   <p className="block p-2 text-sm font-medium leading-[24px] hover:bg-inherit text-[#9A99A0] hover:text-white">
                     Tech
