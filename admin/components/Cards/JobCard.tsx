@@ -8,18 +8,9 @@ import { usePathname } from 'next/navigation';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { getData, updateData } from '@/Services/ApiCalls';
 import Modal from '../Modal/Modal';
-export interface IProgramCard {
-  id: string;
-  title: string;
-  applicantsNum: number;
-  deadline?: string;
-  options: {
-    id: number;
-    label: string;
-  }[];
-}
+import { IProgramCard } from './ProgramCard';
 
-const ProgramCard = ({
+const JobCard = ({
   id,
   title,
   applicantsNum,
@@ -38,7 +29,7 @@ const ProgramCard = ({
   const { data: programData } = useQuery({
     queryKey: [id],
     queryFn: async () => {
-      const data = await getData(`programs/${id}`);
+      const data = await getData(`jobs/${id}/applications`);
 
       return data;
     },
@@ -123,7 +114,7 @@ const ProgramCard = ({
             >
               {options[0].label}
             </button>
-            <Link href={`${path[2] ? path[2] : path[1]}/${id}`}>
+            <Link href={`${path[2] ? path[2] : path[1]}/${id}?title=${title}`}>
               <button className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
                 {options[1].label}
               </button>
@@ -154,4 +145,4 @@ const ProgramCard = ({
   );
 };
 
-export default ProgramCard;
+export default JobCard;

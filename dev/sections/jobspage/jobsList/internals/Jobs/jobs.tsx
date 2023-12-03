@@ -24,10 +24,10 @@ export interface JobDetailsProps {
 }
 
 const Jobs = () => {
-  const { isLoading, error, data } = useQuery<JobDetailsProps[]>({
+  const { isLoading, error, data } = useQuery({
     queryKey: ['jobs'],
     queryFn: async () => {
-      const result = await getData(`jobs`);
+      const result: JobDetailsProps[] = await getData(`jobs`);
 
       return result;
     },

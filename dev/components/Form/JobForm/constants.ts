@@ -4,7 +4,7 @@ export const detailsInput = [
     label: 'Resume/CV',
     type: 'file',
     required: true,
-    name: 'resumeUrl',
+    name: 'resume',
   },
   {
     id: 2,

@@ -39,16 +39,12 @@ const JobForm = () => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const formObject = Object.fromEntries(formData);
-    formData.append('resumeFile', formObject.resume);
 
     console.log(formObject);
 
     setIsLoading(true);
     try {
-      const result = await postFile(
-        `jobApplicant/${jobId}/applications`,
-        formData,
-      );
+      const result = await postFile(`jobs/${jobId}/applications`, formData);
 
       console.log(result);
 
@@ -149,6 +145,7 @@ const JobForm = () => {
               id="address"
               type="text"
               name="address"
+              required
               className="w-full py-[18px] px-5 flex-shrink-0 rounded-lg border border-[#B3B3B3] bg-[#E6E6E6]"
             />
           </div>
