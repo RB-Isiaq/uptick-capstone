@@ -1,13 +1,16 @@
 'use client';
 
 import React, { FormEvent, useState } from 'react';
-import { designInput, title } from './constants';
+import { aiInput, title } from './constants';
 import Modal from '@/components/Modal/Modal';
 import Button from '@/components/Button';
 import { postData } from '@/Services/ApiCalls';
-import { IProgramId } from '../SoftwareForm';
 
-const DesignForm = ({ programId }: IProgramId) => {
+export interface IProgramId {
+  programId: string;
+}
+
+const AIForm = ({ programId }: IProgramId) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -24,8 +27,12 @@ const DesignForm = ({ programId }: IProgramId) => {
         formObject,
       );
 
-      setMessage(result.message);
-      setIsModalOpen((prev) => !prev);
+      if (result.applicant) {
+        setIsModalOpen((prev) => !prev);
+        setMessage(result.message);
+      } else {
+        throw new Error(result.message);
+      }
     } catch (error) {
       if (error instanceof Error) {
         console.log(error.message);
@@ -49,7 +56,7 @@ const DesignForm = ({ programId }: IProgramId) => {
           <h1 className="text-black text-[18px] md:text-[24px] mb-[10px] md:mb-[20px] leading-[160%]">
             SUBMIT YOUR APPLICATION
           </h1>
-          {designInput.map((inp) => (
+          {aiInput.map((inp) => (
             <div
               key={inp.id}
               className="flex flex-col w-full justify-between gap-1  mb-[20px]"
@@ -81,7 +88,11 @@ const DesignForm = ({ programId }: IProgramId) => {
                   className="form_input"
                 >
                   {inp.options?.map((option, i) => (
-                    <option key={i} value={option} className="form_input">
+                    <option
+                      key={i}
+                      value={option}
+                      className="form_input py-10 my-4"
+                    >
                       {option}
                     </option>
                   ))}
@@ -112,4 +123,4 @@ const DesignForm = ({ programId }: IProgramId) => {
   );
 };
 
-export default DesignForm;
+export default AIForm;

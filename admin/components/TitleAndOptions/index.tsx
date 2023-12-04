@@ -30,6 +30,10 @@ const TitleAndOptions = ({
         id={title}
         className="border-0 outline-0 border-b border-black text-black bg-inherit"
         defaultValue={dValue || value}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          onChange(e.target.value)
+        }
+        value={dValue}
       />
       <div>
         {options.map((option) => (

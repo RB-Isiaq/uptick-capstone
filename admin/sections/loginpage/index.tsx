@@ -5,20 +5,17 @@ import { LOGO } from '@/public';
 import Image from 'next/image';
 import Link from 'next/link';
 import { postData } from '@/Services/ApiCalls';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/navigation';
-import { AdminState, storeAdmin } from '@/store/AdminReducer';
+import { storeAdmin } from '@/store/AdminReducer';
 
 const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const router = useRouter();
   const dispatch = useDispatch();
-  const { userId } = useSelector((state: AdminState) => state.admin);
 
-  const username = 'The Admin';
-
-  console.log(userId);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -26,10 +23,10 @@ const LoginPage = () => {
 
     try {
       setIsLoading(true);
-      const result = await postData(`auth/login`, formObject);
+      const result = await postData(`login`, formObject);
 
-      console.log(result);
       if (result.token) {
+        setSuccess(result.message);
         dispatch(
           storeAdmin({
             userId: formObject.user_id,
@@ -67,19 +64,6 @@ const LoginPage = () => {
         </h1>
         <p className="text-white  font-medium">Login to continue</p>
         <div className="flex flex-col gap-5 w-full mb-5 mt-[30px]">
-          <label className="text-white  font-medium" htmlFor="user_id">
-            User ID
-          </label>
-          <input
-            id="user_id"
-            name="user_id"
-            className="w-full px-5 py-[18px] border rounded-lg border-[#4D4D4D] bg-[rgba(153,153,153,0.11)] text-white"
-            type="text"
-            placeholder="User Id"
-            defaultValue={userId}
-          />
-        </div>
-        <div className="flex flex-col gap-5 w-full mb-5">
           <label className="text-white  font-medium" htmlFor="username">
             Username
           </label>
@@ -90,7 +74,6 @@ const LoginPage = () => {
             className="w-full px-5 py-[18px] border rounded-lg border-[#4D4D4D] bg-[rgba(153,153,153,0.11)] text-white"
             type="text"
             placeholder="username"
-            defaultValue={username}
           />
         </div>
         <div className="flex flex-col gap-5 w-full ">
@@ -119,6 +102,7 @@ const LoginPage = () => {
           {isLoading ? 'Logging In ...' : 'Log In'}
         </button>
       </form>
+      <p className="text-green-500 mx-auto text-center">{success}</p>
       <p className="text-red-500 mx-auto text-center">{error}</p>
       <p className="text-white  font-medium mx-auto">
         Don’t have an account?{' '}

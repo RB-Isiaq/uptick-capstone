@@ -74,8 +74,8 @@ export const TechCard = ({
         <div
           className={`flex gap-3 flex-wrap w-full max-w-[438px] ${
             title === 'Software Engineering'
-              ? 'max-w-[324px]'
-              : title === 'Design'
+              ? 'max-w-[320px]'
+              : title === 'Design' || title === 'AI & Data'
               ? 'max-w-[440px]'
               : 'max-w-[545px]'
           }`}

@@ -35,7 +35,8 @@ const JobThumbnail = () => {
             Company <span className="font-normal ml-3">{company}</span>
           </p>
           <p className="text-black text-xs font-bold leading-[160%]">
-            Deadline <span className="font-normal ml-3">{deadline}</span>
+            Deadline{' '}
+            <span className="font-normal ml-3">{deadline.toString()}</span>
           </p>
         </div>
       </div>

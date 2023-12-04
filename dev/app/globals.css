@@ -126,12 +126,12 @@ body {
 @keyframes scroll {
   0% {
     transform: translateX(0);
-    transition: all 1s ease-in-out;
+    transition: all 1s ease-in;
   }
 
   100% {
     transform: translateX(-100vw);
-    transition: all 1s ease-in-out;
+    transition: all 1s ease-out;
   }
 }
 

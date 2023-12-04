@@ -1,16 +1,17 @@
-// import ProgramApplicants from '@/components/ProgramApplicants';
-// import { seApplicants } from '@/sections/programspage/tech/constants';
+'use client';
 
-const jobApplicantsPage = ({ params }: { params: { id: string } }) => {
+import JobApplicants from '@/components/JobApplicant';
+import { useSearchParams } from 'next/navigation';
+
+const JobApplicantsPage = ({ params }: { params: { id: string } }) => {
   const { id } = params;
-  console.log(id);
-
+  const param = useSearchParams();
+  const title = param.get('title');
   return (
     <main>
-      Empty
-      {/* <ProgramApplicants title="Software Engineering"  /> */}
+      <JobApplicants title={title || ''} id={id} />
     </main>
   );
 };
 
-export default jobApplicantsPage;
+export default JobApplicantsPage;

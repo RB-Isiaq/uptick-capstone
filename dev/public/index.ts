@@ -64,6 +64,7 @@ import MAP_EVALUATION from './assets/talent-evaluation.png';
 import MAP_MATCHING from './assets/talent-matching.png';
 import MAP_SUPPORT from './assets/talent-support.png';
 import DOWN_ICON from './assets/arr-down.svg';
+import D_ICON from './assets/arr-d.svg';
 
 export {
   LOGO,
@@ -132,4 +133,5 @@ export {
   MAP_MATCHING,
   MAP_SUPPORT,
   DOWN_ICON,
+  D_ICON,
 };

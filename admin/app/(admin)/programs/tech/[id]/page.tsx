@@ -3,7 +3,6 @@ import { programId } from '@/sections/programspage/tech/constants';
 
 const ProgramPage = ({ params }: { params: { id: string } }) => {
   const { id } = params;
-  console.log(id);
 
   switch (id) {
     case programId.SE_TECH:
@@ -22,6 +21,12 @@ const ProgramPage = ({ params }: { params: { id: string } }) => {
       return (
         <main>
           <ProgramApplicants title="Product Management" id={id} />
+        </main>
+      );
+    case programId.AI_TECH:
+      return (
+        <main>
+          <ProgramApplicants title="AI and Data" id={id} />
         </main>
       );
 

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export type blogState = {
   step: number;
   thumbnail: string;
-  image: Blob | Buffer;
+  image: Blob | string;
   title: string;
   story: string;
   author: string;
@@ -16,7 +16,7 @@ export interface BlogState {
 const initialState = {
   step: 1,
   thumbnail: '',
-  image: {},
+  image: '',
   title: '',
   story: '',
   author: '',

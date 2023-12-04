@@ -27,7 +27,7 @@ export const Contact = () => {
       setIsModalOpen(true);
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error);
+        console.log(error.message);
         setMessage(error.message);
         setIsModalOpen(true);
       }

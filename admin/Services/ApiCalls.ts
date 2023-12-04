@@ -11,6 +11,15 @@ export const postData = async function (route = '', data = {}) {
 
   return response.json();
 };
+export const postFile = async function (route = '', data = new FormData()) {
+  const response = await fetch(`${API_BASE_URL}${route}`, {
+    method: 'POST',
+    body: data,
+  });
+
+  return response.json();
+};
+
 export const updateData = async function (route = '', data = {}) {
   const response = await fetch(`${API_BASE_URL}${route}`, {
     method: 'PUT',
@@ -18,6 +27,13 @@ export const updateData = async function (route = '', data = {}) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
+  });
+
+  return response.json();
+};
+export const deleteData = async function (route = '') {
+  const response = await fetch(`${API_BASE_URL}${route}`, {
+    method: 'DELETE',
   });
 
   return response.json();

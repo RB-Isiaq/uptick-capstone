@@ -1,6 +1,6 @@
 export const startupPrograms = [
   {
-    id: 1,
+    id: '1',
     title: 'Startup School',
     applicantsNum: 200,
     options: [

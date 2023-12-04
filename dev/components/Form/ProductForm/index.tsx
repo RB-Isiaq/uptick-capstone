@@ -28,7 +28,7 @@ const ProductForm = ({ programId }: IProgramId) => {
       setIsModalOpen((prev) => !prev);
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error);
+        console.log(error.message);
         setMessage(error.message);
         setIsModalOpen((prev) => !prev);
       }
