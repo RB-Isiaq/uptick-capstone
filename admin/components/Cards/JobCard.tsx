@@ -6,20 +6,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { getData, updateData } from '@/Services/ApiCalls';
+import { deleteData, getData, updateData } from '@/Services/ApiCalls';
 import Modal from '../Modal/Modal';
-export interface IProgramCard {
-  id: string;
-  title: string;
-  applicantsNum: number;
-  deadline?: string;
-  options: {
-    id: number;
-    label: string;
-  }[];
-}
+import { IProgramCard } from './ProgramCard';
 
-const ProgramCard = ({
+const JobCard = ({
   id,
   title,
   applicantsNum,
@@ -31,11 +22,10 @@ const ProgramCard = ({
   const [message, setMessage] = useState('');
   const pathname = usePathname();
   const path = pathname.split('/');
-
   const { data: programData } = useQuery({
-    queryKey: [id, showOptions],
+    queryKey: ['jobspage'],
     queryFn: async () => {
-      const data = await getData(`programs/${id}`);
+      const data = await getData(`jobs/${id}/applications`);
 
       return data;
     },
@@ -43,7 +33,7 @@ const ProgramCard = ({
 
   const { mutate, error, isSuccess } = useMutation({
     mutationFn: async (status: string) => {
-      const data = await updateData(`programs/${id}`, {
+      const data = await updateData(`jobs/${id}`, {
         ...programData,
         status: status,
       });
@@ -54,8 +44,8 @@ const ProgramCard = ({
   const handleCloseApp = () => {
     mutate('close');
     if (isSuccess) {
-      setMessage('Application closed successfully');
       setIsOpen(true);
+      setMessage('Application closed successfully');
     }
     if (error) {
       setIsOpen(true);
@@ -74,10 +64,22 @@ const ProgramCard = ({
       setMessage('Something went wrong, Please try again');
     }
   };
+  const handleDeleteJob = async (id: string | number) => {
+    try {
+      const res = await deleteData(`jobs/${id} `);
+
+      setIsOpen(true);
+      setMessage(res.message);
+    } catch (error) {
+      console.log(error);
+      setIsOpen(true);
+      setMessage('Something went wrong, Please try again');
+    }
+  };
 
   return (
     <>
-      <div className="bg-white flex justify-between gap-2 pt-5 pb-7 px-6 w-full">
+      <div className="bg-white flex justify-between items-center gap-2 pt-5 pb-7 px-6 w-full">
         <h1 className=" font-semibold w-[165px]">{title}</h1>
         <h1 className=" font-semibold w-[170px]">{applicantsNum}</h1>
         {deadline && <h1 className=" font-semibold w-[170px]">{deadline}</h1>}
@@ -99,7 +101,7 @@ const ProgramCard = ({
             >
               {options[0].label}
             </button>
-            <Link href={`${path[2] ? path[2] : path[1]}/${id}`}>
+            <Link href={`${path[2] ? path[2] : path[1]}/${id}?title=${title}`}>
               <button className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
                 {options[1].label}
               </button>
@@ -113,6 +115,15 @@ const ProgramCard = ({
             >
               {options[2].label}
             </button>
+            <button
+              className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"
+              onClick={() => {
+                handleDeleteJob(id);
+                setShowOptions((prev) => !prev);
+              }}
+            >
+              {options[3].label}
+            </button>
           </div>
         </div>
       </div>
@@ -121,4 +132,4 @@ const ProgramCard = ({
   );
 };
 
-export default ProgramCard;
+export default JobCard;

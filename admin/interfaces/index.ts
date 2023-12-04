@@ -22,6 +22,28 @@ export type ProgramApplicant = {
   programId: string;
 };
 
+export interface JobApplicantDetails {
+  applicantId: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string | null;
+  address: string;
+  resumeUrl: string;
+  applicationDate: string;
+  currentCompany: string | null;
+  linkedinUrl: string | null;
+  githubUrl: string | null;
+  twitterUrl: string | null;
+  portfolioUrl: string | null;
+  otherUrl: string | null;
+  additionalInfo: string | null;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+  jobId: string;
+}
+
 export type TechProgram = {
   name: string;
   description: string;

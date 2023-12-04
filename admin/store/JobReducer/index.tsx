@@ -3,10 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 export type jobState = {
   step: number;
   thumbnail: string;
-  companyLogo: Blob | Buffer;
+  companyLogo: Blob | string;
   title: string;
   company: string;
-  deadline: string;
+  deadline: string | Blob;
   description: string;
   type: string;
   category: string;
@@ -20,7 +20,7 @@ export interface JobState {
 const initialState = {
   step: 1,
   thumbnail: '',
-  companyLogo: {},
+  companyLogo: '',
   title: '',
   company: '',
   deadline: '',

@@ -1,9 +1,10 @@
-import { NON_TECH, SE_TECH, UI_TECH } from '@/public';
+import { AI_TECH, NON_TECH, SE_TECH, UI_TECH } from '@/public';
 
 export const programId = {
-  SE_TECH: '8726c585-5483-4e9a-822a-107741a59ea3',
-  DESIGN_TECH: 'c9bf8c93-8d63-4681-957c-c28b032415f7',
-  MGMT_TECH: '320989a7-c759-46a2-adb1-0445c517c7c6',
+  SE_TECH: 'fa137134-6ab2-4b0b-907b-324c3d6cad93',
+  AI_TECH: '10e4b915-b686-4415-a14a-1caacb942d6e',
+  DESIGN_TECH: '213ee078-2067-4942-a6ad-cd058a428014',
+  MGMT_TECH: '0cdc576b-918d-4201-b003-63c2993813d6',
 };
 export const programs = [
   {
@@ -32,6 +33,35 @@ export const programs = [
     btnText: 'Apply Now',
     type: 'tech',
     image: SE_TECH,
+  },
+  {
+    id: programId.AI_TECH,
+    title: 'AI & Data',
+    profession: 'Become a Top 1% Engineer',
+    desc: 'Explore the limitless possibilities of AI and data engineering through our comprehensive fellowship programs. From data science to machine learning, data analysis to core data engineering, we offer a diverse range of opportunities. Join us and become part of a community that is building the future:',
+    desc2:
+      'Our AI & Data Engineering Fellowship is your gateway to becoming a data scientist, data engineer, analyst, or AI engineer. Learn, collaborate, and build the future with Uptick Talent.',
+    tracks: [
+      {
+        id: 1,
+        track: 'Data Science',
+      },
+      {
+        id: 2,
+        track: 'Machine Learning',
+      },
+      {
+        id: 3,
+        track: 'Data Analysis',
+      },
+      {
+        id: 4,
+        track: 'Data Engineering',
+      },
+    ],
+    btnText: 'Apply Now',
+    type: 'tech',
+    image: AI_TECH,
   },
   {
     id: programId.DESIGN_TECH,

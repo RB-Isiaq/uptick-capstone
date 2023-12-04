@@ -19,10 +19,9 @@ const JobDescription = () => {
         height={83}
         className="w-[109px] h-[88px]"
       />
-      <div className="flex flex-col gap-[15px]"></div>
       <h1 className="text-black text-2xl font-bold leading-[160%]">{title}</h1>
       <p className="text-black text-xs font-bold">
-        Deadline <span className="font-normal">{deadline}</span>
+        Deadline <span className="font-normal">{deadline.toString()}</span>
       </p>
       <h2 className="text-black text-[17px] font-medium leading-[160%]">
         Job Description/ Requirements

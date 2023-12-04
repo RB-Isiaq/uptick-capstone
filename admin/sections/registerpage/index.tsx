@@ -26,9 +26,8 @@ const RegisterPage = () => {
         setError('Must be a matching password');
         return;
       }
-      const result = await postData(`auth/signup`, formObject);
+      const result = await postData(`signup`, formObject);
 
-      console.log(result);
       if (result.user) {
         dispatch(
           storeAdmin({

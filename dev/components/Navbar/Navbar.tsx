@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { btnText, navLinks } from './constants';
 import Link from 'next/link';
-import { LOGO } from '@/public';
+import { D_ICON, LOGO } from '@/public';
 import Hambuger from '../Hambuger';
 import dynamic from 'next/dynamic';
 import Button from '../Button';
@@ -56,15 +56,54 @@ export const Navbar = () => {
             <Image src={LOGO} alt="logo" />
           </Link>
           <div className="hidden  md:flex justify-between gap-4 items-center w-full max-w-[484px]">
-            {navLinks.map((link) => (
-              <Link
-                key={link.id}
-                href={link.href}
-                className="font-medium font-raleway  text-white"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link
+              href={navLinks[0].href}
+              className="font-medium font-raleway  text-white"
+            >
+              {navLinks[0].label}
+            </Link>
+            <div className="relative group py-3">
+              <button className=" flex gap-2 items-center focus:outline-none  ">
+                <p className="font-medium font-raleway  text-white">Programs</p>
+                <div className=" ">
+                  <Image src={D_ICON} alt="drop_down" />
+                </div>
+              </button>
+              <div className="hidden absolute top-10   bg-[#070C19] text-white  group-hover:block w-[200px] px-4 rounded-xl shadow-2xl z-[100]">
+                <Link href="/programs/tech/">
+                  <p className="block p-2 text-sm font-medium leading-[24px] hover:bg-inherit text-[#9A99A0] hover:text-white">
+                    Tech
+                  </p>
+                </Link>
+                <Link href="/programs/business/">
+                  <p className="block p-2 text-sm font-medium leading-[24px] hover:bg-inherit text-[#9A99A0] hover:text-white">
+                    Business
+                  </p>
+                </Link>
+                <Link href="/programs/map/">
+                  <p className="block p-2 text-sm font-medium leading-[24px] hover:bg-inherit text-[#9A99A0] hover:text-white">
+                    Map
+                  </p>
+                </Link>
+                <Link href="/programs/beginners/">
+                  <p className="block p-2 text-sm font-medium leading-[24px] hover:bg-inherit text-[#9A99A0] hover:text-white">
+                    Beginners
+                  </p>
+                </Link>
+              </div>
+            </div>
+            <Link
+              href={navLinks[2].href}
+              className="font-medium font-raleway  text-white"
+            >
+              {navLinks[2].label}
+            </Link>
+            <Link
+              href={navLinks[3].href}
+              className="font-medium font-raleway  text-white"
+            >
+              {navLinks[3].label}
+            </Link>
           </div>
           <div className="hidden md:block">
             <Link href="/#programs">
@@ -92,16 +131,56 @@ export const Navbar = () => {
       `}
           >
             <div className="md:hidden flex flex-col mt-[2rem] gap-7 justify-between">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.id}
-                  href={link.href}
-                  className="font-medium font-raleway  text-white"
-                  onClick={() => setToggleMenu((prev) => !prev)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              <Link
+                href={navLinks[0].href}
+                className="font-medium font-raleway  text-white"
+              >
+                {navLinks[0].label}
+              </Link>
+              <div className="relative group">
+                <button className=" flex gap-2 items-center focus:outline-none  ">
+                  <p className="font-medium font-raleway  text-white">
+                    Programs
+                  </p>
+                  <div>
+                    <Image src={D_ICON} alt="drop_down" />
+                  </div>
+                </button>
+                <div className="absolute to-10 hidden bg-[#070C19] text-white group-hover:block group-hover:relative w-full">
+                  <Link href="/programs/tech/">
+                    <p className="block py-2 text-sm font-medium leading-[24px] hover:bg-inherit text-[#9A99A0] hover:text-white">
+                      Tech
+                    </p>
+                  </Link>
+                  <Link href="/programs/business/">
+                    <p className="block py-2 text-sm font-medium leading-[24px] hover:bg-inherit text-[#9A99A0] hover:text-white">
+                      Business
+                    </p>
+                  </Link>
+                  <Link href="/programs/map/">
+                    <p className="block py-2 text-sm font-medium leading-[24px] hover:bg-inherit text-[#9A99A0] hover:text-white">
+                      Map
+                    </p>
+                  </Link>
+                  <Link href="/programs/beginners/">
+                    <p className="block py-2 text-sm font-medium leading-[24px] hover:bg-inherit text-[#9A99A0] hover:text-white">
+                      Beginners
+                    </p>
+                  </Link>
+                </div>
+              </div>
+              <Link
+                href={navLinks[2].href}
+                className="font-medium font-raleway  text-white"
+              >
+                {navLinks[2].label}
+              </Link>
+              <Link
+                href={navLinks[3].href}
+                className="font-medium font-raleway  text-white"
+              >
+                {navLinks[3].label}
+              </Link>
               <Link
                 href="/#programs"
                 onClick={() => setToggleMenu((prev) => !prev)}

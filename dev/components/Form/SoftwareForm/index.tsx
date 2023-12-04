@@ -27,7 +27,6 @@ const SoftwareForm = ({ programId }: IProgramId) => {
         formObject,
       );
 
-      console.log(result);
       if (result.applicant) {
         setMessage(result.message);
         setIsModalOpen((prev) => !prev);
@@ -36,7 +35,7 @@ const SoftwareForm = ({ programId }: IProgramId) => {
       }
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error);
+        console.log(error.message);
         setMessage(error.message);
         setIsModalOpen((prev) => !prev);
       }

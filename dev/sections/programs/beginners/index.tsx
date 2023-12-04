@@ -14,6 +14,7 @@ const BeginnersPage = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeIn' }}
         exit={{ translateX: -100, opacity: 0 }}
+        className="overflow-hidden"
       >
         <Hero />
         <Curiosity />

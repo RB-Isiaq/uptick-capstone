@@ -14,7 +14,7 @@ import { LOGO } from '@/public';
 export const Footer = () => {
   return (
     <section className="bg-[#121212]">
-      <footer className="w-full max-w-[1440px] flex flex-col justify-center gap-[10px] md:gap-[102px] items-center border-t border-[rgba(82,82,82,0.17)] py-[45px] md:py-[90px] px-3 xl:px-[60px] md:px-10 mx-auto">
+      <footer className="w-full max-w-[1440px] flex flex-col justify-center gap-[10px] md:gap-[91px] items-center border-t border-[rgba(82,82,82,0.17)] py-[45px] md:py-[56px] px-3 xl:px-[60px] md:px-10 mx-auto">
         <div className="w-full flex flex-col  lg:flex-row justify-between gap-4">
           <div className="w-full max-w-[440px] flex flex-col justify-between h-[255px]">
             <Link href="/">
@@ -58,7 +58,7 @@ export const Footer = () => {
                           <Image src={link.icon} alt={link.label} />
                         ) : null}
 
-                        <p className="font-raleway text-[#fff] text-[14px] max-w-[233px]">
+                        <p className="font-raleway text-[#B3B3B3] text-[14px] max-w-[233px]">
                           {link.label}
                         </p>
                       </Link>

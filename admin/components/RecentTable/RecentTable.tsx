@@ -29,7 +29,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 
 const StyledTableRow = styled(TableRow)(({}) => ({
   '&:nth-of-type(even)': {
-    backgroundColor: '#F7F9FF',
+    backgroundColor: '#F9F9F9',
+    borderBottom: '1px solid #F1F1F1',
   },
   // hide last border
   '&:last-child td, &:last-child th': {
@@ -53,15 +54,6 @@ interface RecentTable {
 }
 
 export default function RecentTable({ header, rows }: RecentTable) {
-  // const [showDetails, setShowDetails] = React.useState(false);
-  // const [applicantId, setApplicantId] = React.useState('');
-
-  // const handleShowDetails = (id: string) => {
-  //   console.log(id);
-  //   setApplicantId(id);
-  //   setShowDetails(true);
-  // };
-
   return (
     <>
       <TableContainer component={Paper}>

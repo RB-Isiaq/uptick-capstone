@@ -1,7 +1,8 @@
 export const programId = {
-  SE_TECH: '8726c585-5483-4e9a-822a-107741a59ea3',
-  DESIGN_TECH: 'c9bf8c93-8d63-4681-957c-c28b032415f7',
-  MGMT_TECH: '320989a7-c759-46a2-adb1-0445c517c7c6',
+  SE_TECH: 'fa137134-6ab2-4b0b-907b-324c3d6cad93',
+  DESIGN_TECH: '213ee078-2067-4942-a6ad-cd058a428014',
+  MGMT_TECH: '0cdc576b-918d-4201-b003-63c2993813d6',
+  AI_TECH: '10e4b915-b686-4415-a14a-1caacb942d6e',
 };
 
 export const techPrograms = [
@@ -45,7 +46,26 @@ export const techPrograms = [
   },
   {
     id: programId.MGMT_TECH,
-    title: 'Project Management',
+    title: 'Product Management',
+    applicantsNum: 0,
+    options: [
+      {
+        id: 1,
+        label: 'Close Application',
+      },
+      {
+        id: 2,
+        label: 'View Applicants',
+      },
+      {
+        id: 3,
+        label: 'Open Application',
+      },
+    ],
+  },
+  {
+    id: programId.AI_TECH,
+    title: 'AI and Data',
     applicantsNum: 0,
     options: [
       {
