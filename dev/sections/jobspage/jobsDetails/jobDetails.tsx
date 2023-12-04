@@ -37,7 +37,7 @@ export const JobDetails = ({ id }: { id: string }) => {
   ) : (
     <section className="mt-[-120px] pt-[120px] ">
       <div className="absolute top-0 left-0 w-full bg-[#070C19] h-[80px] md:h-[120px]" />
-      <div className="flex flex-col gap-[15px] lg:gap-[30px] w-full max-w-[741px] mx-auto py-10">
+      <div className="flex flex-col gap-[15px] lg:gap-[20px] w-full max-w-[741px] mx-auto py-10 px-3">
         {data?.companyLogo && (
           <Image
             src={data.companyLogo}
