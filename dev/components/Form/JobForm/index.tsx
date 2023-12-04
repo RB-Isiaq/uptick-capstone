@@ -14,7 +14,6 @@ import Image from 'next/image';
 const JobForm = () => {
   const params = useSearchParams();
   const jobId = params.get('jobId');
-  console.log(jobId);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState('');
@@ -34,25 +33,18 @@ const JobForm = () => {
       </div>
     );
   }
-  // console.log(data);
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const formObject = Object.fromEntries(formData);
-
-    console.log(formObject);
 
     setIsLoading(true);
     try {
       const result = await postFile(`jobs/${jobId}/applications`, formData);
 
-      console.log(result);
-
       setMessage(result.message);
       setIsModalOpen((prev) => !prev);
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error);
         console.log(error.message);
         setMessage(error.message);
         setIsModalOpen((prev) => !prev);

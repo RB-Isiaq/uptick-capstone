@@ -27,18 +27,17 @@ const AIForm = ({ programId }: IProgramId) => {
         formObject,
       );
 
-      console.log(result);
       if (result.applicant) {
-        setMessage(result.message);
         setIsModalOpen((prev) => !prev);
+        setMessage(result.message);
       } else {
         throw new Error(result.message);
       }
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error);
-        setMessage(error.message);
+        console.log(error.message);
         setIsModalOpen((prev) => !prev);
+        setMessage(error.message);
       }
     } finally {
       setIsLoading(false);

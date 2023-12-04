@@ -62,14 +62,14 @@ export const Navbar = () => {
             >
               {navLinks[0].label}
             </Link>
-            <div className="relative group">
+            <div className="relative group py-3">
               <button className=" flex gap-2 items-center focus:outline-none  ">
                 <p className="font-medium font-raleway  text-white">Programs</p>
                 <div className=" ">
                   <Image src={D_ICON} alt="drop_down" />
                 </div>
               </button>
-              <div className="absolute top-10  hidden bg-[#070C19] text-white group-hover:block w-[200px] px-4 rounded-xl shadow-2xl">
+              <div className="hidden absolute top-10   bg-[#070C19] text-white  group-hover:block w-[200px] px-4 rounded-xl shadow-2xl z-[100]">
                 <Link href="/programs/tech/">
                   <p className="block p-2 text-sm font-medium leading-[24px] hover:bg-inherit text-[#9A99A0] hover:text-white">
                     Tech

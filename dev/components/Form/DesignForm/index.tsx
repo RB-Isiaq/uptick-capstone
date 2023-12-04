@@ -28,9 +28,9 @@ const DesignForm = ({ programId }: IProgramId) => {
       setIsModalOpen((prev) => !prev);
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error);
-        setMessage(error.message);
+        console.log(error.message);
         setIsModalOpen((prev) => !prev);
+        setMessage(error.message);
       }
     } finally {
       setIsLoading(false);
