@@ -25,7 +25,6 @@ const LoginPage = () => {
       setIsLoading(true);
       const result = await postData(`login`, formObject);
 
-      console.log(result);
       if (result.token) {
         setSuccess(result.message);
         dispatch(

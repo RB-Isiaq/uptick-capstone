@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import Image from 'next/image';
 import { Right_Arr } from '@/public';
-import ApplicantModal from '../Modal/ApplicantModal';
+import JobApplicantModal from '../Modal/JobApplicantModal';
 import { useState } from 'react';
 import PaginationRounded from '../Pagination';
 import CSVDownloadButton from '../DownloadCsv';
@@ -14,7 +14,7 @@ import Spinner from '../Spinner';
 import JobApplicantCard from './JobApplicant';
 
 export type Details = {
-  programApplicantId: string;
+  applicantId: string;
   firstName: string;
   status: string;
   resumeUrl: string;
@@ -31,9 +31,9 @@ const JobApplicants = ({ title, id }: IJobApplicants) => {
   const [page, setPage] = useState(1);
 
   const { isLoading, error, data } = useQuery({
-    queryKey: [id],
+    queryKey: [id, showDetails, page],
     queryFn: async () => {
-      const data = await getData(`jobs/${id}/applications`);
+      const data = await getData(`jobs/${id}/applications?page=${page}`);
 
       return data;
     },
@@ -55,10 +55,7 @@ const JobApplicants = ({ title, id }: IJobApplicants) => {
     );
   }
 
-  console.log(data, 'DATA');
-
   const showDetailsHandler = (id: string) => {
-    console.log(id);
     setApplicantId(id);
     setShowDetails(true);
   };
@@ -87,12 +84,16 @@ const JobApplicants = ({ title, id }: IJobApplicants) => {
           <div className="w-[100px]" />
         </div>
         <div className="w-full  flex flex-col justify-between gap-[10px] py-5 ">
-          {data.data
-            .slice(page === 1 ? 0 : page + 1 - page, page * 1)
+          {[...data.data]
+            .sort(
+              (a, b) =>
+                new Date(b.updatedAt).getTime() -
+                new Date(a.updatedAt).getTime(),
+            )
             .map((applicantDetail: Details) => (
               <JobApplicantCard
-                key={applicantDetail.programApplicantId}
-                id={applicantDetail.programApplicantId}
+                key={applicantDetail.applicantId}
+                id={applicantDetail.applicantId}
                 name={applicantDetail.firstName}
                 status={applicantDetail.status}
                 date={applicantDetail.updatedAt.split('T')[0]}
@@ -102,13 +103,10 @@ const JobApplicants = ({ title, id }: IJobApplicants) => {
             ))}
         </div>
         <div className="w-full flex justify-end mt-6">
-          <PaginationRounded
-            page={Math.ceil(data.data.length / 1)}
-            setPage={setPage}
-          />
+          <PaginationRounded page={data.paging.totalPages} setPage={setPage} />
         </div>
       </div>
-      <ApplicantModal
+      <JobApplicantModal
         isOpen={showDetails}
         onClose={setShowDetails}
         appDetails={data.data}

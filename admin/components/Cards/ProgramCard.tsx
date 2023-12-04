@@ -31,12 +31,9 @@ const ProgramCard = ({
   const [message, setMessage] = useState('');
   const pathname = usePathname();
   const path = pathname.split('/');
-  console.log(path);
-
-  console.log(id);
 
   const { data: programData } = useQuery({
-    queryKey: [id],
+    queryKey: [id, showOptions],
     queryFn: async () => {
       const data = await getData(`programs/${id}`);
 
@@ -44,9 +41,7 @@ const ProgramCard = ({
     },
   });
 
-  console.log(programData);
-
-  const { mutate, data, error, isSuccess } = useMutation({
+  const { mutate, error, isSuccess } = useMutation({
     mutationFn: async (status: string) => {
       const data = await updateData(`programs/${id}`, {
         ...programData,
@@ -56,23 +51,19 @@ const ProgramCard = ({
     },
   });
 
-  const handleCloseApp = (id: string | number) => {
-    console.log(`${id} closed`);
+  const handleCloseApp = () => {
     mutate('close');
     if (isSuccess) {
       setMessage('Application closed successfully');
       setIsOpen(true);
-      console.log('updated for real');
     }
     if (error) {
       setIsOpen(true);
       setMessage('Something went wrong, Please try again');
     }
-    console.log(`${id} end`);
   };
 
-  const handleOpenApp = (id: string | number) => {
-    console.log(`${id} opened`);
+  const handleOpenApp = () => {
     mutate('open');
     if (isSuccess) {
       setIsOpen(true);
@@ -83,21 +74,6 @@ const ProgramCard = ({
       setMessage('Something went wrong, Please try again');
     }
   };
-  const handleDeleteJob = (id: string | number) => {
-    console.log(`${id} opened`);
-    mutate('open');
-    if (isSuccess) {
-      setIsOpen(true);
-      setMessage('Application opened successfully');
-    }
-    if (error) {
-      setIsOpen(true);
-      setMessage('Something went wrong, Please try again');
-    }
-  };
-
-  console.log(data);
-  console.log(message, isOpen, 'THIRD');
 
   return (
     <>
@@ -117,7 +93,7 @@ const ProgramCard = ({
             <button
               className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"
               onClick={() => {
-                handleCloseApp(id);
+                handleCloseApp();
                 setShowOptions((prev) => !prev);
               }}
             >
@@ -131,20 +107,11 @@ const ProgramCard = ({
             <button
               className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"
               onClick={() => {
-                handleOpenApp(id);
+                handleOpenApp();
                 setShowOptions((prev) => !prev);
               }}
             >
               {options[2].label}
-            </button>
-            <button
-              className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"
-              onClick={() => {
-                handleDeleteJob(id);
-                setShowOptions((prev) => !prev);
-              }}
-            >
-              {options[3].label}
             </button>
           </div>
         </div>

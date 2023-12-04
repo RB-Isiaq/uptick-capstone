@@ -11,7 +11,7 @@ const TalentTech = () => {
   const programIds = techPrograms.map((program) => program.id);
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ['applicants'],
+    queryKey: ['applicants', programIds],
     queryFn: async () => {
       const requests = programIds.map((programId) =>
         getData(`progApplicant/${programId}/apply-program`),
@@ -33,12 +33,10 @@ const TalentTech = () => {
     return <span>Error: {error.message}</span>;
   }
 
-  console.log(data);
   const updatedTechPrograms = techPrograms.map((program, index) => ({
     ...program,
-    applicantsNum: data && data[index].data ? data[index].data.length : 0,
+    applicantsNum: data && data[index].data ? data[index]?.paging.total : 0,
   }));
-  console.log(updatedTechPrograms);
   return (
     <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full min-h-screen">
       <div className="w-full  flex justify-between items-center mb-2">

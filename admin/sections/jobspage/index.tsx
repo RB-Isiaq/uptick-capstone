@@ -28,7 +28,7 @@ const JobsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ['jobs'],
+    queryKey: ['jobs', isOpen],
     queryFn: async () => {
       const result: JobDetailsProps[] = await getData(`jobs`);
 
@@ -37,7 +37,7 @@ const JobsPage = () => {
   });
 
   const { data: jobApplicantsData } = useQuery({
-    queryKey: [data],
+    queryKey: [data, isOpen],
     queryFn: async () => {
       if (!data) {
         return [];
@@ -62,21 +62,15 @@ const JobsPage = () => {
   if (error) {
     return <span>Error: {error.message}</span>;
   }
-  console.log(data);
-  // console.log(data);
-  console.log(jobApplicantsData);
   const updatedJobsData =
     data &&
     data.map((job, index) => ({
       ...job,
       applicantsNum:
         jobApplicantsData && jobApplicantsData[index]?.data
-          ? jobApplicantsData[index]?.data.length
+          ? jobApplicantsData[index]?.paging.total
           : 0,
     }));
-  console.log(updatedJobsData);
-  console.log(data);
-  console.log(jobApplicantsData);
   return (
     <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full min-h-screen">
       <div className="w-full  flex justify-between items-center mb-2">

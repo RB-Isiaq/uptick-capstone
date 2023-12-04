@@ -22,10 +22,6 @@ const JobCard = ({
   const [message, setMessage] = useState('');
   const pathname = usePathname();
   const path = pathname.split('/');
-  console.log(path);
-
-  console.log(id);
-
   const { data: programData } = useQuery({
     queryKey: ['jobspage'],
     queryFn: async () => {
@@ -35,9 +31,7 @@ const JobCard = ({
     },
   });
 
-  console.log(programData);
-
-  const { mutate, data, error, isSuccess } = useMutation({
+  const { mutate, error, isSuccess } = useMutation({
     mutationFn: async (status: string) => {
       const data = await updateData(`jobs/${id}`, {
         ...programData,
@@ -47,23 +41,19 @@ const JobCard = ({
     },
   });
 
-  const handleCloseApp = (id: string | number) => {
-    console.log(`${id} closed`);
+  const handleCloseApp = () => {
     mutate('close');
     if (isSuccess) {
-      setMessage('Application closed successfully');
       setIsOpen(true);
-      console.log('updated for real');
+      setMessage('Application closed successfully');
     }
     if (error) {
       setIsOpen(true);
       setMessage('Something went wrong, Please try again');
     }
-    console.log(`${id} end`);
   };
 
-  const handleOpenApp = (id: string | number) => {
-    console.log(`${id} opened`);
+  const handleOpenApp = () => {
     mutate('open');
     if (isSuccess) {
       setIsOpen(true);
@@ -75,10 +65,9 @@ const JobCard = ({
     }
   };
   const handleDeleteJob = async (id: string | number) => {
-    console.log(`${id} deleting`);
     try {
       const res = await deleteData(`jobs/${id} `);
-      console.log(res);
+
       setIsOpen(true);
       setMessage(res.message);
     } catch (error) {
@@ -87,9 +76,6 @@ const JobCard = ({
       setMessage('Something went wrong, Please try again');
     }
   };
-
-  console.log(data);
-  console.log(message, isOpen, 'THIRD');
 
   return (
     <>
@@ -109,7 +95,7 @@ const JobCard = ({
             <button
               className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"
               onClick={() => {
-                handleCloseApp(id);
+                handleCloseApp();
                 setShowOptions((prev) => !prev);
               }}
             >
@@ -123,7 +109,7 @@ const JobCard = ({
             <button
               className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"
               onClick={() => {
-                handleOpenApp(id);
+                handleOpenApp();
                 setShowOptions((prev) => !prev);
               }}
             >

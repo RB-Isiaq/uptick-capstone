@@ -54,15 +54,6 @@ interface RecentTable {
 }
 
 export default function RecentTable({ header, rows }: RecentTable) {
-  // const [showDetails, setShowDetails] = React.useState(false);
-  // const [applicantId, setApplicantId] = React.useState('');
-
-  // const handleShowDetails = (id: string) => {
-  //   console.log(id);
-  //   setApplicantId(id);
-  //   setShowDetails(true);
-  // };
-
   return (
     <>
       <TableContainer component={Paper}>

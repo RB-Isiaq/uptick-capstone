@@ -28,7 +28,6 @@ const RegisterPage = () => {
       }
       const result = await postData(`signup`, formObject);
 
-      console.log(result);
       if (result.user) {
         dispatch(
           storeAdmin({

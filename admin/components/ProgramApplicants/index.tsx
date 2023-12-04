@@ -31,9 +31,11 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
   const [page, setPage] = useState(1);
 
   const { isLoading, error, data } = useQuery({
-    queryKey: [id],
+    queryKey: [id, showDetails, page],
     queryFn: async () => {
-      const data = await getData(`progApplicant/${id}/apply-program`);
+      const data = await getData(
+        `progApplicant/${id}/apply-program?page=${page}`,
+      );
 
       return data;
     },
@@ -55,10 +57,7 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
     );
   }
 
-  console.log(data, 'DATA');
-
   const showDetailsHandler = (id: string) => {
-    console.log(id);
     setApplicantId(id);
     setShowDetails(true);
   };
@@ -87,8 +86,12 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
           <div className="w-[100px]" />
         </div>
         <div className="w-full  flex flex-col justify-between gap-[10px] py-5 ">
-          {data.data
-            .slice(page === 1 ? 0 : page + 1 - page, page * 1)
+          {[...data.data]
+            .sort(
+              (a, b) =>
+                new Date(b.updatedAt).getTime() -
+                new Date(a.updatedAt).getTime(),
+            )
             .map((applicantDetail: Details) => (
               <ApplicantCard
                 key={applicantDetail.programApplicantId}
@@ -102,10 +105,7 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
             ))}
         </div>
         <div className="w-full flex justify-end mt-6">
-          <PaginationRounded
-            page={Math.ceil(data.data.length / 1)}
-            setPage={setPage}
-          />
+          <PaginationRounded page={data.paging.totalPages} setPage={setPage} />
         </div>
       </div>
       <ApplicantModal

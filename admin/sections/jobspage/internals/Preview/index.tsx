@@ -39,8 +39,6 @@ const Preview = () => {
   const { mutate, data, error, isSuccess, isPending } = useMutation({
     mutationFn: async () => {
       const data = await postFile(`jobs`, formData);
-      console.log(data);
-
       return data;
     },
   });
@@ -49,14 +47,11 @@ const Preview = () => {
     mutate();
     if (isSuccess) {
       setMessage(data.message);
-      console.log(data, 'DATA SUCCESS');
     }
     if (error?.message) {
-      console.log(error.message, 'DATA ERROR');
       setMessage(error.message);
     }
   };
-  console.log(data);
 
   return (
     <div className="bg-[#FAFAFA] w-full min-h-[502px] px-8 pt-[75px] pb-[21px] font-raleway flex flex-col">

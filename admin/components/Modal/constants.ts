@@ -101,6 +101,74 @@ export const applicantDetails = [
   },
 ];
 
+export const jobApplicantDetails = [
+  {
+    id: 1,
+    label: 'Resume/CV',
+    key: 'resumeUrl',
+  },
+  {
+    id: 2,
+    label: 'First Name',
+    key: 'firstName',
+  },
+  {
+    id: 3,
+    label: 'Last Name',
+    key: 'lastName',
+  },
+  {
+    id: 4,
+    label: 'Email',
+    key: 'email',
+  },
+  {
+    id: 5,
+    label: 'Phone',
+    key: 'phone',
+  },
+  {
+    id: 6,
+    label: 'Address',
+    key: 'address',
+  },
+  {
+    id: 7,
+    label: 'Current company',
+    key: 'currentCompany',
+  },
+  {
+    id: 8,
+    label: 'LinkedIn URL',
+    key: 'linkedinUrl',
+  },
+  {
+    id: 9,
+    label: 'Twitter URL',
+    key: 'twitterUrl',
+  },
+  {
+    id: 10,
+    label: 'GitHub URL',
+    key: 'githubUrl',
+  },
+  {
+    id: 11,
+    label: 'Portfolio URL',
+    key: 'portfolioUrl',
+  },
+  {
+    id: 12,
+    label: 'Other website',
+    key: 'otherUrl',
+  },
+  {
+    id: 13,
+    label: 'Additional information',
+    key: 'additionalInfo',
+  },
+];
+
 export const formTabs = [
   {
     id: 1,

@@ -1,33 +1,33 @@
 import Image from 'next/image';
-import { applicantDetails } from './constants';
+import { jobApplicantDetails } from './constants';
 import { Close } from '@/public';
-import { ProgramApplicant } from '@/interfaces';
+import { JobApplicantDetails } from '@/interfaces';
 import { FormEvent } from 'react';
 import { updateData } from '@/Services/ApiCalls';
 import { useMutation } from '@tanstack/react-query';
 
-interface ApplicantModalProps {
+interface JobApplicantModalProps {
   isOpen: boolean;
   onClose: React.Dispatch<React.SetStateAction<boolean>>;
-  appDetails: ProgramApplicant[];
+  appDetails: JobApplicantDetails[];
   applicantId: string;
 }
 
-const ApplicantModal: React.FC<ApplicantModalProps> = ({
+const JobApplicantModal: React.FC<JobApplicantModalProps> = ({
   isOpen,
   onClose,
   appDetails,
   applicantId,
 }) => {
   const details = appDetails.filter(
-    (applicant) => applicant.programApplicantId === applicantId,
+    (applicant) => applicant.applicantId === applicantId,
   );
-  const progDetails: ProgramApplicant = details[0];
+  const applicantDetails: JobApplicantDetails = details[0];
 
   const { mutate, error, isPending, isSuccess } = useMutation({
-    mutationFn: async (formData: ProgramApplicant) => {
+    mutationFn: async (formData: JobApplicantDetails) => {
       const data = await updateData(
-        `progApplicant/${applicantId}/program`,
+        `jobApplicant/${applicantId}/job`,
         formData,
       );
       return data;
@@ -39,8 +39,8 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
     const formData = new FormData(e.currentTarget);
     const formObject = Object.fromEntries(formData);
 
-    const updatedApplicantData: ProgramApplicant = {
-      ...progDetails,
+    const updatedApplicantData: JobApplicantDetails = {
+      ...applicantDetails,
       status: String(formObject.status),
     };
     mutate(updatedApplicantData);
@@ -60,12 +60,12 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
           />
         </div>
         <div className="w-full flex flex-col gap-[14px]">
-          {applicantDetails.map((detail) =>
-            progDetails[detail.key as keyof ProgramApplicant] ? (
+          {jobApplicantDetails.map((detail) =>
+            applicantDetails[detail.key as keyof JobApplicantDetails] ? (
               <div key={detail.id}>
                 <p className="text-lg text-black">{detail.label}</p>
                 <p className="text-lg text-[#5988FF]">
-                  {progDetails[detail.key as keyof ProgramApplicant]}
+                  {applicantDetails[detail.key as keyof JobApplicantDetails]}
                 </p>
               </div>
             ) : null,
@@ -119,4 +119,4 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
   );
 };
 
-export default ApplicantModal;
+export default JobApplicantModal;

@@ -16,18 +16,14 @@ const JobApplicantCard = ({
   handleShowDetails,
 }: IApplicationCard) => {
   const handleDownloadResume = () => {
-    // Create a temporary link element
     const downloadLink = document.createElement('a');
     downloadLink.href = resumeUrl;
-    downloadLink.download = `resume_${id}.pdf`; // You can set the desired file name
+    downloadLink.download = `${name}'s resume.pdf`;
     document.body.appendChild(downloadLink);
-
-    // Trigger a click on the link to start the download
     downloadLink.click();
-
-    // Remove the link from the DOM
     document.body.removeChild(downloadLink);
   };
+
   return (
     <div className="flex justify-between items-center gap-2 py-[13px] px-[18px] w-full bg-white">
       <h1 className="text-lg  text-[#111] w-[110px] ">{name}</h1>
