@@ -1,10 +1,10 @@
-import JobsDetailsPage from '@/sections/jobspage/jobsDetails';
+import BlogDetails from '@/sections/blogspage/internals/BlogDetails';
 
 const BlogId = ({ params }: { params: { blogId: string } }) => {
   const { blogId } = params;
   return (
     <main>
-      <JobsDetailsPage id={blogId} />
+      <BlogDetails id={blogId} />
     </main>
   );
 };

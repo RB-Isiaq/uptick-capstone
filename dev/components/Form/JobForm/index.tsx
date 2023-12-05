@@ -56,7 +56,6 @@ const JobForm = () => {
 
   return (
     <section className="mt-[-120px] pt-[120px] ">
-      <div className="absolute top-0 left-0 w-full bg-[#070C19] h-[80px] md:h-[120px]" />
       <div className="w-full flex flex-col justify-between gap-4 px-3 py-[60px] lg:py-[80px] md:px-10 xl:px-[170px]  max-w-[1440px] mx-auto font-raleway">
         {data?.companyLogo && (
           <Image

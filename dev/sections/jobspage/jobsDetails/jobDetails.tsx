@@ -35,8 +35,7 @@ export const JobDetails = ({ id }: { id: string }) => {
       <Spinner />
     </div>
   ) : (
-    <section className="mt-[-120px] pt-[120px] ">
-      <div className="absolute top-0 left-0 w-full bg-[#070C19] h-[80px] md:h-[120px]" />
+    <section>
       <div className="flex flex-col gap-[15px] lg:gap-[20px] w-full max-w-[741px] mx-auto py-10 px-3">
         {data?.companyLogo && (
           <Image
@@ -44,7 +43,7 @@ export const JobDetails = ({ id }: { id: string }) => {
             alt="job logo"
             width={225}
             height={181}
-            className="w-[225px] h-[181px]"
+            className="w-[190px] h-[151px] md:w-[225px] md:h-[181px]"
           />
         )}
 

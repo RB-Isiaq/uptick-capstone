@@ -65,6 +65,7 @@ import MAP_MATCHING from './assets/talent-matching.png';
 import MAP_SUPPORT from './assets/talent-support.png';
 import DOWN_ICON from './assets/arr-down.svg';
 import D_ICON from './assets/arr-d.svg';
+import SINGLE_BLOG from './assets/blog-d.png';
 
 export {
   LOGO,
@@ -134,4 +135,5 @@ export {
   MAP_SUPPORT,
   DOWN_ICON,
   D_ICON,
+  SINGLE_BLOG,
 };
