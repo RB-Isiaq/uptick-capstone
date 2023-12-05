@@ -8,12 +8,12 @@ const BlogDetails = ({ id }: { id: string | number }) => {
 
   return (
     <section>
-      <div className="flex flex-col justify-center items-center  py-[100px] px-3 xl:px-[60px] md:px-10 max-w-[854px] mx-auto gap-[37px] overflow-hidden">
+      <div className="flex flex-col justify-center items-center py-[40px] lg:py-[100px] px-3 xl:px-[60px] md:px-10 max-w-[854px] mx-auto gap-[28px]  lg:gap-[37px] overflow-hidden">
         <div className="w-full  flex flex-col ">
           <h3 className="text-lg">
             Written by <span className="font-bold">Joseph Ojo</span>
           </h3>
-          <h1 className="font-raleway  text-[32px] md:text-[48px] font-bold">
+          <h1 className="font-raleway  text-[28px] md:text-[48px] font-bold">
             Bolt Kenya suspends 5% booking fee
           </h1>
         </div>
