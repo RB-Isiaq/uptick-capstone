@@ -5,6 +5,8 @@ import Hero from './internals/Hero';
 import Curiosity from './internals/Curiosity';
 import Offer from './internals/Offer';
 import Why from './internals/Why';
+import Learn from './internals/Learn';
+import Reasons from './internals/Reasons';
 
 const BeginnersPage = () => {
   return (
@@ -14,12 +16,13 @@ const BeginnersPage = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: 'easeIn' }}
         exit={{ translateX: -100, opacity: 0 }}
-        className="overflow-hidden"
       >
         <Hero />
         <Curiosity />
         <Offer />
         <Why />
+        <Reasons />
+        <Learn />
       </motion.div>
     </AnimatePresence>
   );

@@ -12,6 +12,9 @@ export interface Card {
   image: string | StaticImageData;
   title: string;
   desc: string;
+  date?: string;
+  text?: string;
+  link?: string;
   buttons?: BTN[];
 }
 export const ProgramCard = ({ image, title, desc, buttons }: Card) => {

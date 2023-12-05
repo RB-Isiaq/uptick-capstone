@@ -56,8 +56,7 @@ const JobForm = () => {
 
   return (
     <section className="mt-[-120px] pt-[120px] ">
-      <div className="absolute top-0 left-0 w-full bg-[#070C19] h-[80px] md:h-[120px]" />
-      <div className="w-full flex flex-col justify-between gap-4   px-3 py-[60px] lg:py-[80px] md:px-10 xl:px-[170px]  max-w-[1440px] mx-auto font-raleway">
+      <div className="w-full flex flex-col justify-between gap-4 px-3 py-[60px] lg:py-[80px] md:px-10 xl:px-[170px]  max-w-[1440px] mx-auto font-raleway">
         {data?.companyLogo && (
           <Image
             src={data.companyLogo}
@@ -67,10 +66,10 @@ const JobForm = () => {
             className="w-[225px] h-[181px]"
           />
         )}
-        <h1 className="text-black font-bold text-[32px] md:text-[48px] mb-[10px] md:mb-[35px] leading-[160%]">
+        <h1 className="text-black font-bold text-[32px] md:text-[48px] mb-[10px] md:mb-[30px] leading-[160%]">
           {data?.jobTitle}
         </h1>
-        <h2 className="text-black font-bold text-[18px] md:text-[24px] mb-[10px] md:mb-[51px] leading-[160%] max-w-[533px]">
+        <h2 className="text-black font-bold text-[18px] md:text-[24px] mb-[10px] md:mb-[30px] leading-[160%] max-w-[533px]">
           {isPending
             ? `Loading / Loading / Loading`
             : `${data?.jobType} / ${data?.jobCategory} / ${data?.location}`}

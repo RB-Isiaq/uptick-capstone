@@ -56,16 +56,14 @@ const Jobs = () => {
             />
           </div>
           <div className="flex flex-col  text-black gap-2">
-            <p className="lg:text-[32px] text-[16px] font-bold">
+            <p className="lg:text-[32px] text-[20px] font-bold">
               {item.jobTitle}
             </p>
-            <p className="text-[12px] lg:text-[16px]">
-              {truncateText(item.description)}
-            </p>
-            <p className="text-[12px] lg:text-[16px]">
+            <p>{truncateText(item.description)}</p>
+            <p>
               <span className="font-bold mr-2">Company</span> {item.companyName}
             </p>
-            <p className="text-[12px] lg:text-[16px]">
+            <p>
               <span className="font-bold mr-2">Deadline:</span>{' '}
               {item.deadline.toString().split('T')[0]}
             </p>
