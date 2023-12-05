@@ -1,11 +1,7 @@
 import JobsListPage from './jobsList';
 
 const JobsPage = () => {
-  return (
-    <>
-      <JobsListPage />
-    </>
-  );
+  return <JobsListPage />;
 };
 
 export default JobsPage;

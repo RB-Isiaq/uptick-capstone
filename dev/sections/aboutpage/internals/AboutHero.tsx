@@ -25,9 +25,9 @@ const Header = () => {
   );
 };
 
-const Story = () => {
+export const Story = () => {
   return (
-    <div className="gridCenter lg:grid-cols-2 gap-12">
+    <div className="gridCenter lg:grid-cols-2 gap-12 ">
       <div className="order-2 lg:order-1">
         <Image
           src="/our-story.png"
@@ -37,7 +37,7 @@ const Story = () => {
           height={1000}
         />
       </div>
-      <div className="text-white flex flex-col gap-10 lg:text-end order-1 lg:order-2">
+      <div className=" flex flex-col gap-10 lg:text-end order-1 lg:order-2">
         <h1 className="text-4xl lg:text-6xl font-bold">Our Story</h1>
         <p className="text-xl leading-[160%]  ">
           Uptick Talent was birthed to empower individuals with the knowledge
@@ -53,9 +53,8 @@ const Story = () => {
 
 const AboutHero = () => {
   return (
-    <div className="about-bg min-h-screen bg-upBlack px-10 md:px-14 py-20 lg:px-32 flex flex-col gap-32 mt-[-120px] pt-[200px]">
+    <div className="about-bg min-h-screen bg-upBlack px-3 md:px-14 py-20 lg:px-32 flex flex-col gap-32 mt-[-120px] pt-[200px]">
       <Header />
-      <Story />
     </div>
   );
 };
