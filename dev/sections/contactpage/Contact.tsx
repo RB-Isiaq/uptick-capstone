@@ -84,7 +84,7 @@ export const Contact = () => {
             />
           </div>
         </form>
-        <div className="z-[1]">
+        <div className="z-[1]" id="location">
           <Map />
         </div>
       </div>

@@ -52,13 +52,13 @@ export const Footer = () => {
                     <li key={link.id}>
                       <Link
                         href={link.path}
-                        className="flex items-center gap-3"
+                        className="flex items-center gap-3 text-[#B3B3B3] hover:text-white"
                       >
                         {link.icon ? (
                           <Image src={link.icon} alt={link.label} />
                         ) : null}
 
-                        <p className="font-raleway text-[#B3B3B3] text-[14px] max-w-[233px]">
+                        <p className="font-raleway  text-[14px] max-w-[233px]">
                           {link.label}
                         </p>
                       </Link>

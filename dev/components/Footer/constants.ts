@@ -41,17 +41,17 @@ export const footerLinks: FooterLinks[] = [
       {
         id: 3,
         label: 'Jobs',
-        path: '/about#jobs',
+        path: '/jobs',
       },
       {
         id: 4,
         label: 'Blogs',
-        path: '/#blogs',
+        path: '/blogs',
       },
       {
         id: 5,
         label: 'Support',
-        path: '/#blogs',
+        path: '/contact',
       },
     ],
   },
@@ -89,7 +89,7 @@ export const footerLinks: FooterLinks[] = [
         id: 1,
         icon: PHONE,
         label: '+234 9037424764',
-        path: '/',
+        path: 'tel:+2349037424764',
       },
       {
         id: 2,
@@ -101,7 +101,7 @@ export const footerLinks: FooterLinks[] = [
         id: 3,
         icon: LOCATION,
         label: '7A, Hara-Hyel House, Dogon Karfe, Jos, Plateau State, Nigeria',
-        path: '/',
+        path: '/contact#location',
       },
     ],
   },
