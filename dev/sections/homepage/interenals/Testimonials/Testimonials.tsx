@@ -76,7 +76,7 @@ export const Testimonials = () => {
             />
           </button>
         </div>
-        <p className="w-full max-w-[708px] font-raleway font-medium text-center text-[24px]">
+        <p className="w-full max-w-[708px] font-raleway font-medium text-center text-lg lg:text-[24px]">
           {success}
         </p>
       </div>
