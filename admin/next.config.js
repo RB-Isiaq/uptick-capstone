@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: ['samplebuckect-100222233.s3.amazonaws.com'],
+  },
+};
 // next.config.js
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const withCSS = require('@zeit/next-css');

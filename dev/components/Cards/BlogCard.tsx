@@ -3,17 +3,24 @@ import Button from '../Button';
 import { Card } from './ProgramCard';
 import Image from 'next/image';
 import Link from 'next/link';
+import { truncateWords } from '@/utils';
 
 export const BlogCard = ({ image, title, desc, text, date, link }: Card) => {
   return (
     <div className="w-full sm:w-[424px] h-max md:h-[512px] flex flex-col  gap-[15px] items-start p-4 md:p-[30px] border border-[#4D4D4D] rounded-2xl bg-[#1C1C1C] hover:shadow-lg ">
-      <Image src={image} alt={title} width={384} height={256} />
+      <Image
+        src={image}
+        alt={title}
+        width={384}
+        height={256}
+        className="w-[384px] h-[256px]"
+      />
       <h1 className=" font-raleway  text-[24px] leading-normal text-white font-bold">
         {title}
       </h1>
 
       <p className="w-full sm:w-[364px] font-raleway  leading-[160%] text-[#B3B3B3]">
-        {desc}
+        {truncateWords(desc)}
       </p>
       <h2 className=" font-raleway  text-[24px] leading-normal text-white font-bold">
         {date}

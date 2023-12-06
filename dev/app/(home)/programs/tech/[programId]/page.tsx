@@ -4,6 +4,11 @@ import ProductForm from '@/components/Form/ProductForm';
 import SoftwareForm from '@/components/Form/SoftwareForm';
 import { programId } from '@/sections/programs/tech/internals/Programs/constants';
 
+export const metadata = {
+  title: 'Talent Tech | Uptick',
+  description: 'Nurturing the Future of Tech and Business in Africa.',
+};
+
 const ProgramPage = ({ params }: { params: { programId: string } }) => {
   const { programId: id } = params;
 
