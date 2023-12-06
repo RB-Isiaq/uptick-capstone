@@ -8,7 +8,8 @@ import { useQuery } from '@tanstack/react-query';
 import { getData } from '@/Services/ApiCalls';
 import Spinner from '@/components/Spinner';
 import { StaticImageData } from 'next/image';
-import { Key } from 'react';
+import { Key, useState } from 'react';
+import PaginationRounded from '@/components/Pagination';
 interface Blog {
   postId: Key | null | undefined;
   imageUrl: string | StaticImageData;
@@ -17,10 +18,11 @@ interface Blog {
   updatedAt: string;
 }
 export const Blogs = () => {
+  const [page, setPage] = useState(1);
   const { isLoading, error, data } = useQuery({
-    queryKey: ['blogposts'],
+    queryKey: ['blogposts', page],
     queryFn: async () => {
-      const result = await getData(`blogposts`);
+      const result = await getData(`blogposts?page=${page}`);
 
       return result;
     },
@@ -54,6 +56,9 @@ export const Blogs = () => {
               />
             </Link>
           ))}
+        </div>
+        <div className="w-full flex justify-center mt-6">
+          <PaginationRounded page={data.paging.totalPages} setPage={setPage} />
         </div>
       </div>
     </section>
