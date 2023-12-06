@@ -1,5 +1,9 @@
 import JobsPage from '@/sections/jobspage';
-import React from 'react';
+
+export const metadata = {
+  title: 'Uptick Admin | Jobs',
+  description: 'Nurturing the Future of Tech and Business in Africa.',
+};
 
 const Jobs = () => {
   return (

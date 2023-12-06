@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import ProtectedRoute from '@/components/ProtectedRoute';
 
 export const metadata: Metadata = {
-  title: 'Uptick Talent',
+  title: 'Admin | Uptick Talent',
   description: 'Nurturing the Future of Tech and Business in Africa.',
 };
 
