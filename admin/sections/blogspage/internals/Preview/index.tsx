@@ -20,23 +20,24 @@ const Preview = () => {
   formData.append('content', story);
   formData.append('author', author);
   formData.append('image', image);
-  const { mutate, data, error, isSuccess, isPending } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: async () => {
-      const data = await postFile(`blogposts`, formData);
-      return data;
+      const responseData = await postFile(`blogposts`, formData);
+      return responseData;
+    },
+    onSuccess: (responseData) => {
+      setMessage(responseData.message);
+      setShowModal(true);
+    },
+    onError: (error) => {
+      console.error(error);
+      setMessage(error.message);
+      setShowModal(true);
     },
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     mutate();
-    if (isSuccess) {
-      setMessage(data.message);
-      setShowModal((prev) => !prev);
-    }
-    if (error) {
-      setMessage(error.message);
-      setShowModal((prev) => !prev);
-    }
   };
 
   return (
@@ -47,6 +48,7 @@ const Preview = () => {
         onClick={handleSubmit}
       />
       <Modal isOpen={showModal} onClose={setShowModal} message={message} />
+      <p className="text-center">{message}</p>
     </div>
   );
 };

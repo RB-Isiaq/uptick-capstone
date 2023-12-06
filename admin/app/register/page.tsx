@@ -1,5 +1,9 @@
 import RegisterPage from '@/sections/registerpage';
-import React from 'react';
+
+export const metadata = {
+  title: 'Uptick Admin | Sign up Page',
+  description: 'Nurturing the Future of Tech and Business in Africa.',
+};
 
 const Register = () => {
   return (

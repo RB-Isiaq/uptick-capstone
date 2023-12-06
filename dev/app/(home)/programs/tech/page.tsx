@@ -1,6 +1,11 @@
 import TechPage from '@/sections/programs/tech';
 
-const Beginners = () => {
+export const metadata = {
+  title: 'Talent Tech | Uptick',
+  description: 'Nurturing the Future of Tech and Business in Africa.',
+};
+
+const Tech = () => {
   return (
     <main>
       <TechPage />
@@ -8,4 +13,4 @@ const Beginners = () => {
   );
 };
 
-export default Beginners;
+export default Tech;

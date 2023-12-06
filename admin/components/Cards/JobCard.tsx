@@ -71,7 +71,9 @@ const JobCard = ({
       setIsOpen(true);
       setMessage(res.message);
     } catch (error) {
-      console.log(error);
+      if (error instanceof Error) {
+        console.log(error.message);
+      }
       setIsOpen(true);
       setMessage('Something went wrong, Please try again');
     }

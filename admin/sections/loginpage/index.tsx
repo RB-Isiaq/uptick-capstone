@@ -27,6 +27,7 @@ const LoginPage = () => {
 
       if (result.token) {
         setSuccess(result.message);
+        setError('');
         dispatch(
           storeAdmin({
             userId: formObject.user_id,
@@ -76,7 +77,7 @@ const LoginPage = () => {
             placeholder="username"
           />
         </div>
-        <div className="flex flex-col gap-5 w-full ">
+        <div className="flex flex-col gap-5 w-full mb-[55px]">
           <label className="text-white  font-medium" htmlFor="password">
             Password
           </label>
@@ -88,12 +89,6 @@ const LoginPage = () => {
             type="password"
             placeholder="Password"
           />
-        </div>
-        <div className="flex items-center gap-2 mb-[55px] mt-2">
-          <input type="checkbox" id="check" />
-          <label className="text-[#808080] text-sm font-medium" htmlFor="check">
-            Remember Me
-          </label>
         </div>
         <button
           className="flex justify-center items-center px-5 py-[14px] gap-[11px] rounded-lg bg-[#477BFF] text-white w-full"

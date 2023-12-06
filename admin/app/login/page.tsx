@@ -1,5 +1,9 @@
 import LoginPage from '@/sections/loginpage';
-import React from 'react';
+
+export const metadata = {
+  title: 'Uptick Admin | Login Page',
+  description: 'Nurturing the Future of Tech and Business in Africa.',
+};
 
 const Login = () => {
   return (
