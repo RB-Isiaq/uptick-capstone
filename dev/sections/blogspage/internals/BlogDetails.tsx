@@ -29,7 +29,7 @@ const BlogDetails = ({ id }: { id: string | number }) => {
     </div>
   ) : (
     <section>
-      <div className="flex flex-col justify-center items-center py-[40px] lg:py-[100px] px-3 xl:px-[60px] md:px-10 max-w-[854px] mx-auto gap-[28px]  lg:gap-[37px] overflow-hidden">
+      <div className="flex flex-col justify-center items-center py-[40px] lg:py-[80px] px-3 xl:px-[60px] md:px-10 max-w-[854px] mx-auto gap-[28px]  lg:gap-[37px] overflow-hidden">
         <div className="w-full  flex flex-col ">
           <h3 className="text-lg">
             Written by <span className="font-bold">{data?.data.author}</span>
