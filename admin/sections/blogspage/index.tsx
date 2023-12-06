@@ -3,10 +3,37 @@
 import { useState } from 'react';
 import Button from '@/components/Button';
 import BlogFormModal from '@/components/Modal/BlogFormModal';
-import BlogCard from '@/components/Cards/BlogCard';
+import BlogCard, { BlogProps } from '@/components/Cards/BlogCard';
+import { getData } from '@/Services/ApiCalls';
+import { useQuery } from '@tanstack/react-query';
+import Spinner from '@/components/Spinner';
 
 const BlogsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { isLoading, error, data } = useQuery({
+    queryKey: ['blogposts', isOpen],
+    queryFn: async () => {
+      const result = await getData(`blogposts`);
+
+      return result;
+    },
+  });
+  if (isLoading) {
+    return (
+      <div className="w-[300px] h-[calc(100vh-150px)] flex justify-center items-center animate-spin mx-auto">
+        <Spinner />
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="w-[300px] h-[calc(100vh-150px)] flex justify-center items-center animate-spin mx-auto">
+        <span>Error: {error.message}</span>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full min-h-screen font-raleway">
       <div className="w-full  flex justify-between items-center mb-2">
@@ -24,7 +51,12 @@ const BlogsPage = () => {
         <h1 className="text-lg font-semibold w-[185px]">Published date</h1>
         <div />
       </div>
-      <BlogCard />
+      <div className="w-full flex flex-col gap-4">
+        {data.data.map((data: BlogProps) => (
+          <BlogCard key={data.postId} blog={data} />
+        ))}
+      </div>
+
       <BlogFormModal isOpen={isOpen} onClose={setIsOpen} />
     </div>
   );

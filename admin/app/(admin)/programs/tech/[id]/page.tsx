@@ -1,6 +1,11 @@
 import ProgramApplicants from '@/components/ProgramApplicants';
 import { programId } from '@/sections/programspage/tech/constants';
 
+export const metadata = {
+  title: 'Admin | Talent Tech',
+  description: 'Nurturing the Future of Tech and Business in Africa.',
+};
+
 const ProgramPage = ({ params }: { params: { id: string } }) => {
   const { id } = params;
 

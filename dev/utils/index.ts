@@ -4,6 +4,13 @@ export function truncateText(text: string): string {
   const truncatedText = words.length > 50 ? first50Words + '...' : first50Words;
   return truncatedText;
 }
+export const truncateWords = (text: string) => {
+  const words = text.split(' ');
+  const firstShortWords = words.slice(0, 15).join(' ');
+  const truncatedText =
+    words.length > 16 ? firstShortWords + '...' : firstShortWords;
+  return truncatedText;
+};
 
 export const getDate = () => {
   const specificDate = new Date();

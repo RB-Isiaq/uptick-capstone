@@ -1,6 +1,6 @@
+import React, { useState } from 'react';
 import { LEFT, RIGHT } from '@/public';
 import Image from 'next/image';
-import React, { useState } from 'react';
 import JobThumbnail from './internals/JobThumbnail';
 import JobDescription from './internals/JobDescription';
 import Button from '@/components/Button';
@@ -8,9 +8,11 @@ import { JobState } from '@/store/JobReducer';
 import { useSelector } from 'react-redux';
 import { useMutation } from '@tanstack/react-query';
 import { postFile } from '@/Services/ApiCalls';
+import Modal from '@/components/Modal/Modal';
 
 const Preview = () => {
   const [isPreviewed, setIsPreviewed] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState('');
 
   const {
@@ -36,21 +38,24 @@ const Preview = () => {
   formData.append('startDate', new Date().toISOString());
   formData.append('endDate', new Date().toISOString());
 
-  const { mutate, data, error, isSuccess, isPending } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: async () => {
-      const data = await postFile(`jobs`, formData);
-      return data;
+      const responseData = await postFile(`jobs`, formData);
+      return responseData;
+    },
+    onSuccess: (responseData) => {
+      setMessage(responseData.message);
+      setShowModal(true);
+    },
+    onError: (error) => {
+      console.error(error);
+      setMessage(error.message);
+      setShowModal(true);
     },
   });
 
   const handleSubmit = () => {
     mutate();
-    if (isSuccess) {
-      setMessage(data.message);
-    }
-    if (error?.message) {
-      setMessage(error.message);
-    }
   };
 
   return (
@@ -82,7 +87,7 @@ const Preview = () => {
         text={isPending ? 'Creating job ...' : 'Create Job'}
         onClick={handleSubmit}
       />
-      <p className="text-center mt-2">{(data && data.message) || message}</p>
+      <Modal isOpen={showModal} onClose={setShowModal} message={message} />
     </div>
   );
 };
