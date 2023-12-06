@@ -7,14 +7,15 @@ import BlogCard, { BlogProps } from '@/components/Cards/BlogCard';
 import { getData } from '@/Services/ApiCalls';
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '@/components/Spinner';
+import PaginationRounded from '@/components/Pagination';
 
 const BlogsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [page, setPage] = useState(1);
   const { isLoading, error, data } = useQuery({
-    queryKey: ['blogposts', isOpen],
+    queryKey: ['blogposts', isOpen, page],
     queryFn: async () => {
-      const result = await getData(`blogposts`);
+      const result = await getData(`blogposts?page=${page}`);
 
       return result;
     },
@@ -51,12 +52,14 @@ const BlogsPage = () => {
         <h1 className="text-lg font-semibold w-[185px]">Published date</h1>
         <div />
       </div>
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-6">
         {data.data.map((data: BlogProps) => (
           <BlogCard key={data.postId} blog={data} />
         ))}
       </div>
-
+      <div className="w-full flex justify-end mt-10">
+        <PaginationRounded page={data.paging.totalPages} setPage={setPage} />
+      </div>
       <BlogFormModal isOpen={isOpen} onClose={setIsOpen} />
     </div>
   );
