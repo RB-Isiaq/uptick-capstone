@@ -23,7 +23,7 @@ const JobCard = ({
   const pathname = usePathname();
   const path = pathname.split('/');
   const { data: programData } = useQuery({
-    queryKey: ['jobspage'],
+    queryKey: ['jobspage', showOptions],
     queryFn: async () => {
       const data = await getData(`jobs/${id}/applications`);
 
@@ -39,13 +39,22 @@ const JobCard = ({
       });
       return data;
     },
+    onSuccess: (data) => {
+      setMessage(data.message);
+      setIsOpen(true);
+    },
+    onError: (error) => {
+      console.error(error);
+      setMessage(error.message);
+      setIsOpen(true);
+    },
   });
 
   const handleCloseApp = () => {
     mutate('close');
     if (isSuccess) {
       setIsOpen(true);
-      setMessage('Application closed successfully');
+      setMessage('Application closed');
     }
     if (error) {
       setIsOpen(true);
@@ -57,7 +66,7 @@ const JobCard = ({
     mutate('open');
     if (isSuccess) {
       setIsOpen(true);
-      setMessage('Application opened successfully');
+      setMessage('Application opened');
     }
     if (error) {
       setIsOpen(true);
@@ -81,7 +90,7 @@ const JobCard = ({
 
   return (
     <>
-      <div className="bg-white flex justify-between items-center gap-2 pt-5 pb-7 px-6 w-full">
+      <div className="bg-white flex justify-between items-center gap-2 pt-5 pb-7 px-3 md:px-6 w-full">
         <h1 className=" font-semibold w-[165px]">{title}</h1>
         <h1 className=" font-semibold w-[170px]">{applicantsNum}</h1>
         {deadline && <h1 className=" font-semibold w-[170px]">{deadline}</h1>}

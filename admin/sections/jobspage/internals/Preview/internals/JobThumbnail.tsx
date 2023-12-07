@@ -16,7 +16,7 @@ const JobThumbnail = () => {
         Featured Job
       </h1>
 
-      <div className="w-full flex justify-between items-center   gap-3 bg-[#EDF2FF] rounded-lg border-[#999] border-[0.5px] py-[25px] px-[25px]">
+      <div className="w-full flex flex-col md:flex-row justify-between items-center   gap-3 bg-[#EDF2FF] rounded-lg border-[#999] border-[0.5px] py-[25px] px-[25px]">
         <Image
           src={thumbnail}
           width={242}

@@ -55,53 +55,43 @@ interface RecentTable {
 
 export default function RecentTable({ header, rows }: RecentTable) {
   return (
-    <>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="customized table">
-          {header && (
-            <TableHead>
-              <TableRow>
-                {header.map((heading) => (
-                  <StyledTableCell key={heading}>{heading}</StyledTableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-          )}
-          <TableBody>
-            {rows.map((row) => (
-              <StyledTableRow key={row.name}>
-                <StyledTableCell component="th" scope="row">
-                  {row.icon && (
-                    <Image src={row.icon} alt="icon" className="inline mr-3" />
-                  )}
-                  {row.name}
-                </StyledTableCell>
-                <StyledTableCell align="left">
-                  {row.application}
-                </StyledTableCell>
-                {row.date && (
-                  <StyledTableCell align="left">{row.date}</StyledTableCell>
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="customized table">
+        {header && (
+          <TableHead>
+            <TableRow>
+              {header.map((heading) => (
+                <StyledTableCell key={heading}>{heading}</StyledTableCell>
+              ))}
+            </TableRow>
+          </TableHead>
+        )}
+        <TableBody>
+          {rows.map((row) => (
+            <StyledTableRow key={row.name}>
+              <StyledTableCell component="th" scope="row">
+                {row.icon && (
+                  <Image src={row.icon} alt="icon" className="inline mr-3" />
                 )}
-                {row.status && (
-                  <StyledTableCell align="left">{row.status}</StyledTableCell>
-                )}
-                {row.number && (
-                  <StyledTableCell align="left">{row.number}</StyledTableCell>
-                )}
-                <StyledTableCell align="left">
-                  <button>{row.view}</button>
-                </StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      {/* <ApplicantModal
-        isOpen={showDetails}
-        onClose={setShowDetails}
-        applicantId={applicantId}
-        appDetails={seApplicants}
-      /> */}
-    </>
+                {row.name}
+              </StyledTableCell>
+              <StyledTableCell align="left">{row.application}</StyledTableCell>
+              {row.date && (
+                <StyledTableCell align="left">{row.date}</StyledTableCell>
+              )}
+              {row.status && (
+                <StyledTableCell align="left">{row.status}</StyledTableCell>
+              )}
+              {row.number && (
+                <StyledTableCell align="left">{row.number}</StyledTableCell>
+              )}
+              <StyledTableCell align="left">
+                <button>{row.view}</button>
+              </StyledTableCell>
+            </StyledTableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }

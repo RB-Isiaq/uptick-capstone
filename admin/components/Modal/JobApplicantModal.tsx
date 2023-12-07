@@ -50,7 +50,7 @@ const JobApplicantModal: React.FC<JobApplicantModalProps> = ({
 
   return (
     <div className="absolute w-full top-0 left-0 min-h-screen flex items-center justify-center z-50 font-raleway bg-transparent backdrop-blur-lg py-20">
-      <div className="relative z-[60] w-full max-w-[820px] bg-white rounded-lg shadow-lg p-[50px]">
+      <div className="relative z-[60] w-full max-w-[820px] bg-white rounded-lg shadow-lg px-5 md:p-[50px]">
         <div className="absolute top-10 right-10">
           <Image
             src={Close}
@@ -80,7 +80,7 @@ const JobApplicantModal: React.FC<JobApplicantModalProps> = ({
           <div className="flex flex-row-reverse gap-2 items-center">
             <label
               htmlFor="accept"
-              className="text-[#1A1A1A] text-2xl font-semibold tracking-[1.837px]"
+              className="text-[#1A1A1A]  md:text-2xl font-semibold tracking-[1.837px]"
             >
               Accept
             </label>
@@ -95,18 +95,18 @@ const JobApplicantModal: React.FC<JobApplicantModalProps> = ({
           <div className="flex flex-row-reverse gap-2 items-center">
             <label
               htmlFor="reject"
-              className="text-[#1A1A1A] text-2xl font-semibold tracking-[1.837px]"
+              className="text-[#1A1A1A]  md:text-2xl font-semibold tracking-[1.837px]"
             >
               Reject
             </label>
             <input type="radio" name="status" id="reject" value="Rejected" />
           </div>
           {isPending ? (
-            <p className="text-black text-2xl">Updating ...</p>
+            <p className="text-black  md:text-2xl">Updating ...</p>
           ) : error ? (
-            <p className="text-red-400 text-2xl">Something went wrong</p>
+            <p className="text-red-400  md:text-2xl">Something went wrong</p>
           ) : isSuccess ? (
-            <p className="text-green-400 text-2xl">Updated</p>
+            <p className="text-green-400  md:text-2xl">Updated</p>
           ) : (
             ''
           )}

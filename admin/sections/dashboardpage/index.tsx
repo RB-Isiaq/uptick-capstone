@@ -14,7 +14,7 @@ import { getDate } from '@/utils';
 const DashboardPage = () => {
   return (
     <div
-      className="bg-[#F7F9FF] px-8 py-3 pb-[100px] min-h-screen"
+      className="bg-[#F7F9FF] px-3 lg:px-8 py-3 pb-[100px] min-h-screen"
       data-testid="dashboard_page"
     >
       <h1 className="text-[32px] font-bold">Welcome, Admin</h1>
@@ -40,8 +40,8 @@ const DashboardPage = () => {
       </h1>
       <RecentTable header={applicantsHeader} rows={applicantRows} />
 
-      <div className="flex  gap-[10px] mt-[30px] justify-between">
-        <div className="bg-white rounded-2xl py-[17px] px-[20px]  flex flex-col">
+      <div className="flex flex-col lg:flex-row  gap-[10px] mt-[30px] justify-between">
+        <div className="bg-white rounded-2xl py-[17px] px-2 lg:px-[20px]  flex flex-col gap-2">
           <h1 className="font-bold text-lg">Experience</h1>
           <BasicPie />
         </div>

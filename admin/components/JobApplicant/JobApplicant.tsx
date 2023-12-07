@@ -25,7 +25,7 @@ const JobApplicantCard = ({
   };
 
   return (
-    <div className="flex justify-between items-center gap-2 py-[13px] px-[18px] w-full bg-white">
+    <div className="flex justify-between items-center gap-2 py-[13px] px-3 md:px-[18px] w-full bg-white">
       <h1 className="text-lg  text-[#111] w-[110px] ">{name}</h1>
       <div className="w-[110px] flex justify-center">
         <h1

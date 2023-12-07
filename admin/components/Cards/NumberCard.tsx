@@ -22,7 +22,7 @@ const NumberCard = ({
   bgC,
 }: NumberCard) => {
   return (
-    <div className="w-[366px] h-[132px] bg-white rounded-lg py-[14px] px-[15px] flex flex-col gap-5">
+    <div className="w-full max-w-[366px] h-[132px] bg-white rounded-lg py-[14px] px-[15px] flex flex-col gap-5">
       <div className="flex justify-between w-full gap-10">
         <div className="flex flex-col gap-1">
           <div className="bg-[#B5CAFF] p-2 w-max rounded-full">

@@ -60,7 +60,11 @@ const JobsPage = () => {
     );
   }
   if (error) {
-    return <span>Error: {error.message}</span>;
+    return (
+      <div className="w-[300px] h-[calc(100vh-150px)] flex justify-center items-center mx-auto">
+        <span className="text-red-400 text-lg">Error: {error.message}</span>
+      </div>
+    );
   }
   const updatedJobsData =
     data &&
@@ -72,7 +76,7 @@ const JobsPage = () => {
           : 0,
     }));
   return (
-    <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full min-h-screen">
+    <div className="bg-[#F7F9FF] px-3 md:px-8 py-[64px] pb-[100px] w-full min-h-screen">
       <div className="w-full  flex justify-between items-center mb-2">
         <h1 className="text-[#15254C] font-bold text-[24px]">Jobs</h1>
 
@@ -82,7 +86,7 @@ const JobsPage = () => {
           onClick={() => setIsOpen((prev) => !prev)}
         />
       </div>
-      <div className="flex justify-between gap-2 py-7 px-6 w-full">
+      <div className="flex justify-between gap-2 py-7 px-3 md:px-6 w-full">
         <h1 className="text-lg font-semibold w-[165px]">Listed Jobs</h1>
         <h1 className="text-lg font-semibold w-[185px]">
           Number of applicants

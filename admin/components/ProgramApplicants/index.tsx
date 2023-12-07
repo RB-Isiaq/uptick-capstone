@@ -63,20 +63,22 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
   };
   return (
     <>
-      <div className="bg-[#F7F9FF] px-8 py-[64px] pb-[100px] w-full min-h-screen">
-        <div className="w-full  flex justify-between items-center mb-2">
+      <div className="bg-[#F7F9FF] px-3 lg:px-8 py-[64px] pb-[100px] w-full min-h-screen">
+        <div className="w-full  flex flex-col md:flex-row justify-between gap-2 lg:items-center mb-2">
           <div className="flex gap-2 items-center">
             <Link href="/programs/tech">
-              <h1 className="text-[#C8D7FF] font-bold text-[24px]">
+              <h1 className="text-[#C8D7FF] font-bold text-lg md:text-[24px]">
                 Talent Tech
               </h1>
             </Link>
             <Image src={Right_Arr} alt="arrow" />
-            <h1 className="text-[#111] font-bold text-[24px]">{title}</h1>
+            <h1 className="text-[#111] font-bold text-lg md:text-[24px]">
+              {title}
+            </h1>
           </div>
           <CSVDownloadButton data={data.data} />
         </div>
-        <div className="flex justify-between items-center gap-2 py-7 px-6 w-full">
+        <div className="hidden md:flex justify-between items-center gap-2 py-7 px-6 w-full">
           <h1 className="text-lg font-semibold text-[#111] w-[115px]">Name</h1>
           <h1 className="text-lg font-semibold text-[#111] w-[115px]">Track</h1>
           <h1 className="text-lg font-semibold text-[#111] w-[115px] px-2">
