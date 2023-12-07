@@ -45,8 +45,8 @@ const BlogDetails = ({ id }: { id: string | number }) => {
           height={400}
         />
         <div className="flex flex-col gap-3">
-          {paragraphs.map((p: string) => (
-            <p className="leading-[150%]" key={p}>
+          {paragraphs.map((p: string, i: number) => (
+            <p className="leading-[150%]" key={i}>
               {p}
             </p>
           ))}

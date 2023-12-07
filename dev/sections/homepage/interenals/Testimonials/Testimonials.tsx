@@ -38,7 +38,7 @@ export const Testimonials = () => {
         className=" w-full max-w-[1440px] mx-auto flex flex-col justify-center items-center gap-4 lg:gap-[60px] py-[50px]  px-3 xl:px-[60px] md:px-10 "
       >
         <Header title={HeadText} color="#1A1A1A" />
-        <div className="w-full md:w-[730px] mx-auto flex  justify-between items-center gap-3 overflow-hidden  transition-all">
+        <div className="w-full lg:w-[730px] mx-auto flex  justify-between items-center gap-3 overflow-hidden  transition-all">
           {testimonials.map((testimony) => (
             <TestimonialCard
               key={testimony.id}

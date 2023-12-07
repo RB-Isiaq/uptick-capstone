@@ -7,7 +7,7 @@ import { truncateWords } from '@/utils';
 
 export const BlogCard = ({ image, title, desc, text, date, link }: Card) => {
   return (
-    <div className="w-full sm:w-[424px] h-max md:h-[512px] flex flex-col  gap-[15px] items-start p-4 md:p-[30px] border border-[#4D4D4D] rounded-2xl bg-[#1C1C1C] hover:shadow-lg ">
+    <div className="w-full md:w-[300px] lg:w-[424px] lg:h-[512px] flex flex-col  gap-[15px] items-start p-4 lg:p-[30px] border border-[#4D4D4D] rounded-2xl bg-[#1C1C1C] hover:shadow-lg ">
       <Image
         src={image}
         alt={title}
@@ -19,7 +19,7 @@ export const BlogCard = ({ image, title, desc, text, date, link }: Card) => {
         {title}
       </h1>
 
-      <p className="w-full sm:w-[364px] font-raleway  leading-[160%] text-[#B3B3B3]">
+      <p className="w-full lg:w-[364px] font-raleway  leading-[160%] text-[#B3B3B3]">
         {truncateWords(desc)}
       </p>
       <h2 className=" font-raleway  text-[24px] leading-normal text-white font-bold">

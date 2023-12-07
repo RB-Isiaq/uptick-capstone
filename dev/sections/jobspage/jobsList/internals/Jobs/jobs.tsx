@@ -44,21 +44,21 @@ const Jobs = () => {
       {data?.map((item) => (
         <div
           key={item.jobId}
-          className="bg-upLightBlue rounded-2xl grid grid-cols-1 sm:grid-cols-2 items-center p-4 lg:p-8 lg:my-5 my-3 border border-upLightGray text-white  w-full"
+          className="bg-upLightBlue rounded-2xl grid grid-cols-1 md:grid-cols-2 items-center p-4 lg:p-8 lg:my-5 my-3 border border-upLightGray text-white  w-full gap-3"
         >
-          <div className="hidden md:grid md:grid-item bg-upLightGray  w-[454px] h-[370px] ">
+          <div className="grid grid-item">
             <Image
               src={item.companyLogo}
               alt="icon"
               width={454}
               height={370}
-              className=" w-[454px] h-[370px]"
+              className="w-full h-[250px] md:w-[454px] md:h-[370px]"
             />
           </div>
           <div className="flex flex-col  text-black gap-2">
-            <p className="lg:text-[32px] text-[20px] font-bold">
+            <h1 className="text-xl md:text-[32px] text-[20px] font-bold">
               {item.jobTitle}
-            </p>
+            </h1>
             <p>{truncateText(item.description)}</p>
             <p>
               <span className="font-bold mr-2">Company</span> {item.companyName}

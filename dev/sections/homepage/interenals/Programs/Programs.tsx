@@ -10,7 +10,7 @@ export const Programs = () => {
         <div className="flex mb-[53px]">
           <Header title={HeadText} />
         </div>
-        <div className="w-full  flex flex-col lg:flex-row justify-center  items-center flex-wrap gap-[35px] mb-[60px] md:mb-[103px]">
+        <div className="w-full  flex flex-col md:flex-row justify-center  items-center flex-wrap gap-[35px] mb-[60px] md:mb-[103px]">
           {programs.map((program) => (
             <ProgramCard
               key={program.id}
