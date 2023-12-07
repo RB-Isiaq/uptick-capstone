@@ -51,7 +51,6 @@ export const TechCard = ({
   useEffect(() => {
     getProgram();
   }, [getProgram]);
-  console.log(title);
 
   return (
     <div
