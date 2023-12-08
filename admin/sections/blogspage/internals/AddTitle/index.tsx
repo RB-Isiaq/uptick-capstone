@@ -53,7 +53,7 @@ const AddTitle = () => {
         />
       </div>
 
-      <div className="bg-[#F7F7F7] py-[16px] px-[27px] flex flex-col gap-3">
+      <div className="bg-[#F7F7F7] py-[16px] px-3 md:px-[27px] flex flex-col gap-3">
         <label htmlFor="blogStory" className="text-black text-lg font-medium">
           Write Blog
         </label>

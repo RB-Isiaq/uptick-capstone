@@ -7,11 +7,15 @@ export const Description = () => {
   return (
     <section className="bg-[#EDF2FF]">
       <div
-        className="w-full max-w-[1320px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 py-10 md:py-[80px] px-3 font-raleway"
+        className="w-full max-w-[1320px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 py-10 md:py-[80px] px-3 md:px-6 lg:px-3 font-raleway"
         id="description"
       >
-        <Image src={LADY_MAP} alt="map" className="rounded-2xl" />
-        <div className="flex flex-col gap-[16px] md:gap-[30px] w-full max-w-[586px]">
+        <Image
+          src={LADY_MAP}
+          alt="map"
+          className="rounded-2xl w-full lg:max-w-[586px]"
+        />
+        <div className="flex flex-col gap-[16px] md:gap-[30px] w-full lg:max-w-[586px]">
           <h1 className="text-[#000]  text-[32px] md:text-[48px] font-bold">
             {HeadText}
           </h1>

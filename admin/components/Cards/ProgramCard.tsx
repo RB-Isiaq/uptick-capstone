@@ -49,12 +49,21 @@ const ProgramCard = ({
       });
       return data;
     },
+    onSuccess: (data) => {
+      setMessage(data.message);
+      setIsOpen(true);
+    },
+    onError: (error) => {
+      console.error(error);
+      setMessage(error.message);
+      setIsOpen(true);
+    },
   });
 
   const handleCloseApp = () => {
     mutate('close');
     if (isSuccess) {
-      setMessage('Application closed successfully');
+      setMessage('Application closed');
       setIsOpen(true);
     }
     if (error) {
@@ -66,18 +75,17 @@ const ProgramCard = ({
   const handleOpenApp = () => {
     mutate('open');
     if (isSuccess) {
+      setMessage('Application opened');
       setIsOpen(true);
-      setMessage('Application opened successfully');
     }
     if (error) {
       setIsOpen(true);
       setMessage('Something went wrong, Please try again');
     }
   };
-
   return (
     <>
-      <div className="bg-white flex justify-between gap-2 pt-5 pb-7 px-6 w-full">
+      <div className="bg-white flex justify-between items-center gap-2 pt-5 pb-7 px-3 md:px-6 w-full">
         <h1 className=" font-semibold w-[165px]">{title}</h1>
         <h1 className=" font-semibold w-[170px]">{applicantsNum}</h1>
         {deadline && <h1 className=" font-semibold w-[170px]">{deadline}</h1>}
@@ -88,7 +96,7 @@ const ProgramCard = ({
           <div
             className={`absolute top-[10px]   bg-[#252531] text-white ${
               showOptions ? 'flex' : 'hidden'
-            } -top-[10px] right-[20px]  flex-col  items-start rounded-lg w-max`}
+            } right-[20px]  flex-col  items-start rounded-lg w-max`}
           >
             <button
               className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"

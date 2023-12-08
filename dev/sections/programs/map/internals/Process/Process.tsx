@@ -10,25 +10,25 @@ const Process = () => {
         <div className="flex justify-center">
           <Header title="Our Process" />
         </div>
-        <div className="w-full flex flex-col gap-[35px] lg:gap-1  waves-bg  mt-[80px] lg:mt-[283px] px-2 z-[2]">
-          <div className="self-end w-full max-w-[536px] h-max lg:h-[609px] p-6 lg:p-[56px] flex flex-col  gap-[15px] rounded-2xl border border-[#4D4D4D] bg-[#EDF2FF]">
-            <Image src={MAP_EVALUATION} alt="evaluation" />
+        <div className="w-full flex flex-col gap-[35px] md:gap-4 waves-bg  mt-[80px] lg:mt-[283px] px-2 z-[2]">
+          <div className="self-center lg:self-end w-full max-w-[536px] h-max lg:h-[609px] p-6 lg:p-[56px] flex flex-col  gap-[15px] rounded-2xl border border-[#4D4D4D] bg-[#EDF2FF]">
+            <Image src={MAP_EVALUATION} alt="evaluation" className="w-full" />
             <h1 className="text-2xl font-semibold">Talent Evaluation</h1>
             <p>
               We rigorously assess the skills, experience, and cultural fit of
               our candidates.
             </p>
           </div>
-          <div className=" w-full max-w-[536px] h-max lg:h-[609px] p-6 lg:p-[56px] flex flex-col  gap-[15px] rounded-2xl border border-[#4D4D4D] bg-[#EDF2FF]">
-            <Image src={MAP_MATCHING} alt="evaluation" />
+          <div className="self-center lg:self-start w-full max-w-[536px] h-max lg:h-[609px] p-6 lg:p-[56px] flex flex-col  gap-[15px] rounded-2xl border border-[#4D4D4D] bg-[#EDF2FF]">
+            <Image src={MAP_MATCHING} alt="evaluation" className="w-full" />
             <h1 className="text-2xl font-semibold">Matching</h1>
             <p>
               We work closely with you to understand your needs and match you
               with the right talent.
             </p>
           </div>
-          <div className="self-end w-full max-w-[536px] h-max lg:h-[609px] p-6 lg:p-[56px] flex flex-col  gap-[15px] rounded-2xl border border-[#4D4D4D] bg-[#EDF2FF]">
-            <Image src={MAP_SUPPORT} alt="evaluation" />
+          <div className="self-center lg:self-end w-full max-w-[536px] h-max lg:h-[609px] p-6 lg:p-[56px] flex flex-col  gap-[15px] rounded-2xl border border-[#4D4D4D] bg-[#EDF2FF]">
+            <Image src={MAP_SUPPORT} alt="evaluation" className="w-full" />
             <h1 className="text-2xl font-semibold">Support</h1>
             <p>
               Our team provides support throughout the onboarding process to

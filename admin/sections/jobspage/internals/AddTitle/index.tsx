@@ -86,7 +86,7 @@ const AddTitle = () => {
           onChange={(e) => setJobDeadline(e.target.value)}
         />
       </div>
-      <div className="bg-[#F7F7F7] py-[16px] px-[27px] flex flex-col gap-3">
+      <div className="bg-[#F7F7F7] py-[16px] px-3 md:px-[27px] flex flex-col gap-3">
         <label htmlFor="jobDesc" className="text-black text-lg font-medium">
           Add Job Description
         </label>

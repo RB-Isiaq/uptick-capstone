@@ -21,7 +21,7 @@ const TitleAndOptions = ({
   onChange,
 }: TitleAndOptionsProps) => {
   return (
-    <div className="bg-[#F7F7F7] py-[16px] px-[27px] flex flex-col gap-3">
+    <div className="bg-[#F7F7F7] py-[16px] px-3 md:px-[27px] flex flex-col gap-3">
       <label htmlFor={title} className="text-black">
         {title}
       </label>

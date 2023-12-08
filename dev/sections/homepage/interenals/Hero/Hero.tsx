@@ -8,9 +8,9 @@ import Link from 'next/link';
 
 export const Hero = () => {
   return (
-    <section className="relative flex bg-[#000] vector-black-bg mt-[-120px] pt-[120px]">
-      <div className="w-full flex flex-col gap-[46px]  justify-center items-center px-3 xl:px-[60px] md:px-10 z-[2] pt-[110.5px] pb-[104.5px]">
-        <h1 className="font-raleway font-bold text-[36px] md:text-[72px] px-1 w-full max-w-[805px] text-center leading-[1.2] text-white  ">
+    <section className="relative flex bg-[#000] vector-black-bg mt-[-120px] pt-[120px] h-screen md:h-max">
+      <div className="w-full  flex flex-col gap-[46px]  justify-center items-center px-3 xl:px-[60px] md:px-10 z-[2] pt-[110.5px] pb-[104.5px]">
+        <h1 className="font-raleway font-bold text-[34px] md:text-[72px] px-1 w-full  lg:max-w-[805px] text-center leading-[1.2] text-white  ">
           {HeadText} <span className="purple_gradient">{HeadText2} </span>
         </h1>
         <p className="w-full max-w-[553px] text-white font-raleway text-center text-[20px] leading-[160%] font-normal">

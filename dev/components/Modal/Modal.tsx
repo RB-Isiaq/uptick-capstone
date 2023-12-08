@@ -10,7 +10,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, message, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 font-raleway">
+    <div className="fixed inset-0 flex items-center justify-center z-50 font-raleway px-2">
       <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
       <div className="z-50 w-96 bg-white rounded-lg shadow-lg p-4">
         <div className="text-xl font-bold mb-2">Response</div>
