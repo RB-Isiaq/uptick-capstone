@@ -58,12 +58,12 @@ export const Navbar = () => {
         className={` ${navBg()} sticky top-0 left-0 z-10 backdrop-blur-xl `}
       >
         <nav
-          className={` w-full flex justify-between gap-4 items-center  px-3 py-6 xl:px-[60px] md:px-10 max-w-[1440px] mx-auto shadow-sm`}
+          className={` w-full flex justify-between gap-3 lg:gap-5 items-center  px-3 py-6 xl:px-[60px] md:px-5 lg:px-10 max-w-[1440px] mx-auto shadow-sm`}
         >
           <Link href="/">
             <Image src={LOGO} alt="logo" />
           </Link>
-          <div className="hidden  md:flex justify-between gap-4 items-center w-full max-w-[484px]">
+          <div className="hidden  md:flex justify-between gap-3 lg:gap-5 items-center w-full lg:w-[484px]">
             <Link
               href={navLinks[0].href}
               className="font-medium font-raleway  text-white"
@@ -116,7 +116,7 @@ export const Navbar = () => {
               {navLinks[3].label}
             </Link>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:block flex-shrink-0">
             <Link href="/#programs">
               <Button text={btnText} />
             </Link>

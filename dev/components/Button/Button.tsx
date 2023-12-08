@@ -21,7 +21,7 @@ export const Button = ({
 }: Button) => {
   return (
     <button
-      className={`flex items-center justify-center px-5 py-[18px] font-raleway  ${
+      className={`flex items-center justify-center px-5 md:px-2 lg:px-5 py-[18px] font-raleway  ${
         secondary
           ? 'bg-[inherit] text-white border  border-[rgba(255,255,255,0.30)]'
           : plain
@@ -31,7 +31,7 @@ export const Button = ({
           : tertiary
           ? 'text-[#477BFF] bg-inherit'
           : 'bg-uptickDarkBlue text-white'
-      } font-semibold tracking-[1.25px] leading-[100%] rounded-lg`}
+      } font-semibold tracking-[1.25px] leading-[100%] rounded-lg `}
       type={type || 'button'}
       onClick={onClick}
       {...props}

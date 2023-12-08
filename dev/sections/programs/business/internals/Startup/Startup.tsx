@@ -6,9 +6,13 @@ import Image from 'next/image';
 export const Startup = () => {
   return (
     <section className="bg-[#E6E6E6]">
-      <div className="w-full max-w-[1350px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 py-10 md:py-[60px] px-3 font-raleway">
-        <Image src={PARTNERS_BUSINESS} alt="partners" />
-        <div className="flex flex-col gap-[16px] md:gap-[30px] w-full max-w-[586px]">
+      <div className="w-full max-w-[1350px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 py-10 md:py-[60px] px-3 md:px-6 lg:px-3 font-raleway">
+        <Image
+          src={PARTNERS_BUSINESS}
+          alt="partners"
+          className="w-full lg:max-w-[586px]"
+        />
+        <div className="flex flex-col gap-[16px] md:gap-[30px] w-full lg:max-w-[586px]">
           <h1 className="text-[#000]  text-[32px] md:text-[48px] font-bold">
             {HeadText}
           </h1>
