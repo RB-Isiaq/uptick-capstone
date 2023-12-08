@@ -34,7 +34,7 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
     queryKey: [id, showDetails, page],
     queryFn: async () => {
       const data = await getData(
-        `progApplicant/${id}/apply-program?page=${page}`,
+        `progApplicant/${id}/apply-program?page=${page}&limit=30`,
       );
 
       return data;
@@ -56,7 +56,6 @@ const ProgramApplicants = ({ title, id }: IProgramApplicants) => {
       </span>
     );
   }
-
   const showDetailsHandler = (id: string) => {
     setApplicantId(id);
     setShowDetails(true);

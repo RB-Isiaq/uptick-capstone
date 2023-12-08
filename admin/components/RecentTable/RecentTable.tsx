@@ -9,15 +9,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Image, { StaticImageData } from 'next/image';
-// import ApplicantModal from '../Modal/ApplicantModal';
-// import { ProgramApplicant } from '@/interfaces';
-// import { seApplicants } from '@/sections/programspage/tech/constants';
+import ApplicantModal from '../Modal/ApplicantModal';
+import { ProgramApplicant } from '@/interfaces';
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
+const StyledTableCell = styled(TableCell)(({}) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: '#F7F9FF',
-    color: theme.palette.common.black,
+    color: '#000',
     fontFamily: 'Raleway',
     fontWeight: 700,
   },
@@ -38,22 +36,28 @@ const StyledTableRow = styled(TableRow)(({}) => ({
   },
 }));
 
-type ApplicantRows = {
-  icon?: string | StaticImageData;
-  name: string;
-  application: string;
-  date?: string;
-  status?: string;
-  number?: number | string;
-  view: string;
-};
-
 interface RecentTable {
   header?: string[];
-  rows: ApplicantRows[];
+  rows: ProgramApplicant[];
 }
 
 export default function RecentTable({ header, rows }: RecentTable) {
+  const [showDetails, setShowDetails] = React.useState(false);
+  const [applicantId, setApplicantId] = React.useState('');
+
+  const getColor = (status: string) => {
+    return status === 'Accepted'
+      ? '#50B773'
+      : status === 'Rejected'
+      ? '#FF3434'
+      : '';
+  };
+
+  const showDetailsHandler = (id: string) => {
+    setApplicantId(id);
+    setShowDetails(true);
+  };
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="customized table">
@@ -67,31 +71,42 @@ export default function RecentTable({ header, rows }: RecentTable) {
           </TableHead>
         )}
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
+          {rows?.map((row) => (
+            <StyledTableRow key={row.firstName}>
               <StyledTableCell component="th" scope="row">
-                {row.icon && (
-                  <Image src={row.icon} alt="icon" className="inline mr-3" />
-                )}
-                {row.name}
+                {row.firstName}
               </StyledTableCell>
-              <StyledTableCell align="left">{row.application}</StyledTableCell>
-              {row.date && (
-                <StyledTableCell align="left">{row.date}</StyledTableCell>
+              <StyledTableCell align="left">Program</StyledTableCell>
+              {row.updatedAt && (
+                <StyledTableCell align="left">
+                  {row.updatedAt.split('T')[0]}
+                </StyledTableCell>
               )}
               {row.status && (
-                <StyledTableCell align="left">{row.status}</StyledTableCell>
-              )}
-              {row.number && (
-                <StyledTableCell align="left">{row.number}</StyledTableCell>
+                <StyledTableCell
+                  align="left"
+                  style={{ color: getColor(row.status) }}
+                >
+                  {row.status}
+                </StyledTableCell>
               )}
               <StyledTableCell align="left">
-                <button>{row.view}</button>
+                <button
+                  onClick={() => showDetailsHandler(row.programApplicantId)}
+                >
+                  Details
+                </button>
               </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
       </Table>
+      <ApplicantModal
+        isOpen={showDetails}
+        onClose={setShowDetails}
+        appDetails={rows}
+        applicantId={applicantId}
+      />
     </TableContainer>
   );
 }

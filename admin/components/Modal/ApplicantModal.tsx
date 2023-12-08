@@ -19,11 +19,13 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
   appDetails,
   applicantId,
 }) => {
-  const details = appDetails.filter(
-    (applicant) => applicant.programApplicantId === applicantId,
-  );
-  const progDetails: ProgramApplicant = details[0];
+  const details =
+    appDetails &&
+    appDetails.filter(
+      (applicant) => applicant.programApplicantId === applicantId,
+    );
 
+  const progDetails: ProgramApplicant = appDetails && details[0];
   const { mutate, error, isPending, isSuccess } = useMutation({
     mutationFn: async (formData: ProgramApplicant) => {
       const data = await updateData(
@@ -50,7 +52,7 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
 
   return (
     <div className="absolute w-full top-0 left-0 min-h-screen flex items-center justify-center z-50 font-raleway bg-transparent backdrop-blur-lg py-20">
-      <div className="relative z-[60] w-full max-w-[820px] bg-white rounded-lg shadow-lg p-5 md:p-[50px]">
+      <div className="relative z-[60] w-full max-w-[820px] bg-white rounded-lg shadow-lg p-5 py-10 md:p-[50px]">
         <div className="absolute top-10 right-10">
           <Image
             src={Close}
@@ -62,7 +64,7 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
         <div className="w-full flex flex-col gap-[14px]">
           {applicantDetails.map((detail) =>
             progDetails[detail.key as keyof ProgramApplicant] ? (
-              <div key={detail.id}>
+              <div key={detail.id} className="w-full overflow-hidden">
                 <p className="text-lg text-black">{detail.label}</p>
                 <p className="text-lg text-[#5988FF]">
                   {progDetails[detail.key as keyof ProgramApplicant]}
@@ -75,12 +77,12 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
         <form
           action=""
           onSubmit={handleSubmit}
-          className="flex gap-9 items-center mt-[35px]"
+          className="flex gap-4 md:gap-9 items-center mt-[35px]"
         >
           <div className="flex flex-row-reverse gap-2 items-center">
             <label
               htmlFor="accept"
-              className="text-[#1A1A1A] md:text-2xl font-semibold tracking-[1.837px]"
+              className="text-[#1A1A1A] text-lg md:text-2xl font-semibold tracking-[1.837px]"
             >
               Accept
             </label>
@@ -95,18 +97,20 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
           <div className="flex flex-row-reverse gap-2 items-center">
             <label
               htmlFor="reject"
-              className="text-[#1A1A1A] md:text-2xl font-semibold tracking-[1.837px]"
+              className="text-[#1A1A1A] text-lg md:text-2xl font-semibold tracking-[1.837px]"
             >
               Reject
             </label>
             <input type="radio" name="status" id="reject" value="Rejected" />
           </div>
           {isPending ? (
-            <p className="text-black md:text-2xl">Updating ...</p>
+            <p className="text-black text-lg md:text-2xl">Updating ...</p>
           ) : error ? (
-            <p className="text-red-400 md:text-2xl">Something went wrong</p>
+            <p className="text-red-400 text-lg md:text-2xl">
+              Something went wrong
+            </p>
           ) : isSuccess ? (
-            <p className="text-green-400 md:text-2xl">Updated</p>
+            <p className="text-green-400 text-lg md:text-2xl">Updated</p>
           ) : (
             ''
           )}

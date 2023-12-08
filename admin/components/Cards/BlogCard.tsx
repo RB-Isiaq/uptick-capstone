@@ -36,13 +36,13 @@ const BlogCard = ({ blog }: BlogCardProps) => {
     }
   };
   return (
-    <div className="flex flex-col lg:flex-row justify-between  lg:items-center gqp-5  lg:gap-[44px] bg-white rounded-lg shadow-md w-full py-[22px] px-3 lg:px-[28px]">
+    <div className="flex flex-col lg:flex-row justify-between  lg:items-center gap-2  lg:gap-[44px] bg-white rounded-lg shadow-md w-full py-[22px] px-3 md:px-[28px]">
       <Image
         src={blog?.imageUrl}
         alt="blog image"
         width={248}
         height={160}
-        className="w-[248px] h-[160px]"
+        className="w-full md:w-[248px] h-[160px]"
       />
       <div className="flex flex-col gap-4 w-[314px]">
         <h1 className="text-black">
@@ -63,7 +63,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
         <div
           className={`absolute top-[10px]   bg-[#252531] text-white ${
             showOptions ? 'flex' : 'hidden'
-          } -top-[10px] right-[20px]  flex-col  items-start rounded-lg w-max`}
+          } -top-[10px] left-8 md:left-0 md:right-[20px]  flex-col  items-start rounded-lg w-max`}
         >
           <Link href={`blogs/${blog?.postId}`}>
             <button

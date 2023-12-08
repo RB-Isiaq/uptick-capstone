@@ -3,7 +3,15 @@
 import * as React from 'react';
 import { PieChart } from '@mui/x-charts/PieChart';
 
-export default function BasicPie() {
+export default function BasicPie({
+  lessThanOne,
+  oneToTwo,
+  aboveTwo,
+}: {
+  lessThanOne: number;
+  oneToTwo: number;
+  aboveTwo: number;
+}) {
   return (
     <div className=" -ml-[100px]">
       <PieChart
@@ -11,9 +19,9 @@ export default function BasicPie() {
         series={[
           {
             data: [
-              { id: 0, value: 120, label: 'Less than a year' },
-              { id: 1, value: 111, label: '1 to 2 years' },
-              { id: 2, value: 98, label: 'More than 2 years' },
+              { id: 0, value: lessThanOne, label: 'Less than a year' },
+              { id: 1, value: oneToTwo, label: '1 to 2 years' },
+              { id: 2, value: aboveTwo, label: 'More than 2 years' },
             ],
           },
         ]}

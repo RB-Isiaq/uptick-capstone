@@ -42,12 +42,19 @@ const Sidebar = () => {
       data-testid="sidebar"
     >
       <Hamburger onClick={toggleSidebar} />
-      <Link onClick={() => setSidebarOpen(!isSidebarOpen)} href="/">
+      <Link
+        onClick={() => {
+          !isDesktop && setSidebarOpen(!isSidebarOpen);
+        }}
+        href="/"
+      >
         <Image src={LOGO} alt="logo" />
       </Link>
       <div className="flex flex-col gap-[24px] mt-[51px]">
         <Link
-          onClick={() => setSidebarOpen(!isSidebarOpen)}
+          onClick={() => {
+            !isDesktop && setSidebarOpen(!isSidebarOpen);
+          }}
           href="/dashboard"
           className="flex gap-2 hover:bg-[#2F2F3A] p-1 hover:border-t-[#477BFF] hover:border-t rounded-md"
         >
@@ -69,7 +76,9 @@ const Sidebar = () => {
           </button>
           <div className="absolute top-0  hidden bg-[#252531] text-white group-hover:block group-hover:relative">
             <Link
-              onClick={() => setSidebarOpen(!isSidebarOpen)}
+              onClick={() => {
+                !isDesktop && setSidebarOpen(!isSidebarOpen);
+              }}
               href="/programs/tech/"
             >
               <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
@@ -77,7 +86,9 @@ const Sidebar = () => {
               </p>
             </Link>
             <Link
-              onClick={() => setSidebarOpen(!isSidebarOpen)}
+              onClick={() => {
+                !isDesktop && setSidebarOpen(!isSidebarOpen);
+              }}
               href="/programs/business/"
             >
               <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
@@ -85,7 +96,9 @@ const Sidebar = () => {
               </p>
             </Link>
             <Link
-              onClick={() => setSidebarOpen(!isSidebarOpen)}
+              onClick={() => {
+                !isDesktop && setSidebarOpen(!isSidebarOpen);
+              }}
               href="/programs/map/"
             >
               <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
@@ -93,7 +106,9 @@ const Sidebar = () => {
               </p>
             </Link>
             <Link
-              onClick={() => setSidebarOpen(!isSidebarOpen)}
+              onClick={() => {
+                !isDesktop && setSidebarOpen(!isSidebarOpen);
+              }}
               href="/programs/beginner/"
             >
               <p className="block px-4 py-1 text-sm font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white">
@@ -104,7 +119,9 @@ const Sidebar = () => {
         </div>
 
         <Link
-          onClick={() => setSidebarOpen(!isSidebarOpen)}
+          onClick={() => {
+            !isDesktop && setSidebarOpen(!isSidebarOpen);
+          }}
           href="/jobs"
           className="flex gap-2 hover:bg-[#2F2F3A] p-1 hover:border-t-[#477BFF] hover:border-t rounded-md"
         >
@@ -114,7 +131,9 @@ const Sidebar = () => {
           </p>
         </Link>
         <Link
-          onClick={() => setSidebarOpen(!isSidebarOpen)}
+          onClick={() => {
+            !isDesktop && setSidebarOpen(!isSidebarOpen);
+          }}
           href="/blogs"
           className="flex gap-2 hover:bg-[#2F2F3A] p-1 hover:border-t-[#477BFF] hover:border-t rounded-md"
         >
