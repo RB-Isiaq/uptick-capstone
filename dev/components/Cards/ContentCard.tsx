@@ -23,10 +23,10 @@ export const ContentCard = ({
     <div
       className={`w-full flex flex-col ${
         reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'
-      } justify-between items-center  gap-3 `}
+      } justify-between items-center  gap-3 overflow-x-hidden`}
     >
       <div className="flex flex-col gap-6 md:gap-[38px]  w-full max-w-[604px]">
-        <h1 className="font-raleway text-white font-bold text-[26px] md:text-[60px] leading-[1.2] ">
+        <h1 className="font-raleway text-white font-bold text-[32px] md:text-[60px] leading-[1.2] ">
           {title}
         </h1>
         <p className="font-raleway text-white text-[18px] w-full max-w-[401px]">
