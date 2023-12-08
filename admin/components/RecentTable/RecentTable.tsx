@@ -46,9 +46,9 @@ export default function RecentTable({ header, rows }: RecentTable) {
   const [applicantId, setApplicantId] = React.useState('');
 
   const getColor = (status: string) => {
-    return status === 'Accepted'
+    return status.toLowerCase() === 'accepted'
       ? '#50B773'
-      : status === 'Rejected'
+      : status.toLowerCase() === 'rejected'
       ? '#FF3434'
       : '';
   };

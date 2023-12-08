@@ -30,8 +30,7 @@ const JobsPage = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ['jobs', isOpen],
     queryFn: async () => {
-      const result: JobDetailsProps[] = await getData(`jobs`);
-
+      const result: { data: JobDetailsProps[] } = await getData(`jobs`);
       return result;
     },
   });
@@ -43,7 +42,7 @@ const JobsPage = () => {
         return [];
       }
 
-      const requests = data.map((job) => {
+      const requests = data.data.map((job) => {
         return getData(`jobs/${job.jobId}/applications`);
       });
 
@@ -66,9 +65,10 @@ const JobsPage = () => {
       </div>
     );
   }
+
   const updatedJobsData =
     data &&
-    data.map((job, index) => ({
+    data?.data.map((job, index) => ({
       ...job,
       applicantsNum:
         jobApplicantsData && jobApplicantsData[index]?.data

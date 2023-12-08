@@ -4,7 +4,7 @@ import { Close } from '@/public';
 import { ProgramApplicant } from '@/interfaces';
 import { FormEvent } from 'react';
 import { updateData } from '@/Services/ApiCalls';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 interface ApplicantModalProps {
   isOpen: boolean;
@@ -19,6 +19,7 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
   appDetails,
   applicantId,
 }) => {
+  const queryClient = useQueryClient();
   const details =
     appDetails &&
     appDetails.filter(
@@ -40,14 +41,16 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const formObject = Object.fromEntries(formData);
-
     const updatedApplicantData: ProgramApplicant = {
       ...progDetails,
-      status: String(formObject.status),
+      status: String(formObject.status).toLowerCase(),
     };
     mutate(updatedApplicantData);
   };
-
+  const refetchData = async () => {
+    await queryClient.invalidateQueries({ queryKey: ['dashboard'] });
+    await queryClient.refetchQueries({ queryKey: ['dashboard'] });
+  };
   if (!isOpen) return null;
 
   return (
@@ -57,7 +60,10 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
           <Image
             src={Close}
             alt="close"
-            onClick={() => onClose(!isOpen)}
+            onClick={() => {
+              refetchData();
+              onClose(!isOpen);
+            }}
             className="cursor-pointer"
           />
         </div>
@@ -90,7 +96,7 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
               type="radio"
               name="status"
               id="accept"
-              value="Accepted"
+              value="accepted"
               defaultChecked
             />
           </div>
@@ -101,7 +107,7 @@ const ApplicantModal: React.FC<ApplicantModalProps> = ({
             >
               Reject
             </label>
-            <input type="radio" name="status" id="reject" value="Rejected" />
+            <input type="radio" name="status" id="reject" value="rejected" />
           </div>
           {isPending ? (
             <p className="text-black text-lg md:text-2xl">Updating ...</p>

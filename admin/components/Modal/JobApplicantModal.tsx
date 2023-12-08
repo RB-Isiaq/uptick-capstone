@@ -38,10 +38,9 @@ const JobApplicantModal: React.FC<JobApplicantModalProps> = ({
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const formObject = Object.fromEntries(formData);
-
     const updatedApplicantData: JobApplicantDetails = {
       ...applicantDetails,
-      status: String(formObject.status),
+      status: String(formObject.status).toLowerCase(),
     };
     mutate(updatedApplicantData);
   };

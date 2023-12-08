@@ -30,9 +30,9 @@ const JobApplicantCard = ({
       <div className="w-[110px] flex md:justify-center">
         <h1
           className={`text-lg  text-[#111] px-[10px] py-1 rounded-xl ${
-            status === 'Accepted'
+            status.toLowerCase() === 'accepted'
               ? 'bg-[#BBF5E7] '
-              : status === 'Rejected'
+              : status.toLowerCase() == 'rejected'
               ? 'bg-[#FF3434] '
               : 'bg-[#E6E6E6] '
           } `}
