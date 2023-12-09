@@ -59,6 +59,11 @@ const DesignForm = ({ programId }: IProgramId) => {
                 className="text-black text-lg md:text-[24px] leading-[160%]"
               >
                 {inp.label}
+                {inp.required && (
+                  <span className="text-red-400 text-lg ml-1  -mt-4 inline">
+                    *
+                  </span>
+                )}
               </label>
               {inp.type === 'text' ||
               inp.type === 'email' ||

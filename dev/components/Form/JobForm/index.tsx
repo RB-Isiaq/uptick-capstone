@@ -36,6 +36,27 @@ const JobForm = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
+    const resumeFile = formData.get('resume') as File;
+
+    if (!resumeFile) {
+      setMessage('Please upload a resume.');
+      setIsModalOpen(true);
+      return;
+    }
+
+    const allowedFormats = [
+      'application/pdf',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    ];
+
+    if (!allowedFormats.includes(resumeFile.type)) {
+      setMessage(
+        'Invalid resume format. Please upload a PDF or Word document.',
+      );
+      setIsModalOpen(true);
+      return;
+    }
 
     setIsLoading(true);
     try {

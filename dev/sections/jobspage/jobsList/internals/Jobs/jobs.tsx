@@ -2,11 +2,13 @@
 
 import { getData } from '@/Services/ApiCalls';
 import Button from '@/components/Button';
+import PaginationRounded from '@/components/Pagination';
 import Spinner from '@/components/Spinner';
 import { truncateText } from '@/utils';
 import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export interface JobDetailsProps {
   jobId?: string;
@@ -24,24 +26,33 @@ export interface JobDetailsProps {
 }
 
 const Jobs = () => {
+  const [page, setPage] = useState(1);
   const { isLoading, error, data } = useQuery({
-    queryKey: ['jobs'],
+    queryKey: ['jobs', page],
     queryFn: async () => {
-      const result: JobDetailsProps[] = await getData(`jobs`);
+      const result: {
+        data: JobDetailsProps[];
+        paging: { totalPages: number };
+      } = await getData(`jobs?page=${page}`);
 
       return result;
     },
   });
   if (error) {
-    return <span>Error: {error.message}</span>;
+    return (
+      <div className="w-[300px] h-[calc(100vh-200px)] flex justify-center items-center animate-spin mx-auto">
+        <span className="text-red-400">Error: {error.message}</span>
+      </div>
+    );
   }
+
   return isLoading ? (
     <div className="w-[300px] h-[calc(100vh-200px)] flex justify-center items-center animate-spin mx-auto">
       <Spinner />
     </div>
   ) : (
     <div className="flex flex-col w-full">
-      {data?.map((item) => (
+      {data?.data.map((item) => (
         <div
           key={item.jobId}
           className="bg-upLightBlue rounded-2xl grid grid-cols-1 md:grid-cols-2 items-center p-4 lg:p-8 lg:my-5 my-3 border border-upLightGray text-white  w-full gap-3"
@@ -73,6 +84,12 @@ const Jobs = () => {
           </div>
         </div>
       ))}
+      <div className="w-full flex justify-center mt-6">
+        <PaginationRounded
+          page={data?.paging.totalPages ?? 0}
+          setPage={setPage}
+        />
+      </div>
     </div>
   );
 };

@@ -22,13 +22,17 @@ export const Blogs = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ['blogposts', page],
     queryFn: async () => {
-      const result = await getData(`blogposts?page=${page}`);
+      const result = await getData(`blogposts?page=${page}&limit=12`);
 
       return result;
     },
   });
   if (error) {
-    return <span>Error: {error.message}</span>;
+    return (
+      <div className="w-[300px] h-[calc(100vh-200px)] flex justify-center items-center animate-spin mx-auto">
+        <span className="text-red-400">Error: {error.message}</span>
+      </div>
+    );
   }
 
   return isLoading ? (
