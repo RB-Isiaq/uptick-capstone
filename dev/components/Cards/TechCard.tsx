@@ -72,16 +72,21 @@ export const TechCard = ({
         </h1>
         <p className="text-[#fff]  text-lg pr-2">{desc}</p>
         <div
-          className={`flex gap-3 flex-wrap w-full max-w-[438px] ${
+          className={`flex gap-3 flex-wrap ${
             title === 'Non-Technical Programs'
-              ? 'max-w-[545px]'
+              ? 'w-full max-w-[545px]'
               : title === 'Design' || title === 'AI & Data'
-              ? 'max-w-[440px]'
-              : 'max-w-[250px]'
+              ? 'w-full max-w-[440px]'
+              : 'w-full max-w-[270px]'
           }`}
         >
           {tracks?.map((track) => (
-            <Button key={track.id} text={track.track} plain />
+            <div
+              className={`flex items-center justify-center px-5 py-[18px] font-raleway  bg-white text-[#2F2F2F] font-semibold tracking-[1.25px] leading-[100%] rounded-lg `}
+              key={track.id}
+            >
+              {track.track}
+            </div>
           ))}
         </div>
         <p className="text-[#fff]  text-lg pr-2"> {desc2}</p>

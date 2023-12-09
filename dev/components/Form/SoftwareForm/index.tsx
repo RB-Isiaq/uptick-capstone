@@ -1,7 +1,13 @@
 'use client';
 
 import React, { FormEvent, useState } from 'react';
-import { softwareInput, title } from './constants';
+import {
+  remainingInputs,
+  softwareInput,
+  stackInput,
+  techStack,
+  title,
+} from './constants';
 import Modal from '@/components/Modal/Modal';
 import Button from '@/components/Button';
 import { postData } from '@/Services/ApiCalls';
@@ -14,6 +20,7 @@ const SoftwareForm = ({ programId }: IProgramId) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [stack, setStack] = useState('Frontend');
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -59,13 +66,222 @@ const SoftwareForm = ({ programId }: IProgramId) => {
           {softwareInput.map((inp) => (
             <div
               key={inp.id}
-              className="flex flex-col w-full justify-between gap-1  mb-[20px]"
+              className="flex flex-col w-full justify-between gap-1 mb-5"
             >
               <label
                 htmlFor={inp.name}
                 className="text-black text-lg md:text-[24px] leading-[160%]"
               >
                 {inp.label}
+                {inp.required && (
+                  <span className="text-red-400 text-lg ml-1  -mt-4 inline">
+                    *
+                  </span>
+                )}
+              </label>
+              {inp.type === 'text' ||
+              inp.type === 'email' ||
+              inp.type === 'url' ||
+              inp.type === 'tel' ? (
+                <input
+                  id={inp.name}
+                  type={inp.type}
+                  name={inp.name}
+                  required={inp.required}
+                  placeholder={inp.placeHolder}
+                  className="form_input"
+                />
+              ) : inp.type === 'select' ? (
+                <select
+                  id={inp.name}
+                  name={inp.name}
+                  required={inp.required}
+                  placeholder={inp.placeHolder}
+                  className="form_input"
+                >
+                  {inp.options?.map((option, i) => (
+                    <option
+                      key={i}
+                      value={option}
+                      className="form_input py-10 my-4"
+                    >
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <textarea
+                  id={inp.name}
+                  name={inp.name}
+                  required={inp.required}
+                  placeholder={inp.placeHolder}
+                  className="form_input"
+                ></textarea>
+              )}
+            </div>
+          ))}
+          <div className="flex flex-col w-full justify-between gap-1  mb-5">
+            <label
+              htmlFor={stackInput.name}
+              className="text-black text-lg md:text-[24px] leading-[160%]"
+            >
+              {stackInput.label}
+              {stackInput.required && (
+                <span className="text-red-400 text-lg ml-1  -mt-4 inline">
+                  *
+                </span>
+              )}
+            </label>
+            <select
+              id={stackInput.name}
+              name={stackInput.name}
+              required={stackInput.required}
+              placeholder={stackInput.placeHolder}
+              className="form_input"
+              value={stack}
+              onChange={(e) => setStack(e.currentTarget.value)}
+            >
+              {stackInput.options?.map((option, i) => (
+                <option
+                  key={i}
+                  value={option}
+                  className="form_input py-10 my-4"
+                >
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+          {stack === 'Frontend' ? (
+            <div className="flex flex-col w-full justify-between gap-1  mb-5">
+              <label
+                htmlFor={techStack[0].name}
+                className="text-black text-lg md:text-[24px] leading-[160%]"
+              >
+                {techStack[0].label}
+                {techStack[0].required && (
+                  <span className="text-red-400 text-lg ml-1  -mt-4 inline">
+                    *
+                  </span>
+                )}
+              </label>
+              <select
+                id={techStack[0].name}
+                name={techStack[0].name}
+                required={techStack[0].required}
+                placeholder={techStack[0].placeHolder}
+                className="form_input"
+              >
+                {techStack[0].options?.map((option, i) => (
+                  <option
+                    key={i}
+                    value={option}
+                    className="form_input py-10 my-4"
+                  >
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : stack === 'Backend' ? (
+            <div className="flex flex-col w-full justify-between gap-1  mb-5">
+              <label
+                htmlFor={techStack[1].name}
+                className="text-black text-lg md:text-[24px] leading-[160%]"
+              >
+                {techStack[1].label}
+                {techStack[1].required && (
+                  <span className="text-red-400 text-lg ml-1  -mt-4 inline">
+                    *
+                  </span>
+                )}
+              </label>
+              <select
+                id={techStack[1].name}
+                name={techStack[1].name}
+                required={techStack[1].required}
+                placeholder={techStack[1].placeHolder}
+                className="form_input"
+              >
+                {techStack[1].options?.map((option, i) => (
+                  <option
+                    key={i}
+                    value={option}
+                    className="form_input py-10 my-4"
+                  >
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : stack === 'Mobile' ? (
+            <div className="flex flex-col w-full justify-between gap-1  mb-5">
+              <label
+                htmlFor={techStack[2].name}
+                className="text-black text-lg md:text-[24px] leading-[160%]"
+              >
+                {techStack[2].label}
+                {techStack[2].required && (
+                  <span className="text-red-400 text-lg ml-1  -mt-4 inline">
+                    *
+                  </span>
+                )}
+              </label>
+              <select
+                id={techStack[2].name}
+                name={techStack[2].name}
+                required={techStack[2].required}
+                placeholder={techStack[2].placeHolder}
+                className="form_input"
+              >
+                {techStack[2].options?.map((option, i) => (
+                  <option
+                    key={i}
+                    value={option}
+                    className="form_input py-10 my-4"
+                  >
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : stack === 'Full Stack' || stack === 'Other...' ? (
+            <div className="flex flex-col w-full justify-between gap-1  mb-5">
+              <label
+                htmlFor={techStack[3].name}
+                className="text-black text-lg md:text-[24px] leading-[160%]"
+              >
+                {`${stack}? ${techStack[3].label.split('?')[1]}`}
+                {techStack[3].required && (
+                  <span className="text-red-400 text-lg ml-1  -mt-4 inline">
+                    *
+                  </span>
+                )}
+              </label>
+              <textarea
+                id={techStack[3].name}
+                name={techStack[3].name}
+                required={techStack[3].required}
+                placeholder={techStack[3].placeHolder}
+                className="form_input"
+              />
+            </div>
+          ) : null}
+          {remainingInputs.map((inp) => (
+            <div
+              key={inp.id}
+              className="flex flex-col w-full justify-between gap-1 mb-5"
+            >
+              <label
+                htmlFor={inp.name}
+                className="text-black text-lg md:text-[24px] leading-[160%]"
+              >
+                {inp.label}
+                {inp.required && (
+                  <span className="text-red-400 text-lg ml-1  -mt-4 inline">
+                    *
+                  </span>
+                )}
               </label>
               {inp.type === 'text' ||
               inp.type === 'email' ||
