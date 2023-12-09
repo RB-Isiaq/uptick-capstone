@@ -8,7 +8,6 @@ import Image from 'next/image';
 import React from 'react';
 
 const BlogDetails = ({ id }: { id: string | number }) => {
-  console.log(id);
   const { isLoading, error, data } = useQuery({
     queryKey: [id],
     queryFn: async () => {
