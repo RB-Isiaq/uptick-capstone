@@ -8,6 +8,7 @@ interface Button {
   tertiary?: boolean;
   type?: 'button' | 'reset' | 'submit';
   onClick?: () => void;
+  isLoading?: boolean;
 }
 export const Button = ({
   text,
@@ -17,6 +18,7 @@ export const Button = ({
   tertiary,
   type,
   onClick,
+  isLoading,
   ...props
 }: Button) => {
   return (
@@ -31,7 +33,9 @@ export const Button = ({
           : tertiary
           ? 'text-[#477BFF] bg-inherit'
           : 'bg-uptickDarkBlue text-white'
-      } font-semibold tracking-[1.25px] leading-[100%] rounded-lg `}
+      } font-semibold tracking-[1.25px] leading-[100%] rounded-lg ${
+        isLoading ? 'animate-bounce' : ''
+      }`}
       type={type || 'button'}
       onClick={onClick}
       {...props}
