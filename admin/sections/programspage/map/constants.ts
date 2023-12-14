@@ -2,7 +2,7 @@ export const mapPrograms = [
   {
     id: '1',
     title: 'Software Engineering',
-    applicantsNum: 200,
+    applicantsNum: 0,
     options: [
       {
         id: 1,

@@ -49,12 +49,16 @@ const TalentTech = () => {
         <Button text="Add New" icon />
       </div>
       <div className="flex justify-between gap-2 py-7 px-3 md:px-6 w-full">
-        <h1 className="text-lg font-semibold md:w-[165px]">Programs</h1>
-        <h1 className="text-lg font-semibold w-[100px] md:w-[185px]">
+        <h1 className="text-lg font-semibold w-[165px] md:w-[170px] ">
+          Programs
+        </h1>
+        <h1 className="text-lg font-semibold w-[120px] md:w-[185px] ">
           Number of applicants
         </h1>
-        <h1 className="text-lg font-semibold md:w-[185px]">Status</h1>
-        <div />
+        <h1 className="  text-lg font-semibold  w-[100px] md:w-[185px]">
+          Status
+        </h1>
+        <div className=" invisible">HI</div>
       </div>
       <div className="w-full  flex flex-col justify-between gap-8 py-5 ">
         {updatedTechPrograms.map((program) => (

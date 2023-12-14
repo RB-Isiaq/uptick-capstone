@@ -2,7 +2,7 @@ export const startupPrograms = [
   {
     id: '1',
     title: 'Startup School',
-    applicantsNum: 200,
+    applicantsNum: 0,
     options: [
       {
         id: 1,
