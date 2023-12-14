@@ -13,6 +13,7 @@ export interface IProgramCard {
   title: string;
   applicantsNum: number;
   deadline?: string;
+  status?: string;
   options: {
     id: number;
     label: string;
@@ -33,7 +34,7 @@ const ProgramCard = ({
   const path = pathname.split('/');
 
   const { data: programData } = useQuery({
-    queryKey: [id, showOptions],
+    queryKey: [id, showOptions, message, isOpen],
     queryFn: async () => {
       const data = await getData(`programs/${id}`);
 
@@ -87,7 +88,10 @@ const ProgramCard = ({
     <>
       <div className="bg-white flex justify-between items-center gap-2 pt-5 pb-7 px-3 md:px-6 w-full">
         <h1 className=" font-semibold w-[165px]">{title}</h1>
-        <h1 className=" font-semibold w-[170px]">{applicantsNum}</h1>
+        <h1 className=" font-semibold w-[120px] md:w-[170px]">
+          {applicantsNum}
+        </h1>
+        <h1 className=" font-semibold w-[170px]">{programData?.status}</h1>
         {deadline && <h1 className=" font-semibold w-[170px]">{deadline}</h1>}
         <div className="relative">
           <button type="button" onClick={() => setShowOptions((prev) => !prev)}>
