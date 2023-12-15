@@ -17,6 +17,7 @@ const TalentBeginners = () => {
         <h1 className="text-lg font-semibold w-[185px]">
           Number of applicants
         </h1>
+        <h1 className="text-lg font-semibold md:w-[185px]">Status</h1>
         <div />
       </div>
       <div className="w-full  flex flex-col justify-between gap-10 py-5 ">

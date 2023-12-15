@@ -1,8 +1,8 @@
 export const beginnerPrograms = [
   {
     id: '1',
-    title: 'Software Engineering',
-    applicantsNum: 200,
+    title: 'Talent beginners',
+    applicantsNum: 0,
     options: [
       {
         id: 1,

@@ -5,7 +5,7 @@ import { Menu } from '@/public';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { deleteData, getData, updateData } from '@/Services/ApiCalls';
 import Modal from '../Modal/Modal';
 import { IProgramCard } from './ProgramCard';
@@ -16,14 +16,16 @@ const JobCard = ({
   applicantsNum,
   deadline,
   options,
+  status,
 }: IProgramCard) => {
+  const queryClient = useQueryClient();
   const [showOptions, setShowOptions] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const pathname = usePathname();
   const path = pathname.split('/');
-  const { data: programData } = useQuery({
-    queryKey: ['jobspage', showOptions],
+  const { data: jobData } = useQuery({
+    queryKey: ['jobspage'],
     queryFn: async () => {
       const data = await getData(`jobs/${id}/applications`);
 
@@ -34,7 +36,7 @@ const JobCard = ({
   const { mutate, error, isSuccess } = useMutation({
     mutationFn: async (status: string) => {
       const data = await updateData(`jobs/${id}`, {
-        ...programData,
+        ...jobData,
         status: status,
       });
       return data;
@@ -49,6 +51,11 @@ const JobCard = ({
       setIsOpen(true);
     },
   });
+
+  const refetchData = async () => {
+    await queryClient.invalidateQueries({ queryKey: ['jobs'] });
+    await queryClient.refetchQueries({ queryKey: ['jobs'] });
+  };
 
   const handleCloseApp = () => {
     mutate('close');
@@ -93,9 +100,17 @@ const JobCard = ({
       <div className="bg-white flex justify-between items-center gap-2 pt-5 pb-7 px-3 md:px-6 w-full">
         <h1 className=" font-semibold w-[165px]">{title}</h1>
         <h1 className=" font-semibold w-[170px]">{applicantsNum}</h1>
-        {deadline && <h1 className=" font-semibold w-[170px]">{deadline}</h1>}
+        <h1 className=" font-semibold w-[185px]">{deadline}</h1>
+        <h1 className=" font-semibold w-[170px]">{status}</h1>
+
         <div className="relative">
-          <button type="button" onClick={() => setShowOptions((prev) => !prev)}>
+          <button
+            type="button"
+            onClick={() => {
+              setShowOptions((prev) => !prev);
+              refetchData();
+            }}
+          >
             <Image src={Menu} alt="menu" />
           </button>
           <div
@@ -108,6 +123,7 @@ const JobCard = ({
               onClick={() => {
                 handleCloseApp();
                 setShowOptions((prev) => !prev);
+                refetchData();
               }}
             >
               {options[0].label}
@@ -121,6 +137,7 @@ const JobCard = ({
               className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"
               onClick={() => {
                 handleOpenApp();
+                refetchData();
                 setShowOptions((prev) => !prev);
               }}
             >
@@ -130,6 +147,7 @@ const JobCard = ({
               className="block px-4 py-2  font-medium leading-[24px] hover:bg-[#2F2F3A] text-[#9A99A0] hover:text-white"
               onClick={() => {
                 handleDeleteJob(id);
+                refetchData();
                 setShowOptions((prev) => !prev);
               }}
             >

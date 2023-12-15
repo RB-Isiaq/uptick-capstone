@@ -47,7 +47,10 @@ export const Navbar = () => {
   }, []);
   const navBg = () => {
     const bg =
-      path.includes('form') || path.includes('blog') || path.includes('job')
+      path.includes('form') ||
+      path.includes('blog') ||
+      path.includes('job') ||
+      path.includes('map')
         ? 'bg-[#070C19]'
         : `bg-[${navbarBackground}]`;
     return bg;

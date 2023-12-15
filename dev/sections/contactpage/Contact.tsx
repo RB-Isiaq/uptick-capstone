@@ -74,7 +74,7 @@ export const Contact = () => {
             cols={30}
             rows={10}
             placeholder="Go ahead we are listening"
-            className="w-full py-[18px] px-5 rounded-lg border border-[#2F2F2F] bg-[rgba(26,26,26,0.75)] text-white"
+            className="w-full py-[18px] px-5 rounded-lg border border-[#2F2F2F] bg-[rgba(26,26,26,0.75)] text-white mb-2"
             required
           ></textarea>
           <div>
