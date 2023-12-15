@@ -38,7 +38,7 @@ const Sidebar = () => {
         isSidebarOpen
           ? 'ml-0 translate-x-[0] ease-in transition-all'
           : '-ml-[240px] -translate-x-[100]   transition-all ease-out'
-      } ease-in-out`}
+      } ease-in-out z-[100]`}
       data-testid="sidebar"
     >
       <Hamburger onClick={toggleSidebar} />

@@ -92,7 +92,8 @@ const JobsPage = () => {
           Number of applicants
         </h1>
         <h1 className="text-lg font-semibold w-[185px]">Deadline</h1>
-        <div />
+        <h1 className="text-lg font-semibold w-[185px]">Status</h1>
+        <div className=" invisible">HI</div>
       </div>
       <div className="w-full  flex flex-col justify-between gap-8 py-5 ">
         {updatedJobsData?.map((item) => (
@@ -102,6 +103,7 @@ const JobsPage = () => {
             title={item?.jobTitle}
             applicantsNum={item?.applicantsNum}
             deadline={item.deadline.toString().split('T')[0]}
+            status={item.status}
             options={[
               {
                 id: 1,

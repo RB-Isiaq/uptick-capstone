@@ -96,6 +96,10 @@ export const TechCard = ({
             <Link href={`${path}/${programId}`}>
               <Button text={btnText} />
             </Link>
+          ) : path === 'business' || path === 'map' ? (
+            <Link href={`${path}/form`}>
+              <Button text={btnText} />
+            </Link>
           ) : (
             <>
               <Button

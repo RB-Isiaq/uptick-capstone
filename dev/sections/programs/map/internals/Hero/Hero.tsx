@@ -1,4 +1,4 @@
-import { businessHero } from './constants';
+import { mapHero } from './constants';
 import Button from '@/components/Button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,18 +9,18 @@ export const Hero = () => {
     <section className="  mt-[-120px] pt-[120px]">
       <div className="relative  w-full max-w-[1440px] mx-auto flex flex-col gap-6 md:gap-[46px] justify-center items-center pt-[140px] pb-[240px]  ">
         <h1 className="text-black text-center font-ralewaay text-[26px] md:text-[72px] font-bold leading-normal ">
-          {businessHero.title}
+          {mapHero.title}
         </h1>
         <p
           className={`text-black text-center font-raleway text-lg leading-[160%]   w-full max-w-[651px] px-2 md:px-0`}
         >
-          {businessHero.desc}
+          {mapHero.desc}
         </p>
-        <Link href={businessHero.path} className="">
-          <Button text={businessHero.btn} black />
+        <Link href={mapHero.path} className="">
+          <Button text={mapHero.btn} black />
         </Link>
         <Image
-          src={businessHero.bg}
+          src={mapHero.bg}
           alt="background"
           className="  absolute top-40 md:top-0 left-0 z-[-1]"
         />
